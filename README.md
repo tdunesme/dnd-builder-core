@@ -1,76 +1,143 @@
-🧙‍♂️ D&D Character Builder — Backend
+# 🧙‍♂️ D&D Character Builder — Backend
 
-Backend de l’application D&D Character Builder 5e (2024), développé avec NestJS, Prisma, SQLite et une authentification JWT.
-Il permet d’enregistrer des utilisateurs, de se connecter, et de gérer des personnages (CRUD).
-Le frontend Vue 3 consomme cette API.
+Backend de l’application **D&D Character Builder 5e (2024)**, développé avec **NestJS**, **Prisma**, **SQLite** et une authentification **JWT**.  
+Il gère l’inscription, la connexion et les personnages des utilisateurs.
 
-🚀 Installation
+---
+
+## 🚀 Installation
+
+```bash
 npm install
+```
 
-🔧 Configuration
+---
 
-Créer un fichier .env à la racine :
+## 🔧 Configuration
 
+Créer un fichier **`.env`** à la racine :
+
+```env
 DATABASE_URL="file:./dev.db"
 JWT_SECRET="your-secret-key"
 JWT_EXPIRES_IN="1d"
+```
 
-🗄️ Base de données
+---
+
+## 🗄️ Base de données
 
 Appliquer les migrations Prisma :
 
+```bash
 npx prisma migrate dev
+```
 
-Ouvrir Prisma Studio (visualisation de la DB) :
+Ouvrir Prisma Studio :
 
+```bash
 npx prisma studio
+```
 
-▶️ Lancer le serveur
-Mode développement
+---
+
+## ▶️ Lancer le serveur
+
+### Mode développement
+
+```bash
 npm run start:dev
+```
 
-API accessible sur :
+L’API sera disponible sur :
 
+```
 http://localhost:3000
+```
 
-🔐 Authentification
+---
 
-POST /auth/register → créer un compte
+## 🔐 Authentification
 
-POST /auth/login → renvoie { accessToken }
+### Inscription
 
-Les routes protégées utilisent :
+```
+POST /auth/register
+```
 
+### Connexion
+
+```
+POST /auth/login
+```
+
+Retourne :
+
+```json
+{
+  "id": "user-id",
+  "email": "user@example.com",
+  "accessToken": "jwt-token"
+}
+```
+
+### Accès aux routes protégées
+
+```
 Authorization: Bearer <accessToken>
+```
 
-🧙‍♂️ Routes Characters
+---
 
-Toutes nécessitent un JWT valide :
+## 🧙‍♂️ Routes Characters
 
-POST /characters → créer un personnage
+Toutes nécessitent un JWT valide.
 
-GET /characters → lister les personnages du joueur
+### Créer un personnage
 
-GET /characters/:id → afficher un personnage
+```
+POST /characters
+```
 
-DELETE /characters/:id → supprimer un personnage
+### Lister mes personnages
 
-🧪 Tests
+```
+GET /characters
+```
+
+### Obtenir un personnage
+
+```
+GET /characters/:id
+```
+
+### Supprimer un personnage
+
+```
+DELETE /characters/:id
+```
+
+---
+
+## 🧪 Tests
 
 Tests unitaires :
 
+```bash
 npm run test
+```
 
 Tests E2E :
 
+```bash
 npm run test:e2e
+```
 
-📄 Notes
+---
 
-Base locale : SQLite
+## 📄 Notes
 
-ORM : Prisma
-
-Le projet suit une architecture modulaire NestJS
-
-Le SRD 5.2 sera intégré plus tard pour les espèces, classes et backgrounds
+- Base locale : **SQLite**
+- ORM : **Prisma**
+- Auth : **JWT + Passport**
+- Le SRD 5.2 sera intégré dans les modules espèces / classes / backgrounds.
