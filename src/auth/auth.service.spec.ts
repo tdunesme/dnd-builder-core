@@ -2,6 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { UnauthorizedException } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { UsersService } from '../users/users.service';
+import { JwtService } from '@nestjs/jwt';
 import { User } from '../generated/prisma/client';
 import * as bcrypt from 'bcrypt';
 
@@ -10,6 +11,7 @@ jest.mock('bcrypt');
 describe('AuthService', () => {
   let service: AuthService;
   let usersService: { findByEmail: jest.Mock; create: jest.Mock };
+  let jwtService: { signAsync: jest.Mock };
 
   beforeEach(async () => {
     usersService = {
@@ -17,10 +19,15 @@ describe('AuthService', () => {
       create: jest.fn(),
     };
 
+    jwtService = {
+      signAsync: jest.fn(),
+    };
+
     const module: TestingModule = await Test.createTestingModule({
       providers: [
         AuthService,
         { provide: UsersService, useValue: usersService },
+        { provide: JwtService, useValue: jwtService },
       ],
     }).compile();
 
@@ -69,6 +76,7 @@ describe('AuthService', () => {
 
       usersService.findByEmail.mockResolvedValue(user);
       (bcrypt.compare as jest.Mock).mockResolvedValue(true);
+      (jwtService.signAsync as jest.Mock).mockResolvedValue('mock-token');
 
       const result = await service.login({
         email: 'valid@example.com',
@@ -82,7 +90,15 @@ describe('AuthService', () => {
         'plain-password',
         'hashed-password',
       );
-      expect(result).toEqual(user);
+      expect(jwtService.signAsync).toHaveBeenCalledWith({
+        sub: user.id,
+        email: user.email,
+      });
+      expect(result).toEqual({
+        id: user.id,
+        email: user.email,
+        accessToken: 'mock-token',
+      });
     });
 
     it('throws UnauthorizedException when user does not exist', async () => {

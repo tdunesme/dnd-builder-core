@@ -28,7 +28,6 @@ export class AuthController {
   @UseGuards(AuthGuard('jwt'))
   @Get('me')
   getProfile(@Req() req: express.Request) {
-    // req.user vient de JwtStrategy.validate()
     return req.user;
   }
 }

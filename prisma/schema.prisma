@@ -5,9 +5,9 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider        = "prisma-client"
-  output          = "../src/generated/prisma"
-  moduleFormat    = "cjs"
+  provider     = "prisma-client"
+  output       = "../src/generated/prisma"
+  moduleFormat = "cjs"
 }
 
 datasource db {
@@ -15,11 +15,30 @@ datasource db {
 }
 
 model User {
-  id           String   @id @default(cuid())
-  email        String   @unique
+  id           String      @id @default(cuid())
+  email        String      @unique
   passwordHash String
-
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
+  characters   Character[]
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
 }
 
+model Character {
+  id    Int    @id @default(autoincrement())
+  name  String
+  level Int    @default(1)
+
+  // Propriétaire du personnage
+  ownerId String 
+  owner   User   @relation(fields: [ownerId], references: [id], onDelete: Cascade) 
+
+  // Références futures vers d'autres tables métier (SRD)
+  speciesId    Int? // à relier plus tard à un modèle Species
+  classId      Int? // à relier plus tard à un modèle Class
+  backgroundId Int? // à relier plus tard à un modèle Background
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([ownerId])
+}
