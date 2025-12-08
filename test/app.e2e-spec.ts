@@ -32,9 +32,9 @@ describe('AppController (e2e)', () => {
       .expect('Hello World!');
   });
 
-  it('/users (POST) - should create a user', () => {
+  it('/auth/register (POST) - should create a user', () => {
     return request(app.getHttpServer())
-      .post('/users')
+      .post('/auth/register')
       .set('Content-Type', 'application/json')
       .send({
         email: 'test@example.com',
@@ -47,9 +47,9 @@ describe('AppController (e2e)', () => {
       });
   });
 
-  it('/users (POST) - should reject invalid email', () => {
+  it('/auth/register (POST) - should reject invalid email', () => {
     return request(app.getHttpServer())
-      .post('/users')
+      .post('/auth/register')
       .set('Content-Type', 'application/json')
       .send({
         email: 'invalid-email',
