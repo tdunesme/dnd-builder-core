@@ -5,9 +5,20 @@ import { UsersModule } from './users/users.module';
 import { PrismaModule } from './prisma/prisma.module';
 import { AuthModule } from './auth/auth.module';
 import { CharactersModule } from './characters/characters.module';
+import { SpeciesModule } from './species/species.module';
+import { BackgroundsModule } from './backgrounds/backgrounds.module';
+import { ClassesModule } from './classes/classes.module';
 
 @Module({
-  imports: [UsersModule, PrismaModule, AuthModule, CharactersModule],
+  imports: [
+    UsersModule,
+    PrismaModule,
+    AuthModule,
+    CharactersModule,
+    SpeciesModule,
+    BackgroundsModule,
+    ClassesModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })

@@ -14,6 +14,7 @@ datasource db {
   provider = "sqlite"
 }
 
+// User
 model User {
   id           String      @id @default(cuid())
   email        String      @unique
@@ -23,22 +24,94 @@ model User {
   updatedAt    DateTime    @updatedAt
 }
 
+// Character
 model Character {
   id    Int    @id @default(autoincrement())
   name  String
   level Int    @default(1)
 
-  // Propriétaire du personnage
-  ownerId String 
-  owner   User   @relation(fields: [ownerId], references: [id], onDelete: Cascade) 
+  ownerId String
+  owner   User   @relation(fields: [ownerId], references: [id], onDelete: Cascade)
 
-  // Références futures vers d'autres tables métier (SRD)
-  speciesId    Int? // à relier plus tard à un modèle Species
-  classId      Int? // à relier plus tard à un modèle Class
-  backgroundId Int? // à relier plus tard à un modèle Background
+  speciesId Int?
+  species   Species? @relation(fields: [speciesId], references: [id])
+
+  classId Int?
+  class   Class? @relation(fields: [classId], references: [id])
+
+  backgroundId Int?
+  background   Background? @relation(fields: [backgroundId], references: [id])
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+
+  @@index([ownerId])
+}
+
+model Species {
+  id           Int    @id @default(autoincrement())
+  key          String @unique
+  name         String
+  creatureType String
+  size         String
+  speed        Int
+
+  sizeOptions Json?
+
+  traits Json?
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  @@index([ownerId])
+  characters Character[]
+}
+
+model Background {
+  id   Int    @id @default(autoincrement())
+  key  String @unique
+  name String
+
+  abilityScores Json
+
+  originFeatKey String
+
+  skillProficiencies Json
+
+  toolProficiency Json
+
+  equipmentOptions Json
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  characters Character[]
+}
+
+model Class {
+  id   Int    @id @default(autoincrement())
+  key  String @unique
+  name String
+
+  hitDie Int
+
+  primaryAbilities Json
+
+  savingThrows Json
+
+  armorProficiencies Json
+
+  weaponProficiencies Json
+
+  toolProficiencies Json
+
+  skillChoices Json
+
+  equipmentOptions Json
+
+  hasSpellcasting  Boolean @default(false)
+  spellcastingType String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  characters Character[]
 }
