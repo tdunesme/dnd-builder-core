@@ -5,6 +5,7 @@ import * as path from 'path';
 import { seedBackgrounds } from './seedBackgrounds';
 import { seedClasses } from './seedClasses';
 import { seedSpecies } from './seedSpecies';
+import { seedClassLevels } from './seedClassLevels';
 
 config();
 
@@ -22,6 +23,7 @@ async function main() {
   await seedSpecies(prisma);
   await seedBackgrounds(prisma);
   await seedClasses(prisma);
+  await seedClassLevels(prisma);
 
   console.log('✅ Seeding SRD terminé.');
 }

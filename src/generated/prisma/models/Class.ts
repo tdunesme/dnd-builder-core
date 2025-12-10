@@ -273,6 +273,7 @@ export type ClassWhereInput = {
   createdAt?: Prisma.DateTimeFilter<"Class"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Class"> | Date | string
   characters?: Prisma.CharacterListRelationFilter
+  levels?: Prisma.ClassLevelListRelationFilter
 }
 
 export type ClassOrderByWithRelationInput = {
@@ -292,6 +293,7 @@ export type ClassOrderByWithRelationInput = {
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   characters?: Prisma.CharacterOrderByRelationAggregateInput
+  levels?: Prisma.ClassLevelOrderByRelationAggregateInput
 }
 
 export type ClassWhereUniqueInput = Prisma.AtLeast<{
@@ -314,6 +316,7 @@ export type ClassWhereUniqueInput = Prisma.AtLeast<{
   createdAt?: Prisma.DateTimeFilter<"Class"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Class"> | Date | string
   characters?: Prisma.CharacterListRelationFilter
+  levels?: Prisma.ClassLevelListRelationFilter
 }, "id" | "key">
 
 export type ClassOrderByWithAggregationInput = {
@@ -376,6 +379,7 @@ export type ClassCreateInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   characters?: Prisma.CharacterCreateNestedManyWithoutClassInput
+  levels?: Prisma.ClassLevelCreateNestedManyWithoutClassInput
 }
 
 export type ClassUncheckedCreateInput = {
@@ -395,6 +399,7 @@ export type ClassUncheckedCreateInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   characters?: Prisma.CharacterUncheckedCreateNestedManyWithoutClassInput
+  levels?: Prisma.ClassLevelUncheckedCreateNestedManyWithoutClassInput
 }
 
 export type ClassUpdateInput = {
@@ -413,6 +418,7 @@ export type ClassUpdateInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   characters?: Prisma.CharacterUpdateManyWithoutClassNestedInput
+  levels?: Prisma.ClassLevelUpdateManyWithoutClassNestedInput
 }
 
 export type ClassUncheckedUpdateInput = {
@@ -432,6 +438,7 @@ export type ClassUncheckedUpdateInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   characters?: Prisma.CharacterUncheckedUpdateManyWithoutClassNestedInput
+  levels?: Prisma.ClassLevelUncheckedUpdateManyWithoutClassNestedInput
 }
 
 export type ClassCreateManyInput = {
@@ -542,6 +549,11 @@ export type ClassSumOrderByAggregateInput = {
   hitDie?: Prisma.SortOrder
 }
 
+export type ClassScalarRelationFilter = {
+  is?: Prisma.ClassWhereInput
+  isNot?: Prisma.ClassWhereInput
+}
+
 export type ClassCreateNestedOneWithoutCharactersInput = {
   create?: Prisma.XOR<Prisma.ClassCreateWithoutCharactersInput, Prisma.ClassUncheckedCreateWithoutCharactersInput>
   connectOrCreate?: Prisma.ClassCreateOrConnectWithoutCharactersInput
@@ -566,6 +578,20 @@ export type NullableStringFieldUpdateOperationsInput = {
   set?: string | null
 }
 
+export type ClassCreateNestedOneWithoutLevelsInput = {
+  create?: Prisma.XOR<Prisma.ClassCreateWithoutLevelsInput, Prisma.ClassUncheckedCreateWithoutLevelsInput>
+  connectOrCreate?: Prisma.ClassCreateOrConnectWithoutLevelsInput
+  connect?: Prisma.ClassWhereUniqueInput
+}
+
+export type ClassUpdateOneRequiredWithoutLevelsNestedInput = {
+  create?: Prisma.XOR<Prisma.ClassCreateWithoutLevelsInput, Prisma.ClassUncheckedCreateWithoutLevelsInput>
+  connectOrCreate?: Prisma.ClassCreateOrConnectWithoutLevelsInput
+  upsert?: Prisma.ClassUpsertWithoutLevelsInput
+  connect?: Prisma.ClassWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.ClassUpdateToOneWithWhereWithoutLevelsInput, Prisma.ClassUpdateWithoutLevelsInput>, Prisma.ClassUncheckedUpdateWithoutLevelsInput>
+}
+
 export type ClassCreateWithoutCharactersInput = {
   key: string
   name: string
@@ -581,6 +607,7 @@ export type ClassCreateWithoutCharactersInput = {
   spellcastingType?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  levels?: Prisma.ClassLevelCreateNestedManyWithoutClassInput
 }
 
 export type ClassUncheckedCreateWithoutCharactersInput = {
@@ -599,6 +626,7 @@ export type ClassUncheckedCreateWithoutCharactersInput = {
   spellcastingType?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  levels?: Prisma.ClassLevelUncheckedCreateNestedManyWithoutClassInput
 }
 
 export type ClassCreateOrConnectWithoutCharactersInput = {
@@ -632,6 +660,7 @@ export type ClassUpdateWithoutCharactersInput = {
   spellcastingType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  levels?: Prisma.ClassLevelUpdateManyWithoutClassNestedInput
 }
 
 export type ClassUncheckedUpdateWithoutCharactersInput = {
@@ -650,6 +679,97 @@ export type ClassUncheckedUpdateWithoutCharactersInput = {
   spellcastingType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  levels?: Prisma.ClassLevelUncheckedUpdateManyWithoutClassNestedInput
+}
+
+export type ClassCreateWithoutLevelsInput = {
+  key: string
+  name: string
+  hitDie: number
+  primaryAbilities: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  savingThrows: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  armorProficiencies: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  weaponProficiencies: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  toolProficiencies: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  skillChoices: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  equipmentOptions: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  hasSpellcasting?: boolean
+  spellcastingType?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  characters?: Prisma.CharacterCreateNestedManyWithoutClassInput
+}
+
+export type ClassUncheckedCreateWithoutLevelsInput = {
+  id?: number
+  key: string
+  name: string
+  hitDie: number
+  primaryAbilities: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  savingThrows: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  armorProficiencies: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  weaponProficiencies: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  toolProficiencies: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  skillChoices: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  equipmentOptions: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  hasSpellcasting?: boolean
+  spellcastingType?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  characters?: Prisma.CharacterUncheckedCreateNestedManyWithoutClassInput
+}
+
+export type ClassCreateOrConnectWithoutLevelsInput = {
+  where: Prisma.ClassWhereUniqueInput
+  create: Prisma.XOR<Prisma.ClassCreateWithoutLevelsInput, Prisma.ClassUncheckedCreateWithoutLevelsInput>
+}
+
+export type ClassUpsertWithoutLevelsInput = {
+  update: Prisma.XOR<Prisma.ClassUpdateWithoutLevelsInput, Prisma.ClassUncheckedUpdateWithoutLevelsInput>
+  create: Prisma.XOR<Prisma.ClassCreateWithoutLevelsInput, Prisma.ClassUncheckedCreateWithoutLevelsInput>
+  where?: Prisma.ClassWhereInput
+}
+
+export type ClassUpdateToOneWithWhereWithoutLevelsInput = {
+  where?: Prisma.ClassWhereInput
+  data: Prisma.XOR<Prisma.ClassUpdateWithoutLevelsInput, Prisma.ClassUncheckedUpdateWithoutLevelsInput>
+}
+
+export type ClassUpdateWithoutLevelsInput = {
+  key?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  hitDie?: Prisma.IntFieldUpdateOperationsInput | number
+  primaryAbilities?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  savingThrows?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  armorProficiencies?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  weaponProficiencies?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  toolProficiencies?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  skillChoices?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  equipmentOptions?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  hasSpellcasting?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  spellcastingType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  characters?: Prisma.CharacterUpdateManyWithoutClassNestedInput
+}
+
+export type ClassUncheckedUpdateWithoutLevelsInput = {
+  id?: Prisma.IntFieldUpdateOperationsInput | number
+  key?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  hitDie?: Prisma.IntFieldUpdateOperationsInput | number
+  primaryAbilities?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  savingThrows?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  armorProficiencies?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  weaponProficiencies?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  toolProficiencies?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  skillChoices?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  equipmentOptions?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  hasSpellcasting?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  spellcastingType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  characters?: Prisma.CharacterUncheckedUpdateManyWithoutClassNestedInput
 }
 
 
@@ -659,10 +779,12 @@ export type ClassUncheckedUpdateWithoutCharactersInput = {
 
 export type ClassCountOutputType = {
   characters: number
+  levels: number
 }
 
 export type ClassCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   characters?: boolean | ClassCountOutputTypeCountCharactersArgs
+  levels?: boolean | ClassCountOutputTypeCountLevelsArgs
 }
 
 /**
@@ -680,6 +802,13 @@ export type ClassCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extens
  */
 export type ClassCountOutputTypeCountCharactersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   where?: Prisma.CharacterWhereInput
+}
+
+/**
+ * ClassCountOutputType without action
+ */
+export type ClassCountOutputTypeCountLevelsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ClassLevelWhereInput
 }
 
 
@@ -700,6 +829,7 @@ export type ClassSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   createdAt?: boolean
   updatedAt?: boolean
   characters?: boolean | Prisma.Class$charactersArgs<ExtArgs>
+  levels?: boolean | Prisma.Class$levelsArgs<ExtArgs>
   _count?: boolean | Prisma.ClassCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["class"]>
 
@@ -760,6 +890,7 @@ export type ClassSelectScalar = {
 export type ClassOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "key" | "name" | "hitDie" | "primaryAbilities" | "savingThrows" | "armorProficiencies" | "weaponProficiencies" | "toolProficiencies" | "skillChoices" | "equipmentOptions" | "hasSpellcasting" | "spellcastingType" | "createdAt" | "updatedAt", ExtArgs["result"]["class"]>
 export type ClassInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   characters?: boolean | Prisma.Class$charactersArgs<ExtArgs>
+  levels?: boolean | Prisma.Class$levelsArgs<ExtArgs>
   _count?: boolean | Prisma.ClassCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type ClassIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -769,6 +900,7 @@ export type $ClassPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   name: "Class"
   objects: {
     characters: Prisma.$CharacterPayload<ExtArgs>[]
+    levels: Prisma.$ClassLevelPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
@@ -1181,6 +1313,7 @@ readonly fields: ClassFieldRefs;
 export interface Prisma__ClassClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
   characters<T extends Prisma.Class$charactersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Class$charactersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$CharacterPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  levels<T extends Prisma.Class$levelsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Class$levelsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ClassLevelPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1632,6 +1765,30 @@ export type Class$charactersArgs<ExtArgs extends runtime.Types.Extensions.Intern
   take?: number
   skip?: number
   distinct?: Prisma.CharacterScalarFieldEnum | Prisma.CharacterScalarFieldEnum[]
+}
+
+/**
+ * Class.levels
+ */
+export type Class$levelsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the ClassLevel
+   */
+  select?: Prisma.ClassLevelSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the ClassLevel
+   */
+  omit?: Prisma.ClassLevelOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ClassLevelInclude<ExtArgs> | null
+  where?: Prisma.ClassLevelWhereInput
+  orderBy?: Prisma.ClassLevelOrderByWithRelationInput | Prisma.ClassLevelOrderByWithRelationInput[]
+  cursor?: Prisma.ClassLevelWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.ClassLevelScalarFieldEnum | Prisma.ClassLevelScalarFieldEnum[]
 }
 
 /**

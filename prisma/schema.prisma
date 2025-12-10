@@ -114,4 +114,21 @@ model Class {
   updatedAt DateTime @updatedAt
 
   characters Character[]
+  levels     ClassLevel[]
+}
+
+model ClassLevel {
+  id      Int @id @default(autoincrement())
+  classId Int
+  level   Int
+
+  proficiencyBonus Int
+
+  features Json
+
+  progression Json?
+
+  class Class @relation(fields: [classId], references: [id])
+
+  @@unique([classId, level])
 }

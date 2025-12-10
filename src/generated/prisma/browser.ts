@@ -42,3 +42,8 @@ export type Background = Prisma.BackgroundModel
  * 
  */
 export type Class = Prisma.ClassModel
+/**
+ * Model ClassLevel
+ * 
+ */
+export type ClassLevel = Prisma.ClassLevelModel

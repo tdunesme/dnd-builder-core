@@ -55,7 +55,8 @@ export const ModelName = {
   Character: 'Character',
   Species: 'Species',
   Background: 'Background',
-  Class: 'Class'
+  Class: 'Class',
+  ClassLevel: 'ClassLevel'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -148,6 +149,18 @@ export const ClassScalarFieldEnum = {
 } as const
 
 export type ClassScalarFieldEnum = (typeof ClassScalarFieldEnum)[keyof typeof ClassScalarFieldEnum]
+
+
+export const ClassLevelScalarFieldEnum = {
+  id: 'id',
+  classId: 'classId',
+  level: 'level',
+  proficiencyBonus: 'proficiencyBonus',
+  features: 'features',
+  progression: 'progression'
+} as const
+
+export type ClassLevelScalarFieldEnum = (typeof ClassLevelScalarFieldEnum)[keyof typeof ClassLevelScalarFieldEnum]
 
 
 export const SortOrder = {

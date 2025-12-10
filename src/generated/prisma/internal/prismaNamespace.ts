@@ -388,7 +388,8 @@ export const ModelName = {
   Character: 'Character',
   Species: 'Species',
   Background: 'Background',
-  Class: 'Class'
+  Class: 'Class',
+  ClassLevel: 'ClassLevel'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -404,7 +405,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "character" | "species" | "background" | "class"
+    modelProps: "user" | "character" | "species" | "background" | "class" | "classLevel"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -778,6 +779,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    ClassLevel: {
+      payload: Prisma.$ClassLevelPayload<ExtArgs>
+      fields: Prisma.ClassLevelFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.ClassLevelFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ClassLevelPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.ClassLevelFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ClassLevelPayload>
+        }
+        findFirst: {
+          args: Prisma.ClassLevelFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ClassLevelPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.ClassLevelFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ClassLevelPayload>
+        }
+        findMany: {
+          args: Prisma.ClassLevelFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ClassLevelPayload>[]
+        }
+        create: {
+          args: Prisma.ClassLevelCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ClassLevelPayload>
+        }
+        createMany: {
+          args: Prisma.ClassLevelCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.ClassLevelCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ClassLevelPayload>[]
+        }
+        delete: {
+          args: Prisma.ClassLevelDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ClassLevelPayload>
+        }
+        update: {
+          args: Prisma.ClassLevelUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ClassLevelPayload>
+        }
+        deleteMany: {
+          args: Prisma.ClassLevelDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.ClassLevelUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.ClassLevelUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ClassLevelPayload>[]
+        }
+        upsert: {
+          args: Prisma.ClassLevelUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ClassLevelPayload>
+        }
+        aggregate: {
+          args: Prisma.ClassLevelAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateClassLevel>
+        }
+        groupBy: {
+          args: Prisma.ClassLevelGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ClassLevelGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.ClassLevelCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ClassLevelCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -891,6 +966,18 @@ export const ClassScalarFieldEnum = {
 } as const
 
 export type ClassScalarFieldEnum = (typeof ClassScalarFieldEnum)[keyof typeof ClassScalarFieldEnum]
+
+
+export const ClassLevelScalarFieldEnum = {
+  id: 'id',
+  classId: 'classId',
+  level: 'level',
+  proficiencyBonus: 'proficiencyBonus',
+  features: 'features',
+  progression: 'progression'
+} as const
+
+export type ClassLevelScalarFieldEnum = (typeof ClassLevelScalarFieldEnum)[keyof typeof ClassLevelScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -1095,6 +1182,7 @@ export type GlobalOmitConfig = {
   species?: Prisma.SpeciesOmit
   background?: Prisma.BackgroundOmit
   class?: Prisma.ClassOmit
+  classLevel?: Prisma.ClassLevelOmit
 }
 
 /* Types for Logging */
