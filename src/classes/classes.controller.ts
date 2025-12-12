@@ -12,6 +12,6 @@ export class ClassesController {
 
   @Get(':id')
   async findOne(@Param('id', ParseIntPipe) id: number) {
-    return this.classesService.findOne(id);
+    return await this.classesService.findOne(id);
   }
 }

@@ -1,6 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
-import { ClassDto } from './dto/class.dto';
+import { ClassDto, ClassLevelDto } from './dto/class.dto';
 
 @Injectable()
 export class ClassesService {
@@ -17,6 +17,11 @@ export class ClassesService {
   async findOne(id: number): Promise<ClassDto> {
     const classEntity = await this.prisma.class.findUnique({
       where: { id },
+      include: {
+        levels: {
+          orderBy: { level: 'asc' },
+        },
+      },
     });
 
     if (!classEntity) {
@@ -26,7 +31,6 @@ export class ClassesService {
     return this.toDto(classEntity);
   }
 
-  // Petit helper privé pour mapper l’entity Prisma -> DTO
   private toDto(entity: any): ClassDto {
     return {
       id: entity.id,
@@ -42,6 +46,14 @@ export class ClassesService {
       equipmentOptions: entity.equipmentOptions ?? null,
       hasSpellcasting: entity.hasSpellcasting,
       spellcastingType: entity.spellcastingType ?? null,
+      levels: entity.levels
+        ? entity.levels.map((lvl: ClassLevelDto) => ({
+            level: lvl.level,
+            proficiencyBonus: lvl.proficiencyBonus,
+            features: lvl.features,
+            progression: lvl.progression,
+          }))
+        : undefined,
     };
   }
 }
