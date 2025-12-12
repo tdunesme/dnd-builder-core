@@ -4,7 +4,6 @@ import { RegisterUserDto } from './dto/register.dto';
 import { LoginUserDto } from './dto/login.dto';
 import { AuthGuard } from '@nestjs/passport';
 import express from 'express';
-import { UserDto } from './dto/user.dto';
 
 @Controller('auth')
 export class AuthController {
