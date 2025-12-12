@@ -14,6 +14,8 @@ export class UsersService {
         data: {
           email: dto.email,
           passwordHash: await bcrypt.hash(dto.password, 10),
+          firstName: dto.firstName,
+          lastName: dto.lastName,
         },
       });
       return user;

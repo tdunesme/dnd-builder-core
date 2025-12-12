@@ -4,6 +4,7 @@ import { RegisterUserDto } from './dto/register.dto';
 import { LoginUserDto } from './dto/login.dto';
 import { AuthGuard } from '@nestjs/passport';
 import express from 'express';
+import { UserDto } from './dto/user.dto';
 
 @Controller('auth')
 export class AuthController {
@@ -15,14 +16,14 @@ export class AuthController {
     return {
       id: user.id,
       email: user.email,
+      firstName: user.firstName,
+      lastName: user.lastName,
     };
   }
 
   @Post('login')
-  async login(
-    @Body() dto: LoginUserDto,
-  ): Promise<{ id: string; email: string; accessToken: string }> {
-    return this.authService.login(dto);
+  async login(@Body() dto: LoginUserDto) {
+    return await this.authService.login(dto);
   }
 
   @UseGuards(AuthGuard('jwt'))
