@@ -9,3 +9,4 @@ services:
     ports:
       - '4000:3000'
     restart: unless-stopped
+    command: ['npm', 'run', 'start:docker']
