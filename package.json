@@ -18,7 +18,7 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "NODE_OPTIONS='--experimental-vm-modules' jest --config ./test/jest-e2e.json",
-    "start:docker": "prisma migrate deploy && prisma db seed --config prisma.config.ts && node dist/main"
+    "start:docker": "npx prisma migrate deploy && npx prisma db seed --config prisma.config.ts && node dist/src/main.js"
   },
   "dependencies": {
     "@nestjs/common": "^11.0.1",
