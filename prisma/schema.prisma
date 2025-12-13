@@ -52,14 +52,16 @@ model Character {
 model Species {
   id           Int    @id @default(autoincrement())
   key          String @unique
+
   name         String
+  description  String?
+
   creatureType String
   size         String
   speed        Int
+  sizeOptions  Json?
 
-  sizeOptions Json?
-
-  traits Json?
+  traits       Json?
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

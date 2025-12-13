@@ -104,6 +104,7 @@ export const SpeciesScalarFieldEnum = {
   id: 'id',
   key: 'key',
   name: 'name',
+  description: 'description',
   creatureType: 'creatureType',
   size: 'size',
   speed: 'speed',

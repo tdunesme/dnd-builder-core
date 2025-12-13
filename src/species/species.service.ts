@@ -31,6 +31,7 @@ export class SpeciesService {
       id: entity.id,
       key: entity.key,
       name: entity.name,
+      description: entity.description,
       creatureType: entity.creatureType,
       size: entity.size,
       speed: entity.speed,

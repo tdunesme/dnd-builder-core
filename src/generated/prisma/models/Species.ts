@@ -40,6 +40,7 @@ export type SpeciesMinAggregateOutputType = {
   id: number | null
   key: string | null
   name: string | null
+  description: string | null
   creatureType: string | null
   size: string | null
   speed: number | null
@@ -51,6 +52,7 @@ export type SpeciesMaxAggregateOutputType = {
   id: number | null
   key: string | null
   name: string | null
+  description: string | null
   creatureType: string | null
   size: string | null
   speed: number | null
@@ -62,6 +64,7 @@ export type SpeciesCountAggregateOutputType = {
   id: number
   key: number
   name: number
+  description: number
   creatureType: number
   size: number
   speed: number
@@ -87,6 +90,7 @@ export type SpeciesMinAggregateInputType = {
   id?: true
   key?: true
   name?: true
+  description?: true
   creatureType?: true
   size?: true
   speed?: true
@@ -98,6 +102,7 @@ export type SpeciesMaxAggregateInputType = {
   id?: true
   key?: true
   name?: true
+  description?: true
   creatureType?: true
   size?: true
   speed?: true
@@ -109,6 +114,7 @@ export type SpeciesCountAggregateInputType = {
   id?: true
   key?: true
   name?: true
+  description?: true
   creatureType?: true
   size?: true
   speed?: true
@@ -209,6 +215,7 @@ export type SpeciesGroupByOutputType = {
   id: number
   key: string
   name: string
+  description: string | null
   creatureType: string
   size: string
   speed: number
@@ -245,6 +252,7 @@ export type SpeciesWhereInput = {
   id?: Prisma.IntFilter<"Species"> | number
   key?: Prisma.StringFilter<"Species"> | string
   name?: Prisma.StringFilter<"Species"> | string
+  description?: Prisma.StringNullableFilter<"Species"> | string | null
   creatureType?: Prisma.StringFilter<"Species"> | string
   size?: Prisma.StringFilter<"Species"> | string
   speed?: Prisma.IntFilter<"Species"> | number
@@ -259,6 +267,7 @@ export type SpeciesOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   key?: Prisma.SortOrder
   name?: Prisma.SortOrder
+  description?: Prisma.SortOrderInput | Prisma.SortOrder
   creatureType?: Prisma.SortOrder
   size?: Prisma.SortOrder
   speed?: Prisma.SortOrder
@@ -276,6 +285,7 @@ export type SpeciesWhereUniqueInput = Prisma.AtLeast<{
   OR?: Prisma.SpeciesWhereInput[]
   NOT?: Prisma.SpeciesWhereInput | Prisma.SpeciesWhereInput[]
   name?: Prisma.StringFilter<"Species"> | string
+  description?: Prisma.StringNullableFilter<"Species"> | string | null
   creatureType?: Prisma.StringFilter<"Species"> | string
   size?: Prisma.StringFilter<"Species"> | string
   speed?: Prisma.IntFilter<"Species"> | number
@@ -290,6 +300,7 @@ export type SpeciesOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   key?: Prisma.SortOrder
   name?: Prisma.SortOrder
+  description?: Prisma.SortOrderInput | Prisma.SortOrder
   creatureType?: Prisma.SortOrder
   size?: Prisma.SortOrder
   speed?: Prisma.SortOrder
@@ -311,6 +322,7 @@ export type SpeciesScalarWhereWithAggregatesInput = {
   id?: Prisma.IntWithAggregatesFilter<"Species"> | number
   key?: Prisma.StringWithAggregatesFilter<"Species"> | string
   name?: Prisma.StringWithAggregatesFilter<"Species"> | string
+  description?: Prisma.StringNullableWithAggregatesFilter<"Species"> | string | null
   creatureType?: Prisma.StringWithAggregatesFilter<"Species"> | string
   size?: Prisma.StringWithAggregatesFilter<"Species"> | string
   speed?: Prisma.IntWithAggregatesFilter<"Species"> | number
@@ -323,6 +335,7 @@ export type SpeciesScalarWhereWithAggregatesInput = {
 export type SpeciesCreateInput = {
   key: string
   name: string
+  description?: string | null
   creatureType: string
   size: string
   speed: number
@@ -337,6 +350,7 @@ export type SpeciesUncheckedCreateInput = {
   id?: number
   key: string
   name: string
+  description?: string | null
   creatureType: string
   size: string
   speed: number
@@ -350,6 +364,7 @@ export type SpeciesUncheckedCreateInput = {
 export type SpeciesUpdateInput = {
   key?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   creatureType?: Prisma.StringFieldUpdateOperationsInput | string
   size?: Prisma.StringFieldUpdateOperationsInput | string
   speed?: Prisma.IntFieldUpdateOperationsInput | number
@@ -364,6 +379,7 @@ export type SpeciesUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   key?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   creatureType?: Prisma.StringFieldUpdateOperationsInput | string
   size?: Prisma.StringFieldUpdateOperationsInput | string
   speed?: Prisma.IntFieldUpdateOperationsInput | number
@@ -378,6 +394,7 @@ export type SpeciesCreateManyInput = {
   id?: number
   key: string
   name: string
+  description?: string | null
   creatureType: string
   size: string
   speed: number
@@ -390,6 +407,7 @@ export type SpeciesCreateManyInput = {
 export type SpeciesUpdateManyMutationInput = {
   key?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   creatureType?: Prisma.StringFieldUpdateOperationsInput | string
   size?: Prisma.StringFieldUpdateOperationsInput | string
   speed?: Prisma.IntFieldUpdateOperationsInput | number
@@ -403,6 +421,7 @@ export type SpeciesUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   key?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   creatureType?: Prisma.StringFieldUpdateOperationsInput | string
   size?: Prisma.StringFieldUpdateOperationsInput | string
   speed?: Prisma.IntFieldUpdateOperationsInput | number
@@ -421,6 +440,7 @@ export type SpeciesCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   key?: Prisma.SortOrder
   name?: Prisma.SortOrder
+  description?: Prisma.SortOrder
   creatureType?: Prisma.SortOrder
   size?: Prisma.SortOrder
   speed?: Prisma.SortOrder
@@ -439,6 +459,7 @@ export type SpeciesMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   key?: Prisma.SortOrder
   name?: Prisma.SortOrder
+  description?: Prisma.SortOrder
   creatureType?: Prisma.SortOrder
   size?: Prisma.SortOrder
   speed?: Prisma.SortOrder
@@ -450,6 +471,7 @@ export type SpeciesMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   key?: Prisma.SortOrder
   name?: Prisma.SortOrder
+  description?: Prisma.SortOrder
   creatureType?: Prisma.SortOrder
   size?: Prisma.SortOrder
   speed?: Prisma.SortOrder
@@ -478,9 +500,14 @@ export type SpeciesUpdateOneWithoutCharactersNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.SpeciesUpdateToOneWithWhereWithoutCharactersInput, Prisma.SpeciesUpdateWithoutCharactersInput>, Prisma.SpeciesUncheckedUpdateWithoutCharactersInput>
 }
 
+export type NullableStringFieldUpdateOperationsInput = {
+  set?: string | null
+}
+
 export type SpeciesCreateWithoutCharactersInput = {
   key: string
   name: string
+  description?: string | null
   creatureType: string
   size: string
   speed: number
@@ -494,6 +521,7 @@ export type SpeciesUncheckedCreateWithoutCharactersInput = {
   id?: number
   key: string
   name: string
+  description?: string | null
   creatureType: string
   size: string
   speed: number
@@ -522,6 +550,7 @@ export type SpeciesUpdateToOneWithWhereWithoutCharactersInput = {
 export type SpeciesUpdateWithoutCharactersInput = {
   key?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   creatureType?: Prisma.StringFieldUpdateOperationsInput | string
   size?: Prisma.StringFieldUpdateOperationsInput | string
   speed?: Prisma.IntFieldUpdateOperationsInput | number
@@ -535,6 +564,7 @@ export type SpeciesUncheckedUpdateWithoutCharactersInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   key?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   creatureType?: Prisma.StringFieldUpdateOperationsInput | string
   size?: Prisma.StringFieldUpdateOperationsInput | string
   speed?: Prisma.IntFieldUpdateOperationsInput | number
@@ -579,6 +609,7 @@ export type SpeciesSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   id?: boolean
   key?: boolean
   name?: boolean
+  description?: boolean
   creatureType?: boolean
   size?: boolean
   speed?: boolean
@@ -594,6 +625,7 @@ export type SpeciesSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exten
   id?: boolean
   key?: boolean
   name?: boolean
+  description?: boolean
   creatureType?: boolean
   size?: boolean
   speed?: boolean
@@ -607,6 +639,7 @@ export type SpeciesSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exten
   id?: boolean
   key?: boolean
   name?: boolean
+  description?: boolean
   creatureType?: boolean
   size?: boolean
   speed?: boolean
@@ -620,6 +653,7 @@ export type SpeciesSelectScalar = {
   id?: boolean
   key?: boolean
   name?: boolean
+  description?: boolean
   creatureType?: boolean
   size?: boolean
   speed?: boolean
@@ -629,7 +663,7 @@ export type SpeciesSelectScalar = {
   updatedAt?: boolean
 }
 
-export type SpeciesOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "key" | "name" | "creatureType" | "size" | "speed" | "sizeOptions" | "traits" | "createdAt" | "updatedAt", ExtArgs["result"]["species"]>
+export type SpeciesOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "key" | "name" | "description" | "creatureType" | "size" | "speed" | "sizeOptions" | "traits" | "createdAt" | "updatedAt", ExtArgs["result"]["species"]>
 export type SpeciesInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   characters?: boolean | Prisma.Species$charactersArgs<ExtArgs>
   _count?: boolean | Prisma.SpeciesCountOutputTypeDefaultArgs<ExtArgs>
@@ -646,6 +680,7 @@ export type $SpeciesPayload<ExtArgs extends runtime.Types.Extensions.InternalArg
     id: number
     key: string
     name: string
+    description: string | null
     creatureType: string
     size: string
     speed: number
@@ -1080,6 +1115,7 @@ export interface SpeciesFieldRefs {
   readonly id: Prisma.FieldRef<"Species", 'Int'>
   readonly key: Prisma.FieldRef<"Species", 'String'>
   readonly name: Prisma.FieldRef<"Species", 'String'>
+  readonly description: Prisma.FieldRef<"Species", 'String'>
   readonly creatureType: Prisma.FieldRef<"Species", 'String'>
   readonly size: Prisma.FieldRef<"Species", 'String'>
   readonly speed: Prisma.FieldRef<"Species", 'Int'>

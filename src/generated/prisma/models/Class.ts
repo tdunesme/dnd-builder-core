@@ -574,10 +574,6 @@ export type BoolFieldUpdateOperationsInput = {
   set?: boolean
 }
 
-export type NullableStringFieldUpdateOperationsInput = {
-  set?: string | null
-}
-
 export type ClassCreateNestedOneWithoutLevelsInput = {
   create?: Prisma.XOR<Prisma.ClassCreateWithoutLevelsInput, Prisma.ClassUncheckedCreateWithoutLevelsInput>
   connectOrCreate?: Prisma.ClassCreateOrConnectWithoutLevelsInput
