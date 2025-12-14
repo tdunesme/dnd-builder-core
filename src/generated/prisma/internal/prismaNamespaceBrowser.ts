@@ -56,7 +56,8 @@ export const ModelName = {
   Species: 'Species',
   Background: 'Background',
   Class: 'Class',
-  ClassLevel: 'ClassLevel'
+  ClassLevel: 'ClassLevel',
+  Spell: 'Spell'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -165,6 +166,27 @@ export const ClassLevelScalarFieldEnum = {
 } as const
 
 export type ClassLevelScalarFieldEnum = (typeof ClassLevelScalarFieldEnum)[keyof typeof ClassLevelScalarFieldEnum]
+
+
+export const SpellScalarFieldEnum = {
+  id: 'id',
+  key: 'key',
+  name: 'name',
+  level: 'level',
+  school: 'school',
+  source: 'source',
+  castingTime: 'castingTime',
+  range: 'range',
+  components: 'components',
+  duration: 'duration',
+  classes: 'classes',
+  description: 'description',
+  atHigherLevels: 'atHigherLevels',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type SpellScalarFieldEnum = (typeof SpellScalarFieldEnum)[keyof typeof SpellScalarFieldEnum]
 
 
 export const SortOrder = {

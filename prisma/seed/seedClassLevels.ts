@@ -25,7 +25,7 @@ const barbarianLevels: BarbarianLevelProgression[] = [
   {
     level: 1,
     proficiencyBonus: 2,
-    features: ['Rage', 'Unarmored Defense', 'Weapon Mastery'],
+    features: ['Rage', 'Défense sans armure', 'Maîtrise des armes'],
     rages: 2,
     rageDamage: 2,
     weaponMasteryCount: 2,
@@ -33,7 +33,7 @@ const barbarianLevels: BarbarianLevelProgression[] = [
   {
     level: 2,
     proficiencyBonus: 2,
-    features: ['Danger Sense', 'Reckless Attack'],
+    features: ['Sens du danger', 'Attaque téméraire'],
     rages: 2,
     rageDamage: 2,
     weaponMasteryCount: 2,
@@ -41,7 +41,7 @@ const barbarianLevels: BarbarianLevelProgression[] = [
   {
     level: 3,
     proficiencyBonus: 2,
-    features: ['Barbarian Subclass', 'Primal Knowledge'],
+    features: ['Voie barbare', 'Connaissance primordiale'],
     rages: 3,
     rageDamage: 2,
     weaponMasteryCount: 2,
@@ -49,7 +49,7 @@ const barbarianLevels: BarbarianLevelProgression[] = [
   {
     level: 4,
     proficiencyBonus: 2,
-    features: ['Ability Score Improvement'],
+    features: ['Amélioration de caractéristique'],
     rages: 3,
     rageDamage: 2,
     weaponMasteryCount: 3,
@@ -57,7 +57,7 @@ const barbarianLevels: BarbarianLevelProgression[] = [
   {
     level: 5,
     proficiencyBonus: 3,
-    features: ['Extra Attack', 'Fast Movement'],
+    features: ['Attaque supplémentaire', 'Déplacement rapide'],
     rages: 3,
     rageDamage: 2,
     weaponMasteryCount: 3,
@@ -65,7 +65,7 @@ const barbarianLevels: BarbarianLevelProgression[] = [
   {
     level: 6,
     proficiencyBonus: 3,
-    features: ['Subclass feature'],
+    features: ['Aptitude de voie'],
     rages: 4,
     rageDamage: 2,
     weaponMasteryCount: 3,
@@ -73,7 +73,7 @@ const barbarianLevels: BarbarianLevelProgression[] = [
   {
     level: 7,
     proficiencyBonus: 3,
-    features: ['Feral Instinct', 'Instinctive Pounce'],
+    features: ['Instinct farouche', 'Bond instinctif'],
     rages: 4,
     rageDamage: 2,
     weaponMasteryCount: 3,
@@ -81,7 +81,7 @@ const barbarianLevels: BarbarianLevelProgression[] = [
   {
     level: 8,
     proficiencyBonus: 3,
-    features: ['Ability Score Improvement'],
+    features: ['Amélioration de caractéristique'],
     rages: 4,
     rageDamage: 2,
     weaponMasteryCount: 3,
@@ -89,7 +89,7 @@ const barbarianLevels: BarbarianLevelProgression[] = [
   {
     level: 9,
     proficiencyBonus: 4,
-    features: ['Brutal Strike'],
+    features: ['Frappe brutale'],
     rages: 4,
     rageDamage: 3,
     weaponMasteryCount: 3,
@@ -97,7 +97,7 @@ const barbarianLevels: BarbarianLevelProgression[] = [
   {
     level: 10,
     proficiencyBonus: 4,
-    features: ['Subclass feature'],
+    features: ['Aptitude de voie'],
     rages: 4,
     rageDamage: 3,
     weaponMasteryCount: 4,
@@ -105,7 +105,7 @@ const barbarianLevels: BarbarianLevelProgression[] = [
   {
     level: 11,
     proficiencyBonus: 4,
-    features: ['Relentless Rage'],
+    features: ['Rage implacable'],
     rages: 4,
     rageDamage: 3,
     weaponMasteryCount: 4,
@@ -113,7 +113,7 @@ const barbarianLevels: BarbarianLevelProgression[] = [
   {
     level: 12,
     proficiencyBonus: 4,
-    features: ['Ability Score Improvement'],
+    features: ['Amélioration de caractéristique'],
     rages: 5,
     rageDamage: 3,
     weaponMasteryCount: 4,
@@ -121,7 +121,7 @@ const barbarianLevels: BarbarianLevelProgression[] = [
   {
     level: 13,
     proficiencyBonus: 5,
-    features: ['Improved Brutal Strike'],
+    features: ['Frappe brutale améliorée'],
     rages: 5,
     rageDamage: 3,
     weaponMasteryCount: 4,
@@ -129,7 +129,7 @@ const barbarianLevels: BarbarianLevelProgression[] = [
   {
     level: 14,
     proficiencyBonus: 5,
-    features: ['Subclass feature'],
+    features: ['Aptitude de voie'],
     rages: 5,
     rageDamage: 3,
     weaponMasteryCount: 4,
@@ -137,7 +137,7 @@ const barbarianLevels: BarbarianLevelProgression[] = [
   {
     level: 15,
     proficiencyBonus: 5,
-    features: ['Persistent Rage'],
+    features: ['Rage persistante'],
     rages: 5,
     rageDamage: 3,
     weaponMasteryCount: 4,
@@ -145,7 +145,7 @@ const barbarianLevels: BarbarianLevelProgression[] = [
   {
     level: 16,
     proficiencyBonus: 5,
-    features: ['Ability Score Improvement'],
+    features: ['Amélioration de caractéristique'],
     rages: 5,
     rageDamage: 4,
     weaponMasteryCount: 4,
@@ -153,7 +153,7 @@ const barbarianLevels: BarbarianLevelProgression[] = [
   {
     level: 17,
     proficiencyBonus: 6,
-    features: ['Improved Brutal Strike'],
+    features: ['Frappe brutale améliorée'],
     rages: 6,
     rageDamage: 4,
     weaponMasteryCount: 4,
@@ -161,7 +161,7 @@ const barbarianLevels: BarbarianLevelProgression[] = [
   {
     level: 18,
     proficiencyBonus: 6,
-    features: ['Indomitable Might'],
+    features: ['Puissance indomptable'],
     rages: 6,
     rageDamage: 4,
     weaponMasteryCount: 4,
@@ -169,7 +169,7 @@ const barbarianLevels: BarbarianLevelProgression[] = [
   {
     level: 19,
     proficiencyBonus: 6,
-    features: ['Epic Boon'],
+    features: ['Don épique'],
     rages: 6,
     rageDamage: 4,
     weaponMasteryCount: 4,
@@ -177,7 +177,7 @@ const barbarianLevels: BarbarianLevelProgression[] = [
   {
     level: 20,
     proficiencyBonus: 6,
-    features: ['Primal Champion'],
+    features: ['Champion primordial'],
     rages: 6,
     rageDamage: 4,
     weaponMasteryCount: 4,
@@ -196,31 +196,36 @@ const rogueLevels: RogueLevelProgression[] = [
   {
     level: 1,
     proficiencyBonus: 2,
-    features: ['Expertise', 'Sneak Attack', "Thieves' Cant", 'Weapon Mastery'],
+    features: [
+      'Expertise',
+      'Attaque sournoise',
+      'Jargon des voleurs',
+      'Maîtrise des armes',
+    ],
     sneakAttackDice: 1,
   },
   {
     level: 2,
     proficiencyBonus: 2,
-    features: ['Cunning Action'],
+    features: ['Action rusée'],
     sneakAttackDice: 1,
   },
   {
     level: 3,
     proficiencyBonus: 2,
-    features: ['Rogue Subclass', 'Steady Aim'],
+    features: ['Archétype de roublard', 'Visée assurée'],
     sneakAttackDice: 2,
   },
   {
     level: 4,
     proficiencyBonus: 2,
-    features: ['Ability Score Improvement'],
+    features: ['Amélioration de caractéristique'],
     sneakAttackDice: 2,
   },
   {
     level: 5,
     proficiencyBonus: 3,
-    features: ['Cunning Strike', 'Uncanny Dodge'],
+    features: ['Frappe rusée', 'Esquive instinctive'],
     sneakAttackDice: 3,
   },
   {
@@ -232,85 +237,85 @@ const rogueLevels: RogueLevelProgression[] = [
   {
     level: 7,
     proficiencyBonus: 3,
-    features: ['Evasion', 'Reliable Talent'],
+    features: ['Évasion', 'Talent fiable'],
     sneakAttackDice: 4,
   },
   {
     level: 8,
     proficiencyBonus: 3,
-    features: ['Ability Score Improvement'],
+    features: ['Amélioration de caractéristique'],
     sneakAttackDice: 4,
   },
   {
     level: 9,
     proficiencyBonus: 4,
-    features: ['Subclass feature'],
+    features: ['Aptitude d’archétype'],
     sneakAttackDice: 5,
   },
   {
     level: 10,
     proficiencyBonus: 4,
-    features: ['Ability Score Improvement'],
+    features: ['Amélioration de caractéristique'],
     sneakAttackDice: 5,
   },
   {
     level: 11,
     proficiencyBonus: 4,
-    features: ['Improved Cunning Strike'],
+    features: ['Frappe rusée améliorée'],
     sneakAttackDice: 6,
   },
   {
     level: 12,
     proficiencyBonus: 4,
-    features: ['Ability Score Improvement'],
+    features: ['Amélioration de caractéristique'],
     sneakAttackDice: 6,
   },
   {
     level: 13,
     proficiencyBonus: 5,
-    features: ['Subclass feature'],
+    features: ['Aptitude d’archétype'],
     sneakAttackDice: 7,
   },
   {
     level: 14,
     proficiencyBonus: 5,
-    features: ['Devious Strikes'],
+    features: ['Frappes sournoises'],
     sneakAttackDice: 7,
   },
   {
     level: 15,
     proficiencyBonus: 5,
-    features: ['Slippery Mind'],
+    features: ['Esprit fuyant'],
     sneakAttackDice: 8,
   },
   {
     level: 16,
     proficiencyBonus: 5,
-    features: ['Ability Score Improvement'],
+    features: ['Amélioration de caractéristique'],
     sneakAttackDice: 8,
   },
   {
     level: 17,
     proficiencyBonus: 6,
-    features: ['Subclass feature'],
+    features: ['Aptitude d’archétype'],
     sneakAttackDice: 9,
   },
   {
     level: 18,
     proficiencyBonus: 6,
-    features: ['Elusive'],
+    features: ['Insaisissable'],
     sneakAttackDice: 9,
   },
   {
     level: 19,
     proficiencyBonus: 6,
-    features: ['Epic Boon'],
+    features: ['Don épique'],
     sneakAttackDice: 10,
   },
   {
     level: 20,
     proficiencyBonus: 6,
-    features: ['Stroke of Luck'],
+    features: ['Coup de chance'],
     sneakAttackDice: 10,
   },
 ];
@@ -329,7 +334,7 @@ const rangerLevels: RangerLevelProgression[] = [
   {
     level: 1,
     proficiencyBonus: 2,
-    features: ['Spellcasting', 'Favored Enemy', 'Weapon Mastery'],
+    features: ['Incantation', 'Ennemi juré', 'Maîtrise des armes'],
     favoredEnemyUses: 2,
     preparedSpells: 2,
     spellSlots: [2, 0, 0, 0, 0],
@@ -337,7 +342,7 @@ const rangerLevels: RangerLevelProgression[] = [
   {
     level: 2,
     proficiencyBonus: 2,
-    features: ['Deft Explorer', 'Fighting Style'],
+    features: ['Explorateur aguerri', 'Style de combat'],
     favoredEnemyUses: 2,
     preparedSpells: 3,
     spellSlots: [2, 0, 0, 0, 0],
@@ -345,7 +350,7 @@ const rangerLevels: RangerLevelProgression[] = [
   {
     level: 3,
     proficiencyBonus: 2,
-    features: ['Ranger Subclass'],
+    features: ['Archétype de rôdeur'],
     favoredEnemyUses: 2,
     preparedSpells: 4,
     spellSlots: [3, 0, 0, 0, 0],
@@ -353,7 +358,7 @@ const rangerLevels: RangerLevelProgression[] = [
   {
     level: 4,
     proficiencyBonus: 2,
-    features: ['Ability Score Improvement'],
+    features: ['Amélioration de caractéristique'],
     favoredEnemyUses: 2,
     preparedSpells: 5,
     spellSlots: [3, 0, 0, 0, 0],
@@ -361,7 +366,7 @@ const rangerLevels: RangerLevelProgression[] = [
   {
     level: 5,
     proficiencyBonus: 3,
-    features: ['Extra Attack'],
+    features: ['Attaque supplémentaire'],
     favoredEnemyUses: 3,
     preparedSpells: 6,
     spellSlots: [4, 2, 0, 0, 0],
@@ -369,7 +374,7 @@ const rangerLevels: RangerLevelProgression[] = [
   {
     level: 6,
     proficiencyBonus: 3,
-    features: ['Roving'],
+    features: ['Itinérance'],
     favoredEnemyUses: 3,
     preparedSpells: 6,
     spellSlots: [4, 2, 0, 0, 0],
@@ -377,7 +382,7 @@ const rangerLevels: RangerLevelProgression[] = [
   {
     level: 7,
     proficiencyBonus: 3,
-    features: ['Subclass feature'],
+    features: ['Aptitude d’archétype'],
     favoredEnemyUses: 3,
     preparedSpells: 7,
     spellSlots: [4, 3, 0, 0, 0],
@@ -385,7 +390,7 @@ const rangerLevels: RangerLevelProgression[] = [
   {
     level: 8,
     proficiencyBonus: 3,
-    features: ['Ability Score Improvement'],
+    features: ['Amélioration de caractéristique'],
     favoredEnemyUses: 3,
     preparedSpells: 7,
     spellSlots: [4, 3, 0, 0, 0],
@@ -401,7 +406,7 @@ const rangerLevels: RangerLevelProgression[] = [
   {
     level: 10,
     proficiencyBonus: 4,
-    features: ['Tireless'],
+    features: ['Infatigable'],
     favoredEnemyUses: 4,
     preparedSpells: 9,
     spellSlots: [4, 3, 2, 0, 0],
@@ -409,7 +414,7 @@ const rangerLevels: RangerLevelProgression[] = [
   {
     level: 11,
     proficiencyBonus: 4,
-    features: ['Subclass feature'],
+    features: ['Aptitude d’archétype'],
     favoredEnemyUses: 4,
     preparedSpells: 10,
     spellSlots: [4, 3, 3, 0, 0],
@@ -417,7 +422,7 @@ const rangerLevels: RangerLevelProgression[] = [
   {
     level: 12,
     proficiencyBonus: 4,
-    features: ['Ability Score Improvement'],
+    features: ['Amélioration de caractéristique'],
     favoredEnemyUses: 4,
     preparedSpells: 10,
     spellSlots: [4, 3, 3, 0, 0],
@@ -425,7 +430,7 @@ const rangerLevels: RangerLevelProgression[] = [
   {
     level: 13,
     proficiencyBonus: 5,
-    features: ['Relentless Hunter'],
+    features: ['Chasseur implacable'],
     favoredEnemyUses: 5,
     preparedSpells: 11,
     spellSlots: [4, 3, 3, 1, 0],
@@ -433,7 +438,7 @@ const rangerLevels: RangerLevelProgression[] = [
   {
     level: 14,
     proficiencyBonus: 5,
-    features: ["Nature's Veil"],
+    features: ['Voile de la nature'],
     favoredEnemyUses: 5,
     preparedSpells: 11,
     spellSlots: [4, 3, 3, 1, 0],
@@ -441,7 +446,7 @@ const rangerLevels: RangerLevelProgression[] = [
   {
     level: 15,
     proficiencyBonus: 5,
-    features: ['Subclass feature'],
+    features: ['Aptitude d’archétype'],
     favoredEnemyUses: 5,
     preparedSpells: 12,
     spellSlots: [4, 3, 3, 2, 0],
@@ -449,7 +454,7 @@ const rangerLevels: RangerLevelProgression[] = [
   {
     level: 16,
     proficiencyBonus: 5,
-    features: ['Ability Score Improvement'],
+    features: ['Amélioration de caractéristique'],
     favoredEnemyUses: 5,
     preparedSpells: 12,
     spellSlots: [4, 3, 3, 2, 0],
@@ -457,7 +462,7 @@ const rangerLevels: RangerLevelProgression[] = [
   {
     level: 17,
     proficiencyBonus: 6,
-    features: ['Precise Hunter'],
+    features: ['Chasseur précis'],
     favoredEnemyUses: 6,
     preparedSpells: 14,
     spellSlots: [4, 3, 3, 3, 1],
@@ -465,7 +470,7 @@ const rangerLevels: RangerLevelProgression[] = [
   {
     level: 18,
     proficiencyBonus: 6,
-    features: ['Feral Senses'],
+    features: ['Sens farouches'],
     favoredEnemyUses: 6,
     preparedSpells: 14,
     spellSlots: [4, 3, 3, 3, 1],
@@ -473,7 +478,7 @@ const rangerLevels: RangerLevelProgression[] = [
   {
     level: 19,
     proficiencyBonus: 6,
-    features: ['Epic Boon'],
+    features: ['Don épique'],
     favoredEnemyUses: 6,
     preparedSpells: 15,
     spellSlots: [4, 3, 3, 3, 2],
@@ -481,7 +486,7 @@ const rangerLevels: RangerLevelProgression[] = [
   {
     level: 20,
     proficiencyBonus: 6,
-    features: ['Foe Slayer'],
+    features: ['Tueur d’ennemis'],
     favoredEnemyUses: 6,
     preparedSpells: 15,
     spellSlots: [4, 3, 3, 3, 2],
@@ -502,7 +507,7 @@ const paladinLevels: PaladinLevelProgression[] = [
   {
     level: 1,
     proficiencyBonus: 2,
-    features: ['Lay On Hands', 'Spellcasting', 'Weapon Mastery'],
+    features: ['Imposition des mains', 'Incantation', 'Maîtrise des armes'],
     channelDivinityUses: 0,
     preparedSpells: 2,
     spellSlots: [2, 0, 0, 0, 0],
@@ -510,7 +515,7 @@ const paladinLevels: PaladinLevelProgression[] = [
   {
     level: 2,
     proficiencyBonus: 2,
-    features: ['Fighting Style', "Paladin's Smite"],
+    features: ['Style de combat', 'Châtiment du paladin'],
     channelDivinityUses: 0,
     preparedSpells: 3,
     spellSlots: [2, 0, 0, 0, 0],
@@ -518,7 +523,7 @@ const paladinLevels: PaladinLevelProgression[] = [
   {
     level: 3,
     proficiencyBonus: 2,
-    features: ['Channel Divinity', 'Paladin Subclass'],
+    features: ['Canalisation divine', 'Serment sacré'],
     channelDivinityUses: 2,
     preparedSpells: 4,
     spellSlots: [3, 0, 0, 0, 0],
@@ -526,7 +531,7 @@ const paladinLevels: PaladinLevelProgression[] = [
   {
     level: 4,
     proficiencyBonus: 2,
-    features: ['Ability Score Improvement'],
+    features: ['Amélioration de caractéristique'],
     channelDivinityUses: 2,
     preparedSpells: 5,
     spellSlots: [3, 0, 0, 0, 0],
@@ -534,7 +539,7 @@ const paladinLevels: PaladinLevelProgression[] = [
   {
     level: 5,
     proficiencyBonus: 3,
-    features: ['Extra Attack', 'Faithful Steed'],
+    features: ['Attaque supplémentaire', 'Monture fidèle'],
     channelDivinityUses: 2,
     preparedSpells: 6,
     spellSlots: [4, 2, 0, 0, 0],
@@ -542,7 +547,7 @@ const paladinLevels: PaladinLevelProgression[] = [
   {
     level: 6,
     proficiencyBonus: 3,
-    features: ['Aura of Protection'],
+    features: ['Aura de protection'],
     channelDivinityUses: 2,
     preparedSpells: 6,
     spellSlots: [4, 2, 0, 0, 0],
@@ -550,7 +555,7 @@ const paladinLevels: PaladinLevelProgression[] = [
   {
     level: 7,
     proficiencyBonus: 3,
-    features: ['Subclass feature'],
+    features: ['Aptitude de serment'],
     channelDivinityUses: 2,
     preparedSpells: 7,
     spellSlots: [4, 3, 0, 0, 0],
@@ -558,7 +563,7 @@ const paladinLevels: PaladinLevelProgression[] = [
   {
     level: 8,
     proficiencyBonus: 3,
-    features: ['Ability Score Improvement'],
+    features: ['Amélioration de caractéristique'],
     channelDivinityUses: 2,
     preparedSpells: 7,
     spellSlots: [4, 3, 0, 0, 0],
@@ -566,7 +571,7 @@ const paladinLevels: PaladinLevelProgression[] = [
   {
     level: 9,
     proficiencyBonus: 4,
-    features: ['Abjure Foes'],
+    features: ['Abjurer les ennemis'],
     channelDivinityUses: 2,
     preparedSpells: 9,
     spellSlots: [4, 3, 2, 0, 0],
@@ -574,7 +579,7 @@ const paladinLevels: PaladinLevelProgression[] = [
   {
     level: 10,
     proficiencyBonus: 4,
-    features: ['Aura of Courage'],
+    features: ['Aura de courage'],
     channelDivinityUses: 2,
     preparedSpells: 9,
     spellSlots: [4, 3, 2, 0, 0],
@@ -582,7 +587,7 @@ const paladinLevels: PaladinLevelProgression[] = [
   {
     level: 11,
     proficiencyBonus: 4,
-    features: ['Radiant Strikes'],
+    features: ['Frappes rayonnantes'],
     channelDivinityUses: 3,
     preparedSpells: 10,
     spellSlots: [4, 3, 3, 0, 0],
@@ -590,7 +595,7 @@ const paladinLevels: PaladinLevelProgression[] = [
   {
     level: 12,
     proficiencyBonus: 4,
-    features: ['Ability Score Improvement'],
+    features: ['Amélioration de caractéristique'],
     channelDivinityUses: 3,
     preparedSpells: 10,
     spellSlots: [4, 3, 3, 0, 0],
@@ -606,7 +611,7 @@ const paladinLevels: PaladinLevelProgression[] = [
   {
     level: 14,
     proficiencyBonus: 5,
-    features: ['Restoring Touch'],
+    features: ['Toucher restaurateur'],
     channelDivinityUses: 3,
     preparedSpells: 11,
     spellSlots: [4, 3, 3, 1, 0],
@@ -614,7 +619,7 @@ const paladinLevels: PaladinLevelProgression[] = [
   {
     level: 15,
     proficiencyBonus: 5,
-    features: ['Subclass feature'],
+    features: ['Aptitude de serment'],
     channelDivinityUses: 3,
     preparedSpells: 12,
     spellSlots: [4, 3, 3, 2, 0],
@@ -622,7 +627,7 @@ const paladinLevels: PaladinLevelProgression[] = [
   {
     level: 16,
     proficiencyBonus: 5,
-    features: ['Ability Score Improvement'],
+    features: ['Amélioration de caractéristique'],
     channelDivinityUses: 3,
     preparedSpells: 12,
     spellSlots: [4, 3, 3, 2, 0],
@@ -638,7 +643,7 @@ const paladinLevels: PaladinLevelProgression[] = [
   {
     level: 18,
     proficiencyBonus: 6,
-    features: ['Aura Expansion'],
+    features: ['Extension d’aura'],
     channelDivinityUses: 3,
     preparedSpells: 14,
     spellSlots: [4, 3, 3, 3, 1],
@@ -646,7 +651,7 @@ const paladinLevels: PaladinLevelProgression[] = [
   {
     level: 19,
     proficiencyBonus: 6,
-    features: ['Epic Boon'],
+    features: ['Don épique'],
     channelDivinityUses: 3,
     preparedSpells: 15,
     spellSlots: [4, 3, 3, 3, 2],
@@ -654,7 +659,7 @@ const paladinLevels: PaladinLevelProgression[] = [
   {
     level: 20,
     proficiencyBonus: 6,
-    features: ['Subclass feature'],
+    features: ['Aptitude de serment'],
     channelDivinityUses: 3,
     preparedSpells: 15,
     spellSlots: [4, 3, 3, 3, 2],
@@ -685,7 +690,7 @@ const bardLevels: BardLevelProgression[] = [
   {
     level: 1,
     proficiencyBonus: 2,
-    features: ['Bardic Inspiration', 'Spellcasting'],
+    features: ['Inspiration bardique', 'Incantation'],
     bardicDie: 6,
     preparedSpells: 4,
     spellSlots: [2, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -693,7 +698,7 @@ const bardLevels: BardLevelProgression[] = [
   {
     level: 2,
     proficiencyBonus: 2,
-    features: ['Expertise', 'Jack of All Trades'],
+    features: ['Expertise', 'Touche-à-tout'],
     bardicDie: 6,
     preparedSpells: 5,
     spellSlots: [3, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -701,7 +706,7 @@ const bardLevels: BardLevelProgression[] = [
   {
     level: 3,
     proficiencyBonus: 2,
-    features: ['Bard Subclass'],
+    features: ['Collège bardique'],
     bardicDie: 6,
     preparedSpells: 6,
     spellSlots: [4, 2, 0, 0, 0, 0, 0, 0, 0],
@@ -709,7 +714,7 @@ const bardLevels: BardLevelProgression[] = [
   {
     level: 4,
     proficiencyBonus: 2,
-    features: ['Ability Score Improvement'],
+    features: ['Amélioration de caractéristique'],
     bardicDie: 6,
     preparedSpells: 7,
     spellSlots: [4, 3, 0, 0, 0, 0, 0, 0, 0],
@@ -717,7 +722,7 @@ const bardLevels: BardLevelProgression[] = [
   {
     level: 5,
     proficiencyBonus: 3,
-    features: ['Font of Inspiration'],
+    features: ['Fontaine d’inspiration'],
     bardicDie: 8,
     preparedSpells: 9,
     spellSlots: [4, 3, 2, 0, 0, 0, 0, 0, 0],
@@ -725,7 +730,7 @@ const bardLevels: BardLevelProgression[] = [
   {
     level: 6,
     proficiencyBonus: 3,
-    features: ['Subclass feature'],
+    features: ['Aptitude de collège'],
     bardicDie: 8,
     preparedSpells: 10,
     spellSlots: [4, 3, 3, 0, 0, 0, 0, 0, 0],
@@ -733,7 +738,7 @@ const bardLevels: BardLevelProgression[] = [
   {
     level: 7,
     proficiencyBonus: 3,
-    features: ['Countercharm'],
+    features: ['Contre-charme'],
     bardicDie: 8,
     preparedSpells: 11,
     spellSlots: [4, 3, 3, 1, 0, 0, 0, 0, 0],
@@ -741,7 +746,7 @@ const bardLevels: BardLevelProgression[] = [
   {
     level: 8,
     proficiencyBonus: 3,
-    features: ['Ability Score Improvement'],
+    features: ['Amélioration de caractéristique'],
     bardicDie: 8,
     preparedSpells: 12,
     spellSlots: [4, 3, 3, 2, 0, 0, 0, 0, 0],
@@ -757,7 +762,7 @@ const bardLevels: BardLevelProgression[] = [
   {
     level: 10,
     proficiencyBonus: 4,
-    features: ['Magical Secrets'],
+    features: ['Secrets magiques'],
     bardicDie: 10,
     preparedSpells: 15,
     spellSlots: [4, 3, 3, 3, 2, 0, 0, 0, 0],
@@ -773,7 +778,7 @@ const bardLevels: BardLevelProgression[] = [
   {
     level: 12,
     proficiencyBonus: 4,
-    features: ['Ability Score Improvement'],
+    features: ['Amélioration de caractéristique'],
     bardicDie: 10,
     preparedSpells: 16,
     spellSlots: [4, 3, 3, 3, 2, 1, 0, 0, 0],
@@ -789,7 +794,7 @@ const bardLevels: BardLevelProgression[] = [
   {
     level: 14,
     proficiencyBonus: 5,
-    features: ['Subclass feature'],
+    features: ['Aptitude de collège'],
     bardicDie: 10,
     preparedSpells: 17,
     spellSlots: [4, 3, 3, 3, 2, 1, 1, 0, 0],
@@ -805,7 +810,7 @@ const bardLevels: BardLevelProgression[] = [
   {
     level: 16,
     proficiencyBonus: 5,
-    features: ['Ability Score Improvement'],
+    features: ['Amélioration de caractéristique'],
     bardicDie: 12,
     preparedSpells: 18,
     spellSlots: [4, 3, 3, 3, 2, 1, 1, 1, 0],
@@ -821,7 +826,7 @@ const bardLevels: BardLevelProgression[] = [
   {
     level: 18,
     proficiencyBonus: 6,
-    features: ['Superior Inspiration'],
+    features: ['Inspiration supérieure'],
     bardicDie: 12,
     preparedSpells: 20,
     spellSlots: [4, 3, 3, 3, 3, 1, 1, 1, 1],
@@ -829,7 +834,7 @@ const bardLevels: BardLevelProgression[] = [
   {
     level: 19,
     proficiencyBonus: 6,
-    features: ['Epic Boon'],
+    features: ['Don épique'],
     bardicDie: 12,
     preparedSpells: 21,
     spellSlots: [4, 3, 3, 3, 3, 2, 1, 1, 1],
@@ -837,7 +842,7 @@ const bardLevels: BardLevelProgression[] = [
   {
     level: 20,
     proficiencyBonus: 6,
-    features: ['Words of Creation'],
+    features: ['Mots de création'],
     bardicDie: 12,
     preparedSpells: 22,
     spellSlots: [4, 3, 3, 3, 3, 2, 2, 1, 1],
@@ -869,7 +874,7 @@ const clericLevels: ClericLevelProgression[] = [
   {
     level: 1,
     proficiencyBonus: 2,
-    features: ['Spellcasting', 'Divine Order'],
+    features: ['Incantation', 'Ordre divin'],
     channelDivinityUses: 0,
     cantrips: 3,
     preparedSpells: 4,
@@ -878,7 +883,7 @@ const clericLevels: ClericLevelProgression[] = [
   {
     level: 2,
     proficiencyBonus: 2,
-    features: ['Channel Divinity'],
+    features: ['Canalisation divine'],
     channelDivinityUses: 2,
     cantrips: 3,
     preparedSpells: 5,
@@ -887,7 +892,7 @@ const clericLevels: ClericLevelProgression[] = [
   {
     level: 3,
     proficiencyBonus: 2,
-    features: ['Cleric Subclass'],
+    features: ['Domaine divin'],
     channelDivinityUses: 2,
     cantrips: 3,
     preparedSpells: 6,
@@ -896,7 +901,7 @@ const clericLevels: ClericLevelProgression[] = [
   {
     level: 4,
     proficiencyBonus: 2,
-    features: ['Ability Score Improvement'],
+    features: ['Amélioration de caractéristique'],
     channelDivinityUses: 2,
     cantrips: 4,
     preparedSpells: 7,
@@ -905,7 +910,7 @@ const clericLevels: ClericLevelProgression[] = [
   {
     level: 5,
     proficiencyBonus: 3,
-    features: ['Sear Undead'],
+    features: ['Consumer les morts-vivants'],
     channelDivinityUses: 2,
     cantrips: 4,
     preparedSpells: 9,
@@ -914,7 +919,7 @@ const clericLevels: ClericLevelProgression[] = [
   {
     level: 6,
     proficiencyBonus: 3,
-    features: ['Subclass feature'],
+    features: ['Aptitude de domaine'],
     channelDivinityUses: 3,
     cantrips: 4,
     preparedSpells: 10,
@@ -923,7 +928,7 @@ const clericLevels: ClericLevelProgression[] = [
   {
     level: 7,
     proficiencyBonus: 3,
-    features: ['Blessed Strikes'],
+    features: ['Frappes bénies'],
     channelDivinityUses: 3,
     cantrips: 4,
     preparedSpells: 11,
@@ -932,7 +937,7 @@ const clericLevels: ClericLevelProgression[] = [
   {
     level: 8,
     proficiencyBonus: 3,
-    features: ['Ability Score Improvement'],
+    features: ['Amélioration de caractéristique'],
     channelDivinityUses: 3,
     cantrips: 4,
     preparedSpells: 12,
@@ -950,7 +955,7 @@ const clericLevels: ClericLevelProgression[] = [
   {
     level: 10,
     proficiencyBonus: 4,
-    features: ['Divine Intervention'],
+    features: ['Intervention divine'],
     channelDivinityUses: 3,
     cantrips: 5,
     preparedSpells: 15,
@@ -968,7 +973,7 @@ const clericLevels: ClericLevelProgression[] = [
   {
     level: 12,
     proficiencyBonus: 4,
-    features: ['Ability Score Improvement'],
+    features: ['Amélioration de caractéristique'],
     channelDivinityUses: 3,
     cantrips: 5,
     preparedSpells: 16,
@@ -986,7 +991,7 @@ const clericLevels: ClericLevelProgression[] = [
   {
     level: 14,
     proficiencyBonus: 5,
-    features: ['Improved Blessed Strikes'],
+    features: ['Frappes bénies améliorées'],
     channelDivinityUses: 3,
     cantrips: 5,
     preparedSpells: 17,
@@ -1004,7 +1009,7 @@ const clericLevels: ClericLevelProgression[] = [
   {
     level: 16,
     proficiencyBonus: 5,
-    features: ['Ability Score Improvement'],
+    features: ['Amélioration de caractéristique'],
     channelDivinityUses: 3,
     cantrips: 5,
     preparedSpells: 18,
@@ -1013,7 +1018,7 @@ const clericLevels: ClericLevelProgression[] = [
   {
     level: 17,
     proficiencyBonus: 6,
-    features: ['Subclass feature'],
+    features: ['Aptitude de domaine'],
     channelDivinityUses: 3,
     cantrips: 5,
     preparedSpells: 19,
@@ -1031,7 +1036,7 @@ const clericLevels: ClericLevelProgression[] = [
   {
     level: 19,
     proficiencyBonus: 6,
-    features: ['Epic Boon'],
+    features: ['Don épique'],
     channelDivinityUses: 4,
     cantrips: 5,
     preparedSpells: 21,
@@ -1040,7 +1045,7 @@ const clericLevels: ClericLevelProgression[] = [
   {
     level: 20,
     proficiencyBonus: 6,
-    features: ['Greater Divine Intervention'],
+    features: ['Intervention divine supérieure'],
     channelDivinityUses: 4,
     cantrips: 5,
     preparedSpells: 22,
@@ -1073,7 +1078,7 @@ const druidLevels: DruidLevelProgression[] = [
   {
     level: 1,
     proficiencyBonus: 2,
-    features: ['Spellcasting', 'Druidic', 'Primal Order'],
+    features: ['Incantation', 'Druidique', 'Ordre primordial'],
     wildShapeUses: 0, // "-"
     cantrips: 2,
     preparedSpells: 4,
@@ -1082,7 +1087,7 @@ const druidLevels: DruidLevelProgression[] = [
   {
     level: 2,
     proficiencyBonus: 2,
-    features: ['Wild Shape', 'Wild Companion'],
+    features: ['Forme sauvage', 'Compagnon sauvage'],
     wildShapeUses: 2,
     cantrips: 2,
     preparedSpells: 5,
@@ -1091,7 +1096,7 @@ const druidLevels: DruidLevelProgression[] = [
   {
     level: 3,
     proficiencyBonus: 2,
-    features: ['Druid Subclass'],
+    features: ['Cercle druidique'],
     wildShapeUses: 2,
     cantrips: 2,
     preparedSpells: 6,
@@ -1100,7 +1105,7 @@ const druidLevels: DruidLevelProgression[] = [
   {
     level: 4,
     proficiencyBonus: 2,
-    features: ['Ability Score Improvement'],
+    features: ['Amélioration de caractéristique'],
     wildShapeUses: 2,
     cantrips: 3,
     preparedSpells: 7,
@@ -1109,7 +1114,7 @@ const druidLevels: DruidLevelProgression[] = [
   {
     level: 5,
     proficiencyBonus: 3,
-    features: ['Wild Resurgence'],
+    features: ['Renouveau sauvage'],
     wildShapeUses: 2,
     cantrips: 3,
     preparedSpells: 9,
@@ -1118,7 +1123,7 @@ const druidLevels: DruidLevelProgression[] = [
   {
     level: 6,
     proficiencyBonus: 3,
-    features: ['Subclass Feature'],
+    features: ['Aptitude de cercle'],
     wildShapeUses: 3,
     cantrips: 3,
     preparedSpells: 10,
@@ -1127,7 +1132,7 @@ const druidLevels: DruidLevelProgression[] = [
   {
     level: 7,
     proficiencyBonus: 3,
-    features: ['Elemental Fury'],
+    features: ['Fureur élémentaire'],
     wildShapeUses: 3,
     cantrips: 3,
     preparedSpells: 11,
@@ -1136,7 +1141,7 @@ const druidLevels: DruidLevelProgression[] = [
   {
     level: 8,
     proficiencyBonus: 3,
-    features: ['Ability Score Improvement'],
+    features: ['Amélioration de caractéristique'],
     wildShapeUses: 3,
     cantrips: 3,
     preparedSpells: 12,
@@ -1154,7 +1159,7 @@ const druidLevels: DruidLevelProgression[] = [
   {
     level: 10,
     proficiencyBonus: 4,
-    features: ['Subclass Feature'],
+    features: ['Aptitude de cercle'],
     wildShapeUses: 3,
     cantrips: 4,
     preparedSpells: 15,
@@ -1172,7 +1177,7 @@ const druidLevels: DruidLevelProgression[] = [
   {
     level: 12,
     proficiencyBonus: 4,
-    features: ['Ability Score Improvement'],
+    features: ['Amélioration de caractéristique'],
     wildShapeUses: 3,
     cantrips: 4,
     preparedSpells: 16,
@@ -1190,7 +1195,7 @@ const druidLevels: DruidLevelProgression[] = [
   {
     level: 14,
     proficiencyBonus: 5,
-    features: ['Subclass Feature'],
+    features: ['Aptitude de cercle'],
     wildShapeUses: 3,
     cantrips: 4,
     preparedSpells: 17,
@@ -1199,7 +1204,7 @@ const druidLevels: DruidLevelProgression[] = [
   {
     level: 15,
     proficiencyBonus: 5,
-    features: ['Improved Elemental Fury'],
+    features: ['Fureur élémentaire améliorée'],
     wildShapeUses: 3,
     cantrips: 4,
     preparedSpells: 18,
@@ -1208,7 +1213,7 @@ const druidLevels: DruidLevelProgression[] = [
   {
     level: 16,
     proficiencyBonus: 5,
-    features: ['Ability Score Improvement'],
+    features: ['Amélioration de caractéristique'],
     wildShapeUses: 3,
     cantrips: 4,
     preparedSpells: 18,
@@ -1226,7 +1231,7 @@ const druidLevels: DruidLevelProgression[] = [
   {
     level: 18,
     proficiencyBonus: 6,
-    features: ['Beast Spells'],
+    features: ['Sorts bestiaux'],
     wildShapeUses: 4,
     cantrips: 4,
     preparedSpells: 20,
@@ -1235,7 +1240,7 @@ const druidLevels: DruidLevelProgression[] = [
   {
     level: 19,
     proficiencyBonus: 6,
-    features: ['Epic Boon'],
+    features: ['Don épique'],
     wildShapeUses: 4,
     cantrips: 4,
     preparedSpells: 21,
@@ -1244,7 +1249,7 @@ const druidLevels: DruidLevelProgression[] = [
   {
     level: 20,
     proficiencyBonus: 6,
-    features: ['Archdruid'],
+    features: ['Archidruide'],
     wildShapeUses: 4,
     cantrips: 4,
     preparedSpells: 22,
@@ -1266,15 +1271,19 @@ const monkLevels: MonkLevelProgression[] = [
   {
     level: 1,
     proficiencyBonus: 2,
-    features: ['Martial Arts', 'Unarmored Defense'],
+    features: ['Arts martiaux', 'Défense sans armure'],
     martialArtsDie: '1d6',
-    focusPoints: 0, // "—"
-    unarmoredMovementBonusFt: 0, // "—"
+    focusPoints: 0,
+    unarmoredMovementBonusFt: 0,
   },
   {
     level: 2,
     proficiencyBonus: 2,
-    features: ["Monk's Focus", 'Unarmored Movement', 'Uncanny Metabolism'],
+    features: [
+      'Focalisation du moine',
+      'Déplacement sans armure',
+      'Métabolisme extraordinaire',
+    ],
     martialArtsDie: '1d6',
     focusPoints: 2,
     unarmoredMovementBonusFt: 10,
@@ -1282,7 +1291,7 @@ const monkLevels: MonkLevelProgression[] = [
   {
     level: 3,
     proficiencyBonus: 2,
-    features: ['Deflect Attacks', 'Monk Subclass'],
+    features: ['Déviation d’attaques', 'Tradition monastique'],
     martialArtsDie: '1d6',
     focusPoints: 3,
     unarmoredMovementBonusFt: 10,
@@ -1290,7 +1299,7 @@ const monkLevels: MonkLevelProgression[] = [
   {
     level: 4,
     proficiencyBonus: 2,
-    features: ['Ability Score Improvement', 'Slow Fall'],
+    features: ['Amélioration de caractéristique', 'Chute ralentie'],
     martialArtsDie: '1d6',
     focusPoints: 4,
     unarmoredMovementBonusFt: 10,
@@ -1298,7 +1307,7 @@ const monkLevels: MonkLevelProgression[] = [
   {
     level: 5,
     proficiencyBonus: 3,
-    features: ['Extra Attack', 'Stunning Strike'],
+    features: ['Attaque supplémentaire', 'Frappe étourdissante'],
     martialArtsDie: '1d8',
     focusPoints: 5,
     unarmoredMovementBonusFt: 10,
@@ -1306,7 +1315,7 @@ const monkLevels: MonkLevelProgression[] = [
   {
     level: 6,
     proficiencyBonus: 3,
-    features: ['Empowered Strikes', 'Subclass feature'],
+    features: ['Frappes renforcées', 'Aptitude de tradition'],
     martialArtsDie: '1d8',
     focusPoints: 6,
     unarmoredMovementBonusFt: 15,
@@ -1314,7 +1323,7 @@ const monkLevels: MonkLevelProgression[] = [
   {
     level: 7,
     proficiencyBonus: 3,
-    features: ['Evasion'],
+    features: ['Évasion'],
     martialArtsDie: '1d8',
     focusPoints: 7,
     unarmoredMovementBonusFt: 15,
@@ -1322,7 +1331,7 @@ const monkLevels: MonkLevelProgression[] = [
   {
     level: 8,
     proficiencyBonus: 3,
-    features: ['Ability Score Improvement'],
+    features: ['Amélioration de caractéristique'],
     martialArtsDie: '1d8',
     focusPoints: 8,
     unarmoredMovementBonusFt: 15,
@@ -1330,7 +1339,7 @@ const monkLevels: MonkLevelProgression[] = [
   {
     level: 9,
     proficiencyBonus: 4,
-    features: ['Acrobatic Movement'],
+    features: ['Déplacement acrobatique'],
     martialArtsDie: '1d8',
     focusPoints: 9,
     unarmoredMovementBonusFt: 15,
@@ -1338,7 +1347,7 @@ const monkLevels: MonkLevelProgression[] = [
   {
     level: 10,
     proficiencyBonus: 4,
-    features: ['Heightened Focus', 'Self-Restoration'],
+    features: ['Focalisation accrue', 'Auto-restauration'],
     martialArtsDie: '1d8',
     focusPoints: 10,
     unarmoredMovementBonusFt: 20,
@@ -1346,7 +1355,7 @@ const monkLevels: MonkLevelProgression[] = [
   {
     level: 11,
     proficiencyBonus: 4,
-    features: ['Subclass feature'],
+    features: ['Aptitude de tradition'],
     martialArtsDie: '1d10',
     focusPoints: 11,
     unarmoredMovementBonusFt: 20,
@@ -1354,7 +1363,7 @@ const monkLevels: MonkLevelProgression[] = [
   {
     level: 12,
     proficiencyBonus: 4,
-    features: ['Ability Score Improvement'],
+    features: ['Amélioration de caractéristique'],
     martialArtsDie: '1d10',
     focusPoints: 12,
     unarmoredMovementBonusFt: 20,
@@ -1362,7 +1371,7 @@ const monkLevels: MonkLevelProgression[] = [
   {
     level: 13,
     proficiencyBonus: 5,
-    features: ['Deflect Energy'],
+    features: ['Déviation d’énergie'],
     martialArtsDie: '1d10',
     focusPoints: 13,
     unarmoredMovementBonusFt: 20,
@@ -1370,7 +1379,7 @@ const monkLevels: MonkLevelProgression[] = [
   {
     level: 14,
     proficiencyBonus: 5,
-    features: ['Disciplined Survivor'],
+    features: ['Survivant discipliné'],
     martialArtsDie: '1d10',
     focusPoints: 14,
     unarmoredMovementBonusFt: 25,
@@ -1378,7 +1387,7 @@ const monkLevels: MonkLevelProgression[] = [
   {
     level: 15,
     proficiencyBonus: 5,
-    features: ['Perfect Focus'],
+    features: ['Focalisation parfaite'],
     martialArtsDie: '1d10',
     focusPoints: 15,
     unarmoredMovementBonusFt: 25,
@@ -1386,7 +1395,7 @@ const monkLevels: MonkLevelProgression[] = [
   {
     level: 16,
     proficiencyBonus: 5,
-    features: ['Ability Score Improvement'],
+    features: ['Amélioration de caractéristique'],
     martialArtsDie: '1d10',
     focusPoints: 16,
     unarmoredMovementBonusFt: 25,
@@ -1394,7 +1403,7 @@ const monkLevels: MonkLevelProgression[] = [
   {
     level: 17,
     proficiencyBonus: 6,
-    features: ['Subclass feature'],
+    features: ['Aptitude de tradition'],
     martialArtsDie: '1d12',
     focusPoints: 17,
     unarmoredMovementBonusFt: 25,
@@ -1402,7 +1411,7 @@ const monkLevels: MonkLevelProgression[] = [
   {
     level: 18,
     proficiencyBonus: 6,
-    features: ['Superior Defense'],
+    features: ['Défense supérieure'],
     martialArtsDie: '1d12',
     focusPoints: 18,
     unarmoredMovementBonusFt: 30,
@@ -1410,7 +1419,7 @@ const monkLevels: MonkLevelProgression[] = [
   {
     level: 19,
     proficiencyBonus: 6,
-    features: ['Epic Boon'],
+    features: ['Don épique'],
     martialArtsDie: '1d12',
     focusPoints: 19,
     unarmoredMovementBonusFt: 30,
@@ -1418,7 +1427,7 @@ const monkLevels: MonkLevelProgression[] = [
   {
     level: 20,
     proficiencyBonus: 6,
-    features: ['Body and Mind'],
+    features: ['Corps et esprit'],
     martialArtsDie: '1d12',
     focusPoints: 20,
     unarmoredMovementBonusFt: 30,
@@ -1438,140 +1447,143 @@ const fighterLevels: FighterLevelProgression[] = [
   {
     level: 1,
     proficiencyBonus: 2,
-    features: ['Fighting Style', 'Second Wind', 'Weapon Mastery'],
+    features: ['Style de combat', 'Second souffle', 'Maîtrise des armes'],
     secondWindUses: 2,
     weaponMasteryCount: 3,
   },
   {
     level: 2,
     proficiencyBonus: 2,
-    features: ['Action Surge (one use)', 'Tactical Mind'],
+    features: ['Sursaut d’action (1 utilisation)', 'Esprit tactique'],
     secondWindUses: 2,
     weaponMasteryCount: 3,
   },
   {
     level: 3,
     proficiencyBonus: 2,
-    features: ['Fighter Subclass'],
+    features: ['Archétype martial'],
     secondWindUses: 2,
     weaponMasteryCount: 3,
   },
   {
     level: 4,
     proficiencyBonus: 2,
-    features: ['Ability Score Improvement'],
+    features: ['Amélioration de caractéristique'],
     secondWindUses: 3,
     weaponMasteryCount: 4,
   },
   {
     level: 5,
     proficiencyBonus: 3,
-    features: ['Extra Attack', 'Tactical Shift'],
+    features: ['Attaque supplémentaire', 'Déplacement tactique'],
     secondWindUses: 3,
     weaponMasteryCount: 4,
   },
   {
     level: 6,
     proficiencyBonus: 3,
-    features: ['Ability Score Improvement'],
+    features: ['Amélioration de caractéristique'],
     secondWindUses: 3,
     weaponMasteryCount: 4,
   },
   {
     level: 7,
     proficiencyBonus: 3,
-    features: ['Subclass feature'],
+    features: ['Aptitude d’archétype'],
     secondWindUses: 3,
     weaponMasteryCount: 4,
   },
   {
     level: 8,
     proficiencyBonus: 3,
-    features: ['Ability Score Improvement'],
+    features: ['Amélioration de caractéristique'],
     secondWindUses: 3,
     weaponMasteryCount: 4,
   },
   {
     level: 9,
     proficiencyBonus: 4,
-    features: ['Indomitable (one use)', 'Tactical Master'],
+    features: ['Indomptable (1 utilisation)', 'Maître tacticien'],
     secondWindUses: 3,
     weaponMasteryCount: 4,
   },
   {
     level: 10,
     proficiencyBonus: 4,
-    features: ['Subclass feature'],
+    features: ['Aptitude d’archétype'],
     secondWindUses: 4,
     weaponMasteryCount: 5,
   },
   {
     level: 11,
     proficiencyBonus: 4,
-    features: ['Two Extra Attacks'],
+    features: ['Deux attaques supplémentaires'],
     secondWindUses: 4,
     weaponMasteryCount: 5,
   },
   {
     level: 12,
     proficiencyBonus: 4,
-    features: ['Ability Score Improvement'],
+    features: ['Amélioration de caractéristique'],
     secondWindUses: 4,
     weaponMasteryCount: 5,
   },
   {
     level: 13,
     proficiencyBonus: 5,
-    features: ['Indomitable (two uses)', 'Studied Attacks'],
+    features: ['Indomptable (2 utilisations)', 'Attaques étudiées'],
     secondWindUses: 4,
     weaponMasteryCount: 5,
   },
   {
     level: 14,
     proficiencyBonus: 5,
-    features: ['Ability Score Improvement'],
+    features: ['Amélioration de caractéristique'],
     secondWindUses: 4,
     weaponMasteryCount: 5,
   },
   {
     level: 15,
     proficiencyBonus: 5,
-    features: ['Subclass feature'],
+    features: ['Aptitude d’archétype'],
     secondWindUses: 4,
     weaponMasteryCount: 5,
   },
   {
     level: 16,
     proficiencyBonus: 5,
-    features: ['Ability Score Improvement'],
+    features: ['Amélioration de caractéristique'],
     secondWindUses: 4,
     weaponMasteryCount: 6,
   },
   {
     level: 17,
     proficiencyBonus: 6,
-    features: ['Action Surge (two uses)', 'Indomitable (three uses)'],
+    features: [
+      'Sursaut d’action (2 utilisations)',
+      'Indomptable (3 utilisations)',
+    ],
     secondWindUses: 4,
     weaponMasteryCount: 6,
   },
   {
     level: 18,
     proficiencyBonus: 6,
-    features: ['Subclass feature'],
+    features: ['Aptitude d’archétype'],
     secondWindUses: 4,
     weaponMasteryCount: 6,
   },
   {
     level: 19,
     proficiencyBonus: 6,
-    features: ['Epic Boon'],
+    features: ['Don épique'],
     secondWindUses: 4,
     weaponMasteryCount: 6,
   },
   {
     level: 20,
     proficiencyBonus: 6,
-    features: ['Three Extra Attacks'],
+    features: ['Trois attaques supplémentaires'],
     secondWindUses: 4,
     weaponMasteryCount: 6,
   },
@@ -1602,8 +1614,8 @@ const sorcererLevels: SorcererLevelProgression[] = [
   {
     level: 1,
     proficiencyBonus: 2,
-    features: ['Spellcasting', 'Innate Sorcery'],
-    sorceryPoints: 0, // "—"
+    features: ['Incantation', 'Sorcellerie innée'],
+    sorceryPoints: 0,
     cantrips: 4,
     preparedSpells: 2,
     spellSlots: [2, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -1611,7 +1623,7 @@ const sorcererLevels: SorcererLevelProgression[] = [
   {
     level: 2,
     proficiencyBonus: 2,
-    features: ['Font of Magic', 'Metamagic'],
+    features: ['Fontaine de magie', 'Métamagie'],
     sorceryPoints: 2,
     cantrips: 4,
     preparedSpells: 4,
@@ -1620,7 +1632,7 @@ const sorcererLevels: SorcererLevelProgression[] = [
   {
     level: 3,
     proficiencyBonus: 2,
-    features: ['Sorcerer Subclass'],
+    features: ['Lignée sorcière'],
     sorceryPoints: 3,
     cantrips: 4,
     preparedSpells: 6,
@@ -1629,7 +1641,7 @@ const sorcererLevels: SorcererLevelProgression[] = [
   {
     level: 4,
     proficiencyBonus: 2,
-    features: ['Ability Score Improvement'],
+    features: ['Amélioration de caractéristique'],
     sorceryPoints: 4,
     cantrips: 5,
     preparedSpells: 7,
@@ -1638,7 +1650,7 @@ const sorcererLevels: SorcererLevelProgression[] = [
   {
     level: 5,
     proficiencyBonus: 3,
-    features: ['Sorcerous Restoration'],
+    features: ['Restauration sorcière'],
     sorceryPoints: 5,
     cantrips: 5,
     preparedSpells: 9,
@@ -1647,7 +1659,7 @@ const sorcererLevels: SorcererLevelProgression[] = [
   {
     level: 6,
     proficiencyBonus: 3,
-    features: ['Subclass feature'],
+    features: ['Aptitude de lignée'],
     sorceryPoints: 6,
     cantrips: 5,
     preparedSpells: 10,
@@ -1656,7 +1668,7 @@ const sorcererLevels: SorcererLevelProgression[] = [
   {
     level: 7,
     proficiencyBonus: 3,
-    features: ['Sorcery Incarnate'],
+    features: ['Sorcellerie incarnée'],
     sorceryPoints: 7,
     cantrips: 5,
     preparedSpells: 11,
@@ -1665,7 +1677,7 @@ const sorcererLevels: SorcererLevelProgression[] = [
   {
     level: 8,
     proficiencyBonus: 3,
-    features: ['Ability Score Improvement'],
+    features: ['Amélioration de caractéristique'],
     sorceryPoints: 8,
     cantrips: 5,
     preparedSpells: 12,
@@ -1683,7 +1695,7 @@ const sorcererLevels: SorcererLevelProgression[] = [
   {
     level: 10,
     proficiencyBonus: 4,
-    features: ['Metamagic'],
+    features: ['Métamagie'],
     sorceryPoints: 10,
     cantrips: 6,
     preparedSpells: 15,
@@ -1701,7 +1713,7 @@ const sorcererLevels: SorcererLevelProgression[] = [
   {
     level: 12,
     proficiencyBonus: 4,
-    features: ['Ability Score Improvement'],
+    features: ['Amélioration de caractéristique'],
     sorceryPoints: 12,
     cantrips: 6,
     preparedSpells: 16,
@@ -1719,7 +1731,7 @@ const sorcererLevels: SorcererLevelProgression[] = [
   {
     level: 14,
     proficiencyBonus: 5,
-    features: ['Subclass feature'],
+    features: ['Aptitude de lignée'],
     sorceryPoints: 14,
     cantrips: 6,
     preparedSpells: 17,
@@ -1737,7 +1749,7 @@ const sorcererLevels: SorcererLevelProgression[] = [
   {
     level: 16,
     proficiencyBonus: 5,
-    features: ['Ability Score Improvement'],
+    features: ['Amélioration de caractéristique'],
     sorceryPoints: 16,
     cantrips: 6,
     preparedSpells: 18,
@@ -1746,7 +1758,7 @@ const sorcererLevels: SorcererLevelProgression[] = [
   {
     level: 17,
     proficiencyBonus: 6,
-    features: ['Metamagic'],
+    features: ['Métamagie'],
     sorceryPoints: 17,
     cantrips: 6,
     preparedSpells: 19,
@@ -1755,7 +1767,7 @@ const sorcererLevels: SorcererLevelProgression[] = [
   {
     level: 18,
     proficiencyBonus: 6,
-    features: ['Subclass feature'],
+    features: ['Aptitude de lignée'],
     sorceryPoints: 18,
     cantrips: 6,
     preparedSpells: 20,
@@ -1764,7 +1776,7 @@ const sorcererLevels: SorcererLevelProgression[] = [
   {
     level: 19,
     proficiencyBonus: 6,
-    features: ['Epic Boon'],
+    features: ['Don épique'],
     sorceryPoints: 19,
     cantrips: 6,
     preparedSpells: 21,
@@ -1773,7 +1785,7 @@ const sorcererLevels: SorcererLevelProgression[] = [
   {
     level: 20,
     proficiencyBonus: 6,
-    features: ['Arcane Apotheosis'],
+    features: ['Apothéose arcanique'],
     sorceryPoints: 20,
     cantrips: 6,
     preparedSpells: 22,
@@ -1797,7 +1809,7 @@ const warlockLevels: WarlockLevelProgression[] = [
   {
     level: 1,
     proficiencyBonus: 2,
-    features: ['Eldritch Invocations', 'Pact Magic'],
+    features: ['Invocations occultes', 'Magie de pacte'],
     invocations: 1,
     cantrips: 2,
     preparedSpells: 2,
@@ -1807,7 +1819,7 @@ const warlockLevels: WarlockLevelProgression[] = [
   {
     level: 2,
     proficiencyBonus: 2,
-    features: ['Magical Cunning'],
+    features: ['Ruse magique'],
     invocations: 3,
     cantrips: 2,
     preparedSpells: 3,
@@ -1817,7 +1829,7 @@ const warlockLevels: WarlockLevelProgression[] = [
   {
     level: 3,
     proficiencyBonus: 2,
-    features: ['Warlock Subclass'],
+    features: ['Patron'],
     invocations: 3,
     cantrips: 2,
     preparedSpells: 4,
@@ -1827,7 +1839,7 @@ const warlockLevels: WarlockLevelProgression[] = [
   {
     level: 4,
     proficiencyBonus: 2,
-    features: ['Ability Score Improvement'],
+    features: ['Amélioration de caractéristique'],
     invocations: 3,
     cantrips: 3,
     preparedSpells: 5,
@@ -1847,7 +1859,7 @@ const warlockLevels: WarlockLevelProgression[] = [
   {
     level: 6,
     proficiencyBonus: 3,
-    features: ['Subclass feature'],
+    features: ['Aptitude de patron'],
     invocations: 5,
     cantrips: 3,
     preparedSpells: 7,
@@ -1867,7 +1879,7 @@ const warlockLevels: WarlockLevelProgression[] = [
   {
     level: 8,
     proficiencyBonus: 3,
-    features: ['Ability Score Improvement'],
+    features: ['Amélioration de caractéristique'],
     invocations: 6,
     cantrips: 3,
     preparedSpells: 9,
@@ -1877,7 +1889,7 @@ const warlockLevels: WarlockLevelProgression[] = [
   {
     level: 9,
     proficiencyBonus: 4,
-    features: ['Contact Patron'],
+    features: ['Contacter le patron'],
     invocations: 7,
     cantrips: 3,
     preparedSpells: 10,
@@ -1887,7 +1899,7 @@ const warlockLevels: WarlockLevelProgression[] = [
   {
     level: 10,
     proficiencyBonus: 4,
-    features: ['Subclass feature'],
+    features: ['Aptitude de patron'],
     invocations: 7,
     cantrips: 4,
     preparedSpells: 10,
@@ -1897,7 +1909,7 @@ const warlockLevels: WarlockLevelProgression[] = [
   {
     level: 11,
     proficiencyBonus: 4,
-    features: ['Mystic Arcanum (level 6 spell)'],
+    features: ['Arcanum mystique (sort de niveau 6)'],
     invocations: 7,
     cantrips: 4,
     preparedSpells: 11,
@@ -1907,7 +1919,7 @@ const warlockLevels: WarlockLevelProgression[] = [
   {
     level: 12,
     proficiencyBonus: 4,
-    features: ['Ability Score Improvement'],
+    features: ['Amélioration de caractéristique'],
     invocations: 8,
     cantrips: 4,
     preparedSpells: 11,
@@ -1917,7 +1929,7 @@ const warlockLevels: WarlockLevelProgression[] = [
   {
     level: 13,
     proficiencyBonus: 5,
-    features: ['Mystic Arcanum (level 7 spell)'],
+    features: ['Arcanum mystique (sort de niveau 7)'],
     invocations: 8,
     cantrips: 4,
     preparedSpells: 12,
@@ -1927,7 +1939,7 @@ const warlockLevels: WarlockLevelProgression[] = [
   {
     level: 14,
     proficiencyBonus: 5,
-    features: ['Subclass feature'],
+    features: ['Aptitude de patron'],
     invocations: 8,
     cantrips: 4,
     preparedSpells: 12,
@@ -1937,7 +1949,7 @@ const warlockLevels: WarlockLevelProgression[] = [
   {
     level: 15,
     proficiencyBonus: 5,
-    features: ['Mystic Arcanum (level 8 spell)'],
+    features: ['Arcanum mystique (sort de niveau 8)'],
     invocations: 9,
     cantrips: 4,
     preparedSpells: 13,
@@ -1947,7 +1959,7 @@ const warlockLevels: WarlockLevelProgression[] = [
   {
     level: 16,
     proficiencyBonus: 5,
-    features: ['Ability Score Improvement'],
+    features: ['Amélioration de caractéristique'],
     invocations: 9,
     cantrips: 4,
     preparedSpells: 13,
@@ -1957,7 +1969,7 @@ const warlockLevels: WarlockLevelProgression[] = [
   {
     level: 17,
     proficiencyBonus: 6,
-    features: ['Mystic Arcanum (level 9 spell)'],
+    features: ['Arcanum mystique (sort de niveau 9)'],
     invocations: 9,
     cantrips: 4,
     preparedSpells: 14,
@@ -1977,7 +1989,7 @@ const warlockLevels: WarlockLevelProgression[] = [
   {
     level: 19,
     proficiencyBonus: 6,
-    features: ['Epic Boon'],
+    features: ['Don épique'],
     invocations: 10,
     cantrips: 4,
     preparedSpells: 15,
@@ -1987,7 +1999,7 @@ const warlockLevels: WarlockLevelProgression[] = [
   {
     level: 20,
     proficiencyBonus: 6,
-    features: ['Eldritch Master'],
+    features: ['Maître occulte'],
     invocations: 10,
     cantrips: 4,
     preparedSpells: 15,
@@ -2020,7 +2032,7 @@ const wizardLevels: WizardLevelProgression[] = [
   {
     level: 1,
     proficiencyBonus: 2,
-    features: ['Spellcasting', 'Ritual Adept', 'Arcane Recovery'],
+    features: ['Incantation', 'Adepte des rituels', 'Récupération arcanique'],
     cantrips: 3,
     preparedSpells: 4,
     spellSlots: [2, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -2028,7 +2040,7 @@ const wizardLevels: WizardLevelProgression[] = [
   {
     level: 2,
     proficiencyBonus: 2,
-    features: ['Scholar'],
+    features: ['Érudit'],
     cantrips: 3,
     preparedSpells: 5,
     spellSlots: [3, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -2036,7 +2048,7 @@ const wizardLevels: WizardLevelProgression[] = [
   {
     level: 3,
     proficiencyBonus: 2,
-    features: ['Wizard Subclass'],
+    features: ['Tradition arcanique'],
     cantrips: 3,
     preparedSpells: 6,
     spellSlots: [4, 2, 0, 0, 0, 0, 0, 0, 0],
@@ -2044,7 +2056,7 @@ const wizardLevels: WizardLevelProgression[] = [
   {
     level: 4,
     proficiencyBonus: 2,
-    features: ['Ability Score Improvement'],
+    features: ['Amélioration de caractéristique'],
     cantrips: 4,
     preparedSpells: 7,
     spellSlots: [4, 3, 0, 0, 0, 0, 0, 0, 0],
@@ -2052,7 +2064,7 @@ const wizardLevels: WizardLevelProgression[] = [
   {
     level: 5,
     proficiencyBonus: 3,
-    features: ['Memorize Spell'],
+    features: ['Mémoriser un sort'],
     cantrips: 4,
     preparedSpells: 9,
     spellSlots: [4, 3, 2, 0, 0, 0, 0, 0, 0],
@@ -2060,7 +2072,7 @@ const wizardLevels: WizardLevelProgression[] = [
   {
     level: 6,
     proficiencyBonus: 3,
-    features: ['Subclass Feature'],
+    features: ['Aptitude de tradition'],
     cantrips: 4,
     preparedSpells: 10,
     spellSlots: [4, 3, 3, 0, 0, 0, 0, 0, 0],
@@ -2076,7 +2088,7 @@ const wizardLevels: WizardLevelProgression[] = [
   {
     level: 8,
     proficiencyBonus: 3,
-    features: ['Ability Score Improvement'],
+    features: ['Amélioration de caractéristique'],
     cantrips: 4,
     preparedSpells: 12,
     spellSlots: [4, 3, 3, 2, 0, 0, 0, 0, 0],
@@ -2092,7 +2104,7 @@ const wizardLevels: WizardLevelProgression[] = [
   {
     level: 10,
     proficiencyBonus: 4,
-    features: ['Subclass Feature'],
+    features: ['Aptitude de tradition'],
     cantrips: 5,
     preparedSpells: 15,
     spellSlots: [4, 3, 3, 3, 2, 0, 0, 0, 0],
@@ -2108,7 +2120,7 @@ const wizardLevels: WizardLevelProgression[] = [
   {
     level: 12,
     proficiencyBonus: 4,
-    features: ['Ability Score Improvement'],
+    features: ['Amélioration de caractéristique'],
     cantrips: 5,
     preparedSpells: 16,
     spellSlots: [4, 3, 3, 3, 2, 1, 0, 0, 0],
@@ -2124,7 +2136,7 @@ const wizardLevels: WizardLevelProgression[] = [
   {
     level: 14,
     proficiencyBonus: 5,
-    features: ['Subclass Feature'],
+    features: ['Aptitude de tradition'],
     cantrips: 5,
     preparedSpells: 18,
     spellSlots: [4, 3, 3, 3, 2, 1, 1, 0, 0],
@@ -2140,7 +2152,7 @@ const wizardLevels: WizardLevelProgression[] = [
   {
     level: 16,
     proficiencyBonus: 5,
-    features: ['Ability Score Improvement'],
+    features: ['Amélioration de caractéristique'],
     cantrips: 5,
     preparedSpells: 21,
     spellSlots: [4, 3, 3, 3, 2, 1, 1, 1, 0],
@@ -2156,7 +2168,7 @@ const wizardLevels: WizardLevelProgression[] = [
   {
     level: 18,
     proficiencyBonus: 6,
-    features: ['Spell Mastery'],
+    features: ['Maîtrise des sorts'],
     cantrips: 5,
     preparedSpells: 23,
     spellSlots: [4, 3, 3, 3, 3, 1, 1, 1, 1],
@@ -2164,7 +2176,7 @@ const wizardLevels: WizardLevelProgression[] = [
   {
     level: 19,
     proficiencyBonus: 6,
-    features: ['Epic Boon'],
+    features: ['Don épique'],
     cantrips: 5,
     preparedSpells: 24,
     spellSlots: [4, 3, 3, 3, 3, 2, 1, 1, 1],
@@ -2172,7 +2184,7 @@ const wizardLevels: WizardLevelProgression[] = [
   {
     level: 20,
     proficiencyBonus: 6,
-    features: ['Signature Spells'],
+    features: ['Sorts signatures'],
     cantrips: 5,
     preparedSpells: 25,
     spellSlots: [4, 3, 3, 3, 3, 2, 2, 1, 1],

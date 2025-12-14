@@ -137,3 +137,24 @@ model ClassLevel {
 
   @@unique([classId, level])
 }
+
+model Spell {
+  id             Int      @id @default(autoincrement())
+  key            String   @unique
+  name           String
+  level          Int
+  school         String
+  source         String?
+  castingTime    String
+  range          String
+  components     String
+  duration       String
+  classes        String
+  description    String
+  atHigherLevels String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@index([level])
+  @@index([school])
+}

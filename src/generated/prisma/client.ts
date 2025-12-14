@@ -67,3 +67,8 @@ export type Class = Prisma.ClassModel
  * 
  */
 export type ClassLevel = Prisma.ClassLevelModel
+/**
+ * Model Spell
+ * 
+ */
+export type Spell = Prisma.SpellModel

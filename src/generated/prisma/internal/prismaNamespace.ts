@@ -389,7 +389,8 @@ export const ModelName = {
   Species: 'Species',
   Background: 'Background',
   Class: 'Class',
-  ClassLevel: 'ClassLevel'
+  ClassLevel: 'ClassLevel',
+  Spell: 'Spell'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -405,7 +406,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "character" | "species" | "background" | "class" | "classLevel"
+    modelProps: "user" | "character" | "species" | "background" | "class" | "classLevel" | "spell"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -853,6 +854,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    Spell: {
+      payload: Prisma.$SpellPayload<ExtArgs>
+      fields: Prisma.SpellFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.SpellFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SpellPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.SpellFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SpellPayload>
+        }
+        findFirst: {
+          args: Prisma.SpellFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SpellPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.SpellFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SpellPayload>
+        }
+        findMany: {
+          args: Prisma.SpellFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SpellPayload>[]
+        }
+        create: {
+          args: Prisma.SpellCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SpellPayload>
+        }
+        createMany: {
+          args: Prisma.SpellCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.SpellCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SpellPayload>[]
+        }
+        delete: {
+          args: Prisma.SpellDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SpellPayload>
+        }
+        update: {
+          args: Prisma.SpellUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SpellPayload>
+        }
+        deleteMany: {
+          args: Prisma.SpellDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.SpellUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.SpellUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SpellPayload>[]
+        }
+        upsert: {
+          args: Prisma.SpellUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SpellPayload>
+        }
+        aggregate: {
+          args: Prisma.SpellAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateSpell>
+        }
+        groupBy: {
+          args: Prisma.SpellGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.SpellGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.SpellCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.SpellCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -982,6 +1057,27 @@ export const ClassLevelScalarFieldEnum = {
 } as const
 
 export type ClassLevelScalarFieldEnum = (typeof ClassLevelScalarFieldEnum)[keyof typeof ClassLevelScalarFieldEnum]
+
+
+export const SpellScalarFieldEnum = {
+  id: 'id',
+  key: 'key',
+  name: 'name',
+  level: 'level',
+  school: 'school',
+  source: 'source',
+  castingTime: 'castingTime',
+  range: 'range',
+  components: 'components',
+  duration: 'duration',
+  classes: 'classes',
+  description: 'description',
+  atHigherLevels: 'atHigherLevels',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type SpellScalarFieldEnum = (typeof SpellScalarFieldEnum)[keyof typeof SpellScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -1187,6 +1283,7 @@ export type GlobalOmitConfig = {
   background?: Prisma.BackgroundOmit
   class?: Prisma.ClassOmit
   classLevel?: Prisma.ClassLevelOmit
+  spell?: Prisma.SpellOmit
 }
 
 /* Types for Logging */

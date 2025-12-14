@@ -8,6 +8,7 @@ import { CharactersModule } from './characters/characters.module';
 import { SpeciesModule } from './species/species.module';
 import { BackgroundsModule } from './backgrounds/backgrounds.module';
 import { ClassesModule } from './classes/classes.module';
+import { SpellsModule } from './spells/spells.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { ClassesModule } from './classes/classes.module';
     SpeciesModule,
     BackgroundsModule,
     ClassesModule,
+    SpellsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
