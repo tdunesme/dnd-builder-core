@@ -9,6 +9,7 @@ import { SpeciesModule } from './species/species.module';
 import { BackgroundsModule } from './backgrounds/backgrounds.module';
 import { ClassesModule } from './classes/classes.module';
 import { SpellsModule } from './spells/spells.module';
+import { CharactersModule } from './modules/characters/characters.module';
 
 @Module({
   imports: [

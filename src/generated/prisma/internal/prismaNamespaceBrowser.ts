@@ -89,13 +89,22 @@ export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof User
 export const CharacterScalarFieldEnum = {
   id: 'id',
   name: 'name',
-  level: 'level',
-  ownerId: 'ownerId',
-  speciesId: 'speciesId',
-  classId: 'classId',
-  backgroundId: 'backgroundId',
+  status: 'status',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  updatedAt: 'updatedAt',
+  userId: 'userId',
+  level: 'level',
+  speciesKey: 'speciesKey',
+  classKey: 'classKey',
+  backgroundKey: 'backgroundKey',
+  abilityScores: 'abilityScores',
+  abilityMethod: 'abilityMethod',
+  equipment: 'equipment',
+  spells: 'spells',
+  notes: 'notes',
+  speciesId: 'speciesId',
+  backgroundId: 'backgroundId',
+  classId: 'classId'
 } as const
 
 export type CharacterScalarFieldEnum = (typeof CharacterScalarFieldEnum)[keyof typeof CharacterScalarFieldEnum]
@@ -213,14 +222,6 @@ export const JsonNullValueInput = {
 export type JsonNullValueInput = (typeof JsonNullValueInput)[keyof typeof JsonNullValueInput]
 
 
-export const NullsOrder = {
-  first: 'first',
-  last: 'last'
-} as const
-
-export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
-
-
 export const JsonNullValueFilter = {
   DbNull: 'DbNull',
   JsonNull: 'JsonNull',
@@ -236,4 +237,12 @@ export const QueryMode = {
 } as const
 
 export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode]
+
+
+export const NullsOrder = {
+  first: 'first',
+  last: 'last'
+} as const
+
+export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
 

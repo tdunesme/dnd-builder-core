@@ -260,7 +260,7 @@ export type UserCreateInput = {
   lastName: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  characters?: Prisma.CharacterCreateNestedManyWithoutOwnerInput
+  characters?: Prisma.CharacterCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateInput = {
@@ -271,7 +271,7 @@ export type UserUncheckedCreateInput = {
   lastName: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  characters?: Prisma.CharacterUncheckedCreateNestedManyWithoutOwnerInput
+  characters?: Prisma.CharacterUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserUpdateInput = {
@@ -282,7 +282,7 @@ export type UserUpdateInput = {
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  characters?: Prisma.CharacterUpdateManyWithoutOwnerNestedInput
+  characters?: Prisma.CharacterUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateInput = {
@@ -293,7 +293,7 @@ export type UserUncheckedUpdateInput = {
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  characters?: Prisma.CharacterUncheckedUpdateManyWithoutOwnerNestedInput
+  characters?: Prisma.CharacterUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateManyInput = {

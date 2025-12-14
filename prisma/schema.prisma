@@ -27,26 +27,46 @@ model User {
 }
 
 // Character
+enum CharacterStatus {
+  DRAFT
+  ACTIVE
+}
+
 model Character {
-  id    Int    @id @default(autoincrement())
-  name  String
-  level Int    @default(1)
+  id     String          @id @default(uuid())
+  name   String?
+  status CharacterStatus @default(DRAFT)
 
-  ownerId String
-  owner   User   @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
-  speciesId Int?
-  species   Species? @relation(fields: [speciesId], references: [id])
+  userId String
 
-  classId Int?
-  class   Class? @relation(fields: [classId], references: [id])
+  level Int @default(1)
 
-  backgroundId Int?
+  speciesKey String?
+
+  classKey String?
+
+  backgroundKey String?
+
+  abilityScores Json?
+  abilityMethod String?
+
+  equipment Json?
+
+  spells Json?
+
+  notes        Json?
+  user         User        @relation(fields: [userId], references: [id])
+  species      Species?    @relation(fields: [speciesId], references: [id])
+  speciesId    Int?
   background   Background? @relation(fields: [backgroundId], references: [id])
-  createdAt    DateTime    @default(now())
-  updatedAt    DateTime    @updatedAt
+  backgroundId Int?
+  class        Class?      @relation(fields: [classId], references: [id])
+  classId      Int?
 
-  @@index([ownerId])
+  @@index([userId])
 }
 
 model Species {

@@ -500,10 +500,6 @@ export type SpeciesUpdateOneWithoutCharactersNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.SpeciesUpdateToOneWithWhereWithoutCharactersInput, Prisma.SpeciesUpdateWithoutCharactersInput>, Prisma.SpeciesUncheckedUpdateWithoutCharactersInput>
 }
 
-export type NullableStringFieldUpdateOperationsInput = {
-  set?: string | null
-}
-
 export type SpeciesCreateWithoutCharactersInput = {
   key: string
   name: string

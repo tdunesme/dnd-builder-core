@@ -27,109 +27,143 @@ export type AggregateCharacter = {
 }
 
 export type CharacterAvgAggregateOutputType = {
-  id: number | null
   level: number | null
   speciesId: number | null
-  classId: number | null
   backgroundId: number | null
+  classId: number | null
 }
 
 export type CharacterSumAggregateOutputType = {
-  id: number | null
   level: number | null
   speciesId: number | null
-  classId: number | null
   backgroundId: number | null
+  classId: number | null
 }
 
 export type CharacterMinAggregateOutputType = {
-  id: number | null
+  id: string | null
   name: string | null
-  level: number | null
-  ownerId: string | null
-  speciesId: number | null
-  classId: number | null
-  backgroundId: number | null
+  status: $Enums.CharacterStatus | null
   createdAt: Date | null
   updatedAt: Date | null
+  userId: string | null
+  level: number | null
+  speciesKey: string | null
+  classKey: string | null
+  backgroundKey: string | null
+  abilityMethod: string | null
+  speciesId: number | null
+  backgroundId: number | null
+  classId: number | null
 }
 
 export type CharacterMaxAggregateOutputType = {
-  id: number | null
+  id: string | null
   name: string | null
-  level: number | null
-  ownerId: string | null
-  speciesId: number | null
-  classId: number | null
-  backgroundId: number | null
+  status: $Enums.CharacterStatus | null
   createdAt: Date | null
   updatedAt: Date | null
+  userId: string | null
+  level: number | null
+  speciesKey: string | null
+  classKey: string | null
+  backgroundKey: string | null
+  abilityMethod: string | null
+  speciesId: number | null
+  backgroundId: number | null
+  classId: number | null
 }
 
 export type CharacterCountAggregateOutputType = {
   id: number
   name: number
-  level: number
-  ownerId: number
-  speciesId: number
-  classId: number
-  backgroundId: number
+  status: number
   createdAt: number
   updatedAt: number
+  userId: number
+  level: number
+  speciesKey: number
+  classKey: number
+  backgroundKey: number
+  abilityScores: number
+  abilityMethod: number
+  equipment: number
+  spells: number
+  notes: number
+  speciesId: number
+  backgroundId: number
+  classId: number
   _all: number
 }
 
 
 export type CharacterAvgAggregateInputType = {
-  id?: true
   level?: true
   speciesId?: true
-  classId?: true
   backgroundId?: true
+  classId?: true
 }
 
 export type CharacterSumAggregateInputType = {
-  id?: true
   level?: true
   speciesId?: true
-  classId?: true
   backgroundId?: true
+  classId?: true
 }
 
 export type CharacterMinAggregateInputType = {
   id?: true
   name?: true
-  level?: true
-  ownerId?: true
-  speciesId?: true
-  classId?: true
-  backgroundId?: true
+  status?: true
   createdAt?: true
   updatedAt?: true
+  userId?: true
+  level?: true
+  speciesKey?: true
+  classKey?: true
+  backgroundKey?: true
+  abilityMethod?: true
+  speciesId?: true
+  backgroundId?: true
+  classId?: true
 }
 
 export type CharacterMaxAggregateInputType = {
   id?: true
   name?: true
-  level?: true
-  ownerId?: true
-  speciesId?: true
-  classId?: true
-  backgroundId?: true
+  status?: true
   createdAt?: true
   updatedAt?: true
+  userId?: true
+  level?: true
+  speciesKey?: true
+  classKey?: true
+  backgroundKey?: true
+  abilityMethod?: true
+  speciesId?: true
+  backgroundId?: true
+  classId?: true
 }
 
 export type CharacterCountAggregateInputType = {
   id?: true
   name?: true
-  level?: true
-  ownerId?: true
-  speciesId?: true
-  classId?: true
-  backgroundId?: true
+  status?: true
   createdAt?: true
   updatedAt?: true
+  userId?: true
+  level?: true
+  speciesKey?: true
+  classKey?: true
+  backgroundKey?: true
+  abilityScores?: true
+  abilityMethod?: true
+  equipment?: true
+  spells?: true
+  notes?: true
+  speciesId?: true
+  backgroundId?: true
+  classId?: true
   _all?: true
 }
 
@@ -220,15 +254,24 @@ export type CharacterGroupByArgs<ExtArgs extends runtime.Types.Extensions.Intern
 }
 
 export type CharacterGroupByOutputType = {
-  id: number
-  name: string
-  level: number
-  ownerId: string
-  speciesId: number | null
-  classId: number | null
-  backgroundId: number | null
+  id: string
+  name: string | null
+  status: $Enums.CharacterStatus
   createdAt: Date
   updatedAt: Date
+  userId: string
+  level: number
+  speciesKey: string | null
+  classKey: string | null
+  backgroundKey: string | null
+  abilityScores: runtime.JsonValue | null
+  abilityMethod: string | null
+  equipment: runtime.JsonValue | null
+  spells: runtime.JsonValue | null
+  notes: runtime.JsonValue | null
+  speciesId: number | null
+  backgroundId: number | null
+  classId: number | null
   _count: CharacterCountAggregateOutputType | null
   _avg: CharacterAvgAggregateOutputType | null
   _sum: CharacterSumAggregateOutputType | null
@@ -255,66 +298,102 @@ export type CharacterWhereInput = {
   AND?: Prisma.CharacterWhereInput | Prisma.CharacterWhereInput[]
   OR?: Prisma.CharacterWhereInput[]
   NOT?: Prisma.CharacterWhereInput | Prisma.CharacterWhereInput[]
-  id?: Prisma.IntFilter<"Character"> | number
-  name?: Prisma.StringFilter<"Character"> | string
-  level?: Prisma.IntFilter<"Character"> | number
-  ownerId?: Prisma.StringFilter<"Character"> | string
-  speciesId?: Prisma.IntNullableFilter<"Character"> | number | null
-  classId?: Prisma.IntNullableFilter<"Character"> | number | null
-  backgroundId?: Prisma.IntNullableFilter<"Character"> | number | null
+  id?: Prisma.StringFilter<"Character"> | string
+  name?: Prisma.StringNullableFilter<"Character"> | string | null
+  status?: Prisma.EnumCharacterStatusFilter<"Character"> | $Enums.CharacterStatus
   createdAt?: Prisma.DateTimeFilter<"Character"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Character"> | Date | string
-  owner?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  userId?: Prisma.StringFilter<"Character"> | string
+  level?: Prisma.IntFilter<"Character"> | number
+  speciesKey?: Prisma.StringNullableFilter<"Character"> | string | null
+  classKey?: Prisma.StringNullableFilter<"Character"> | string | null
+  backgroundKey?: Prisma.StringNullableFilter<"Character"> | string | null
+  abilityScores?: Prisma.JsonNullableFilter<"Character">
+  abilityMethod?: Prisma.StringNullableFilter<"Character"> | string | null
+  equipment?: Prisma.JsonNullableFilter<"Character">
+  spells?: Prisma.JsonNullableFilter<"Character">
+  notes?: Prisma.JsonNullableFilter<"Character">
+  speciesId?: Prisma.IntNullableFilter<"Character"> | number | null
+  backgroundId?: Prisma.IntNullableFilter<"Character"> | number | null
+  classId?: Prisma.IntNullableFilter<"Character"> | number | null
+  user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
   species?: Prisma.XOR<Prisma.SpeciesNullableScalarRelationFilter, Prisma.SpeciesWhereInput> | null
-  class?: Prisma.XOR<Prisma.ClassNullableScalarRelationFilter, Prisma.ClassWhereInput> | null
   background?: Prisma.XOR<Prisma.BackgroundNullableScalarRelationFilter, Prisma.BackgroundWhereInput> | null
+  class?: Prisma.XOR<Prisma.ClassNullableScalarRelationFilter, Prisma.ClassWhereInput> | null
 }
 
 export type CharacterOrderByWithRelationInput = {
   id?: Prisma.SortOrder
-  name?: Prisma.SortOrder
-  level?: Prisma.SortOrder
-  ownerId?: Prisma.SortOrder
-  speciesId?: Prisma.SortOrderInput | Prisma.SortOrder
-  classId?: Prisma.SortOrderInput | Prisma.SortOrder
-  backgroundId?: Prisma.SortOrderInput | Prisma.SortOrder
+  name?: Prisma.SortOrderInput | Prisma.SortOrder
+  status?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  owner?: Prisma.UserOrderByWithRelationInput
+  userId?: Prisma.SortOrder
+  level?: Prisma.SortOrder
+  speciesKey?: Prisma.SortOrderInput | Prisma.SortOrder
+  classKey?: Prisma.SortOrderInput | Prisma.SortOrder
+  backgroundKey?: Prisma.SortOrderInput | Prisma.SortOrder
+  abilityScores?: Prisma.SortOrderInput | Prisma.SortOrder
+  abilityMethod?: Prisma.SortOrderInput | Prisma.SortOrder
+  equipment?: Prisma.SortOrderInput | Prisma.SortOrder
+  spells?: Prisma.SortOrderInput | Prisma.SortOrder
+  notes?: Prisma.SortOrderInput | Prisma.SortOrder
+  speciesId?: Prisma.SortOrderInput | Prisma.SortOrder
+  backgroundId?: Prisma.SortOrderInput | Prisma.SortOrder
+  classId?: Prisma.SortOrderInput | Prisma.SortOrder
+  user?: Prisma.UserOrderByWithRelationInput
   species?: Prisma.SpeciesOrderByWithRelationInput
-  class?: Prisma.ClassOrderByWithRelationInput
   background?: Prisma.BackgroundOrderByWithRelationInput
+  class?: Prisma.ClassOrderByWithRelationInput
 }
 
 export type CharacterWhereUniqueInput = Prisma.AtLeast<{
-  id?: number
+  id?: string
   AND?: Prisma.CharacterWhereInput | Prisma.CharacterWhereInput[]
   OR?: Prisma.CharacterWhereInput[]
   NOT?: Prisma.CharacterWhereInput | Prisma.CharacterWhereInput[]
-  name?: Prisma.StringFilter<"Character"> | string
-  level?: Prisma.IntFilter<"Character"> | number
-  ownerId?: Prisma.StringFilter<"Character"> | string
-  speciesId?: Prisma.IntNullableFilter<"Character"> | number | null
-  classId?: Prisma.IntNullableFilter<"Character"> | number | null
-  backgroundId?: Prisma.IntNullableFilter<"Character"> | number | null
+  name?: Prisma.StringNullableFilter<"Character"> | string | null
+  status?: Prisma.EnumCharacterStatusFilter<"Character"> | $Enums.CharacterStatus
   createdAt?: Prisma.DateTimeFilter<"Character"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Character"> | Date | string
-  owner?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  userId?: Prisma.StringFilter<"Character"> | string
+  level?: Prisma.IntFilter<"Character"> | number
+  speciesKey?: Prisma.StringNullableFilter<"Character"> | string | null
+  classKey?: Prisma.StringNullableFilter<"Character"> | string | null
+  backgroundKey?: Prisma.StringNullableFilter<"Character"> | string | null
+  abilityScores?: Prisma.JsonNullableFilter<"Character">
+  abilityMethod?: Prisma.StringNullableFilter<"Character"> | string | null
+  equipment?: Prisma.JsonNullableFilter<"Character">
+  spells?: Prisma.JsonNullableFilter<"Character">
+  notes?: Prisma.JsonNullableFilter<"Character">
+  speciesId?: Prisma.IntNullableFilter<"Character"> | number | null
+  backgroundId?: Prisma.IntNullableFilter<"Character"> | number | null
+  classId?: Prisma.IntNullableFilter<"Character"> | number | null
+  user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
   species?: Prisma.XOR<Prisma.SpeciesNullableScalarRelationFilter, Prisma.SpeciesWhereInput> | null
-  class?: Prisma.XOR<Prisma.ClassNullableScalarRelationFilter, Prisma.ClassWhereInput> | null
   background?: Prisma.XOR<Prisma.BackgroundNullableScalarRelationFilter, Prisma.BackgroundWhereInput> | null
+  class?: Prisma.XOR<Prisma.ClassNullableScalarRelationFilter, Prisma.ClassWhereInput> | null
 }, "id">
 
 export type CharacterOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
-  name?: Prisma.SortOrder
-  level?: Prisma.SortOrder
-  ownerId?: Prisma.SortOrder
-  speciesId?: Prisma.SortOrderInput | Prisma.SortOrder
-  classId?: Prisma.SortOrderInput | Prisma.SortOrder
-  backgroundId?: Prisma.SortOrderInput | Prisma.SortOrder
+  name?: Prisma.SortOrderInput | Prisma.SortOrder
+  status?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  userId?: Prisma.SortOrder
+  level?: Prisma.SortOrder
+  speciesKey?: Prisma.SortOrderInput | Prisma.SortOrder
+  classKey?: Prisma.SortOrderInput | Prisma.SortOrder
+  backgroundKey?: Prisma.SortOrderInput | Prisma.SortOrder
+  abilityScores?: Prisma.SortOrderInput | Prisma.SortOrder
+  abilityMethod?: Prisma.SortOrderInput | Prisma.SortOrder
+  equipment?: Prisma.SortOrderInput | Prisma.SortOrder
+  spells?: Prisma.SortOrderInput | Prisma.SortOrder
+  notes?: Prisma.SortOrderInput | Prisma.SortOrder
+  speciesId?: Prisma.SortOrderInput | Prisma.SortOrder
+  backgroundId?: Prisma.SortOrderInput | Prisma.SortOrder
+  classId?: Prisma.SortOrderInput | Prisma.SortOrder
   _count?: Prisma.CharacterCountOrderByAggregateInput
   _avg?: Prisma.CharacterAvgOrderByAggregateInput
   _max?: Prisma.CharacterMaxOrderByAggregateInput
@@ -326,92 +405,167 @@ export type CharacterScalarWhereWithAggregatesInput = {
   AND?: Prisma.CharacterScalarWhereWithAggregatesInput | Prisma.CharacterScalarWhereWithAggregatesInput[]
   OR?: Prisma.CharacterScalarWhereWithAggregatesInput[]
   NOT?: Prisma.CharacterScalarWhereWithAggregatesInput | Prisma.CharacterScalarWhereWithAggregatesInput[]
-  id?: Prisma.IntWithAggregatesFilter<"Character"> | number
-  name?: Prisma.StringWithAggregatesFilter<"Character"> | string
-  level?: Prisma.IntWithAggregatesFilter<"Character"> | number
-  ownerId?: Prisma.StringWithAggregatesFilter<"Character"> | string
-  speciesId?: Prisma.IntNullableWithAggregatesFilter<"Character"> | number | null
-  classId?: Prisma.IntNullableWithAggregatesFilter<"Character"> | number | null
-  backgroundId?: Prisma.IntNullableWithAggregatesFilter<"Character"> | number | null
+  id?: Prisma.StringWithAggregatesFilter<"Character"> | string
+  name?: Prisma.StringNullableWithAggregatesFilter<"Character"> | string | null
+  status?: Prisma.EnumCharacterStatusWithAggregatesFilter<"Character"> | $Enums.CharacterStatus
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Character"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Character"> | Date | string
+  userId?: Prisma.StringWithAggregatesFilter<"Character"> | string
+  level?: Prisma.IntWithAggregatesFilter<"Character"> | number
+  speciesKey?: Prisma.StringNullableWithAggregatesFilter<"Character"> | string | null
+  classKey?: Prisma.StringNullableWithAggregatesFilter<"Character"> | string | null
+  backgroundKey?: Prisma.StringNullableWithAggregatesFilter<"Character"> | string | null
+  abilityScores?: Prisma.JsonNullableWithAggregatesFilter<"Character">
+  abilityMethod?: Prisma.StringNullableWithAggregatesFilter<"Character"> | string | null
+  equipment?: Prisma.JsonNullableWithAggregatesFilter<"Character">
+  spells?: Prisma.JsonNullableWithAggregatesFilter<"Character">
+  notes?: Prisma.JsonNullableWithAggregatesFilter<"Character">
+  speciesId?: Prisma.IntNullableWithAggregatesFilter<"Character"> | number | null
+  backgroundId?: Prisma.IntNullableWithAggregatesFilter<"Character"> | number | null
+  classId?: Prisma.IntNullableWithAggregatesFilter<"Character"> | number | null
 }
 
 export type CharacterCreateInput = {
-  name: string
-  level?: number
+  id?: string
+  name?: string | null
+  status?: $Enums.CharacterStatus
   createdAt?: Date | string
   updatedAt?: Date | string
-  owner: Prisma.UserCreateNestedOneWithoutCharactersInput
+  level?: number
+  speciesKey?: string | null
+  classKey?: string | null
+  backgroundKey?: string | null
+  abilityScores?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  abilityMethod?: string | null
+  equipment?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  spells?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  notes?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  user: Prisma.UserCreateNestedOneWithoutCharactersInput
   species?: Prisma.SpeciesCreateNestedOneWithoutCharactersInput
-  class?: Prisma.ClassCreateNestedOneWithoutCharactersInput
   background?: Prisma.BackgroundCreateNestedOneWithoutCharactersInput
+  class?: Prisma.ClassCreateNestedOneWithoutCharactersInput
 }
 
 export type CharacterUncheckedCreateInput = {
-  id?: number
-  name: string
-  level?: number
-  ownerId: string
-  speciesId?: number | null
-  classId?: number | null
-  backgroundId?: number | null
+  id?: string
+  name?: string | null
+  status?: $Enums.CharacterStatus
   createdAt?: Date | string
   updatedAt?: Date | string
+  userId: string
+  level?: number
+  speciesKey?: string | null
+  classKey?: string | null
+  backgroundKey?: string | null
+  abilityScores?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  abilityMethod?: string | null
+  equipment?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  spells?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  notes?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  speciesId?: number | null
+  backgroundId?: number | null
+  classId?: number | null
 }
 
 export type CharacterUpdateInput = {
-  name?: Prisma.StringFieldUpdateOperationsInput | string
-  level?: Prisma.IntFieldUpdateOperationsInput | number
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  status?: Prisma.EnumCharacterStatusFieldUpdateOperationsInput | $Enums.CharacterStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  owner?: Prisma.UserUpdateOneRequiredWithoutCharactersNestedInput
+  level?: Prisma.IntFieldUpdateOperationsInput | number
+  speciesKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  classKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  backgroundKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  abilityScores?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  abilityMethod?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  equipment?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  spells?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  notes?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  user?: Prisma.UserUpdateOneRequiredWithoutCharactersNestedInput
   species?: Prisma.SpeciesUpdateOneWithoutCharactersNestedInput
-  class?: Prisma.ClassUpdateOneWithoutCharactersNestedInput
   background?: Prisma.BackgroundUpdateOneWithoutCharactersNestedInput
+  class?: Prisma.ClassUpdateOneWithoutCharactersNestedInput
 }
 
 export type CharacterUncheckedUpdateInput = {
-  id?: Prisma.IntFieldUpdateOperationsInput | number
-  name?: Prisma.StringFieldUpdateOperationsInput | string
-  level?: Prisma.IntFieldUpdateOperationsInput | number
-  ownerId?: Prisma.StringFieldUpdateOperationsInput | string
-  speciesId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  classId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  backgroundId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  status?: Prisma.EnumCharacterStatusFieldUpdateOperationsInput | $Enums.CharacterStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  userId?: Prisma.StringFieldUpdateOperationsInput | string
+  level?: Prisma.IntFieldUpdateOperationsInput | number
+  speciesKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  classKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  backgroundKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  abilityScores?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  abilityMethod?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  equipment?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  spells?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  notes?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  speciesId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  backgroundId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  classId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
 }
 
 export type CharacterCreateManyInput = {
-  id?: number
-  name: string
-  level?: number
-  ownerId: string
-  speciesId?: number | null
-  classId?: number | null
-  backgroundId?: number | null
+  id?: string
+  name?: string | null
+  status?: $Enums.CharacterStatus
   createdAt?: Date | string
   updatedAt?: Date | string
+  userId: string
+  level?: number
+  speciesKey?: string | null
+  classKey?: string | null
+  backgroundKey?: string | null
+  abilityScores?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  abilityMethod?: string | null
+  equipment?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  spells?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  notes?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  speciesId?: number | null
+  backgroundId?: number | null
+  classId?: number | null
 }
 
 export type CharacterUpdateManyMutationInput = {
-  name?: Prisma.StringFieldUpdateOperationsInput | string
-  level?: Prisma.IntFieldUpdateOperationsInput | number
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  status?: Prisma.EnumCharacterStatusFieldUpdateOperationsInput | $Enums.CharacterStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  level?: Prisma.IntFieldUpdateOperationsInput | number
+  speciesKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  classKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  backgroundKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  abilityScores?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  abilityMethod?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  equipment?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  spells?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  notes?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
 }
 
 export type CharacterUncheckedUpdateManyInput = {
-  id?: Prisma.IntFieldUpdateOperationsInput | number
-  name?: Prisma.StringFieldUpdateOperationsInput | string
-  level?: Prisma.IntFieldUpdateOperationsInput | number
-  ownerId?: Prisma.StringFieldUpdateOperationsInput | string
-  speciesId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  classId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  backgroundId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  status?: Prisma.EnumCharacterStatusFieldUpdateOperationsInput | $Enums.CharacterStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  userId?: Prisma.StringFieldUpdateOperationsInput | string
+  level?: Prisma.IntFieldUpdateOperationsInput | number
+  speciesKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  classKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  backgroundKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  abilityScores?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  abilityMethod?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  equipment?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  spells?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  notes?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  speciesId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  backgroundId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  classId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
 }
 
 export type CharacterListRelationFilter = {
@@ -427,95 +581,120 @@ export type CharacterOrderByRelationAggregateInput = {
 export type CharacterCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   name?: Prisma.SortOrder
-  level?: Prisma.SortOrder
-  ownerId?: Prisma.SortOrder
-  speciesId?: Prisma.SortOrder
-  classId?: Prisma.SortOrder
-  backgroundId?: Prisma.SortOrder
+  status?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  userId?: Prisma.SortOrder
+  level?: Prisma.SortOrder
+  speciesKey?: Prisma.SortOrder
+  classKey?: Prisma.SortOrder
+  backgroundKey?: Prisma.SortOrder
+  abilityScores?: Prisma.SortOrder
+  abilityMethod?: Prisma.SortOrder
+  equipment?: Prisma.SortOrder
+  spells?: Prisma.SortOrder
+  notes?: Prisma.SortOrder
+  speciesId?: Prisma.SortOrder
+  backgroundId?: Prisma.SortOrder
+  classId?: Prisma.SortOrder
 }
 
 export type CharacterAvgOrderByAggregateInput = {
-  id?: Prisma.SortOrder
   level?: Prisma.SortOrder
   speciesId?: Prisma.SortOrder
-  classId?: Prisma.SortOrder
   backgroundId?: Prisma.SortOrder
+  classId?: Prisma.SortOrder
 }
 
 export type CharacterMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   name?: Prisma.SortOrder
-  level?: Prisma.SortOrder
-  ownerId?: Prisma.SortOrder
-  speciesId?: Prisma.SortOrder
-  classId?: Prisma.SortOrder
-  backgroundId?: Prisma.SortOrder
+  status?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  userId?: Prisma.SortOrder
+  level?: Prisma.SortOrder
+  speciesKey?: Prisma.SortOrder
+  classKey?: Prisma.SortOrder
+  backgroundKey?: Prisma.SortOrder
+  abilityMethod?: Prisma.SortOrder
+  speciesId?: Prisma.SortOrder
+  backgroundId?: Prisma.SortOrder
+  classId?: Prisma.SortOrder
 }
 
 export type CharacterMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   name?: Prisma.SortOrder
-  level?: Prisma.SortOrder
-  ownerId?: Prisma.SortOrder
-  speciesId?: Prisma.SortOrder
-  classId?: Prisma.SortOrder
-  backgroundId?: Prisma.SortOrder
+  status?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  userId?: Prisma.SortOrder
+  level?: Prisma.SortOrder
+  speciesKey?: Prisma.SortOrder
+  classKey?: Prisma.SortOrder
+  backgroundKey?: Prisma.SortOrder
+  abilityMethod?: Prisma.SortOrder
+  speciesId?: Prisma.SortOrder
+  backgroundId?: Prisma.SortOrder
+  classId?: Prisma.SortOrder
 }
 
 export type CharacterSumOrderByAggregateInput = {
-  id?: Prisma.SortOrder
   level?: Prisma.SortOrder
   speciesId?: Prisma.SortOrder
-  classId?: Prisma.SortOrder
   backgroundId?: Prisma.SortOrder
+  classId?: Prisma.SortOrder
 }
 
-export type CharacterCreateNestedManyWithoutOwnerInput = {
-  create?: Prisma.XOR<Prisma.CharacterCreateWithoutOwnerInput, Prisma.CharacterUncheckedCreateWithoutOwnerInput> | Prisma.CharacterCreateWithoutOwnerInput[] | Prisma.CharacterUncheckedCreateWithoutOwnerInput[]
-  connectOrCreate?: Prisma.CharacterCreateOrConnectWithoutOwnerInput | Prisma.CharacterCreateOrConnectWithoutOwnerInput[]
-  createMany?: Prisma.CharacterCreateManyOwnerInputEnvelope
+export type CharacterCreateNestedManyWithoutUserInput = {
+  create?: Prisma.XOR<Prisma.CharacterCreateWithoutUserInput, Prisma.CharacterUncheckedCreateWithoutUserInput> | Prisma.CharacterCreateWithoutUserInput[] | Prisma.CharacterUncheckedCreateWithoutUserInput[]
+  connectOrCreate?: Prisma.CharacterCreateOrConnectWithoutUserInput | Prisma.CharacterCreateOrConnectWithoutUserInput[]
+  createMany?: Prisma.CharacterCreateManyUserInputEnvelope
   connect?: Prisma.CharacterWhereUniqueInput | Prisma.CharacterWhereUniqueInput[]
 }
 
-export type CharacterUncheckedCreateNestedManyWithoutOwnerInput = {
-  create?: Prisma.XOR<Prisma.CharacterCreateWithoutOwnerInput, Prisma.CharacterUncheckedCreateWithoutOwnerInput> | Prisma.CharacterCreateWithoutOwnerInput[] | Prisma.CharacterUncheckedCreateWithoutOwnerInput[]
-  connectOrCreate?: Prisma.CharacterCreateOrConnectWithoutOwnerInput | Prisma.CharacterCreateOrConnectWithoutOwnerInput[]
-  createMany?: Prisma.CharacterCreateManyOwnerInputEnvelope
+export type CharacterUncheckedCreateNestedManyWithoutUserInput = {
+  create?: Prisma.XOR<Prisma.CharacterCreateWithoutUserInput, Prisma.CharacterUncheckedCreateWithoutUserInput> | Prisma.CharacterCreateWithoutUserInput[] | Prisma.CharacterUncheckedCreateWithoutUserInput[]
+  connectOrCreate?: Prisma.CharacterCreateOrConnectWithoutUserInput | Prisma.CharacterCreateOrConnectWithoutUserInput[]
+  createMany?: Prisma.CharacterCreateManyUserInputEnvelope
   connect?: Prisma.CharacterWhereUniqueInput | Prisma.CharacterWhereUniqueInput[]
 }
 
-export type CharacterUpdateManyWithoutOwnerNestedInput = {
-  create?: Prisma.XOR<Prisma.CharacterCreateWithoutOwnerInput, Prisma.CharacterUncheckedCreateWithoutOwnerInput> | Prisma.CharacterCreateWithoutOwnerInput[] | Prisma.CharacterUncheckedCreateWithoutOwnerInput[]
-  connectOrCreate?: Prisma.CharacterCreateOrConnectWithoutOwnerInput | Prisma.CharacterCreateOrConnectWithoutOwnerInput[]
-  upsert?: Prisma.CharacterUpsertWithWhereUniqueWithoutOwnerInput | Prisma.CharacterUpsertWithWhereUniqueWithoutOwnerInput[]
-  createMany?: Prisma.CharacterCreateManyOwnerInputEnvelope
+export type CharacterUpdateManyWithoutUserNestedInput = {
+  create?: Prisma.XOR<Prisma.CharacterCreateWithoutUserInput, Prisma.CharacterUncheckedCreateWithoutUserInput> | Prisma.CharacterCreateWithoutUserInput[] | Prisma.CharacterUncheckedCreateWithoutUserInput[]
+  connectOrCreate?: Prisma.CharacterCreateOrConnectWithoutUserInput | Prisma.CharacterCreateOrConnectWithoutUserInput[]
+  upsert?: Prisma.CharacterUpsertWithWhereUniqueWithoutUserInput | Prisma.CharacterUpsertWithWhereUniqueWithoutUserInput[]
+  createMany?: Prisma.CharacterCreateManyUserInputEnvelope
   set?: Prisma.CharacterWhereUniqueInput | Prisma.CharacterWhereUniqueInput[]
   disconnect?: Prisma.CharacterWhereUniqueInput | Prisma.CharacterWhereUniqueInput[]
   delete?: Prisma.CharacterWhereUniqueInput | Prisma.CharacterWhereUniqueInput[]
   connect?: Prisma.CharacterWhereUniqueInput | Prisma.CharacterWhereUniqueInput[]
-  update?: Prisma.CharacterUpdateWithWhereUniqueWithoutOwnerInput | Prisma.CharacterUpdateWithWhereUniqueWithoutOwnerInput[]
-  updateMany?: Prisma.CharacterUpdateManyWithWhereWithoutOwnerInput | Prisma.CharacterUpdateManyWithWhereWithoutOwnerInput[]
+  update?: Prisma.CharacterUpdateWithWhereUniqueWithoutUserInput | Prisma.CharacterUpdateWithWhereUniqueWithoutUserInput[]
+  updateMany?: Prisma.CharacterUpdateManyWithWhereWithoutUserInput | Prisma.CharacterUpdateManyWithWhereWithoutUserInput[]
   deleteMany?: Prisma.CharacterScalarWhereInput | Prisma.CharacterScalarWhereInput[]
 }
 
-export type CharacterUncheckedUpdateManyWithoutOwnerNestedInput = {
-  create?: Prisma.XOR<Prisma.CharacterCreateWithoutOwnerInput, Prisma.CharacterUncheckedCreateWithoutOwnerInput> | Prisma.CharacterCreateWithoutOwnerInput[] | Prisma.CharacterUncheckedCreateWithoutOwnerInput[]
-  connectOrCreate?: Prisma.CharacterCreateOrConnectWithoutOwnerInput | Prisma.CharacterCreateOrConnectWithoutOwnerInput[]
-  upsert?: Prisma.CharacterUpsertWithWhereUniqueWithoutOwnerInput | Prisma.CharacterUpsertWithWhereUniqueWithoutOwnerInput[]
-  createMany?: Prisma.CharacterCreateManyOwnerInputEnvelope
+export type CharacterUncheckedUpdateManyWithoutUserNestedInput = {
+  create?: Prisma.XOR<Prisma.CharacterCreateWithoutUserInput, Prisma.CharacterUncheckedCreateWithoutUserInput> | Prisma.CharacterCreateWithoutUserInput[] | Prisma.CharacterUncheckedCreateWithoutUserInput[]
+  connectOrCreate?: Prisma.CharacterCreateOrConnectWithoutUserInput | Prisma.CharacterCreateOrConnectWithoutUserInput[]
+  upsert?: Prisma.CharacterUpsertWithWhereUniqueWithoutUserInput | Prisma.CharacterUpsertWithWhereUniqueWithoutUserInput[]
+  createMany?: Prisma.CharacterCreateManyUserInputEnvelope
   set?: Prisma.CharacterWhereUniqueInput | Prisma.CharacterWhereUniqueInput[]
   disconnect?: Prisma.CharacterWhereUniqueInput | Prisma.CharacterWhereUniqueInput[]
   delete?: Prisma.CharacterWhereUniqueInput | Prisma.CharacterWhereUniqueInput[]
   connect?: Prisma.CharacterWhereUniqueInput | Prisma.CharacterWhereUniqueInput[]
-  update?: Prisma.CharacterUpdateWithWhereUniqueWithoutOwnerInput | Prisma.CharacterUpdateWithWhereUniqueWithoutOwnerInput[]
-  updateMany?: Prisma.CharacterUpdateManyWithWhereWithoutOwnerInput | Prisma.CharacterUpdateManyWithWhereWithoutOwnerInput[]
+  update?: Prisma.CharacterUpdateWithWhereUniqueWithoutUserInput | Prisma.CharacterUpdateWithWhereUniqueWithoutUserInput[]
+  updateMany?: Prisma.CharacterUpdateManyWithWhereWithoutUserInput | Prisma.CharacterUpdateManyWithWhereWithoutUserInput[]
   deleteMany?: Prisma.CharacterScalarWhereInput | Prisma.CharacterScalarWhereInput[]
+}
+
+export type NullableStringFieldUpdateOperationsInput = {
+  set?: string | null
+}
+
+export type EnumCharacterStatusFieldUpdateOperationsInput = {
+  set?: $Enums.CharacterStatus
 }
 
 export type IntFieldUpdateOperationsInput = {
@@ -660,86 +839,133 @@ export type CharacterUncheckedUpdateManyWithoutClassNestedInput = {
   deleteMany?: Prisma.CharacterScalarWhereInput | Prisma.CharacterScalarWhereInput[]
 }
 
-export type CharacterCreateWithoutOwnerInput = {
-  name: string
-  level?: number
+export type CharacterCreateWithoutUserInput = {
+  id?: string
+  name?: string | null
+  status?: $Enums.CharacterStatus
   createdAt?: Date | string
   updatedAt?: Date | string
+  level?: number
+  speciesKey?: string | null
+  classKey?: string | null
+  backgroundKey?: string | null
+  abilityScores?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  abilityMethod?: string | null
+  equipment?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  spells?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  notes?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   species?: Prisma.SpeciesCreateNestedOneWithoutCharactersInput
-  class?: Prisma.ClassCreateNestedOneWithoutCharactersInput
   background?: Prisma.BackgroundCreateNestedOneWithoutCharactersInput
+  class?: Prisma.ClassCreateNestedOneWithoutCharactersInput
 }
 
-export type CharacterUncheckedCreateWithoutOwnerInput = {
-  id?: number
-  name: string
-  level?: number
-  speciesId?: number | null
-  classId?: number | null
-  backgroundId?: number | null
+export type CharacterUncheckedCreateWithoutUserInput = {
+  id?: string
+  name?: string | null
+  status?: $Enums.CharacterStatus
   createdAt?: Date | string
   updatedAt?: Date | string
+  level?: number
+  speciesKey?: string | null
+  classKey?: string | null
+  backgroundKey?: string | null
+  abilityScores?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  abilityMethod?: string | null
+  equipment?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  spells?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  notes?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  speciesId?: number | null
+  backgroundId?: number | null
+  classId?: number | null
 }
 
-export type CharacterCreateOrConnectWithoutOwnerInput = {
+export type CharacterCreateOrConnectWithoutUserInput = {
   where: Prisma.CharacterWhereUniqueInput
-  create: Prisma.XOR<Prisma.CharacterCreateWithoutOwnerInput, Prisma.CharacterUncheckedCreateWithoutOwnerInput>
+  create: Prisma.XOR<Prisma.CharacterCreateWithoutUserInput, Prisma.CharacterUncheckedCreateWithoutUserInput>
 }
 
-export type CharacterCreateManyOwnerInputEnvelope = {
-  data: Prisma.CharacterCreateManyOwnerInput | Prisma.CharacterCreateManyOwnerInput[]
+export type CharacterCreateManyUserInputEnvelope = {
+  data: Prisma.CharacterCreateManyUserInput | Prisma.CharacterCreateManyUserInput[]
 }
 
-export type CharacterUpsertWithWhereUniqueWithoutOwnerInput = {
+export type CharacterUpsertWithWhereUniqueWithoutUserInput = {
   where: Prisma.CharacterWhereUniqueInput
-  update: Prisma.XOR<Prisma.CharacterUpdateWithoutOwnerInput, Prisma.CharacterUncheckedUpdateWithoutOwnerInput>
-  create: Prisma.XOR<Prisma.CharacterCreateWithoutOwnerInput, Prisma.CharacterUncheckedCreateWithoutOwnerInput>
+  update: Prisma.XOR<Prisma.CharacterUpdateWithoutUserInput, Prisma.CharacterUncheckedUpdateWithoutUserInput>
+  create: Prisma.XOR<Prisma.CharacterCreateWithoutUserInput, Prisma.CharacterUncheckedCreateWithoutUserInput>
 }
 
-export type CharacterUpdateWithWhereUniqueWithoutOwnerInput = {
+export type CharacterUpdateWithWhereUniqueWithoutUserInput = {
   where: Prisma.CharacterWhereUniqueInput
-  data: Prisma.XOR<Prisma.CharacterUpdateWithoutOwnerInput, Prisma.CharacterUncheckedUpdateWithoutOwnerInput>
+  data: Prisma.XOR<Prisma.CharacterUpdateWithoutUserInput, Prisma.CharacterUncheckedUpdateWithoutUserInput>
 }
 
-export type CharacterUpdateManyWithWhereWithoutOwnerInput = {
+export type CharacterUpdateManyWithWhereWithoutUserInput = {
   where: Prisma.CharacterScalarWhereInput
-  data: Prisma.XOR<Prisma.CharacterUpdateManyMutationInput, Prisma.CharacterUncheckedUpdateManyWithoutOwnerInput>
+  data: Prisma.XOR<Prisma.CharacterUpdateManyMutationInput, Prisma.CharacterUncheckedUpdateManyWithoutUserInput>
 }
 
 export type CharacterScalarWhereInput = {
   AND?: Prisma.CharacterScalarWhereInput | Prisma.CharacterScalarWhereInput[]
   OR?: Prisma.CharacterScalarWhereInput[]
   NOT?: Prisma.CharacterScalarWhereInput | Prisma.CharacterScalarWhereInput[]
-  id?: Prisma.IntFilter<"Character"> | number
-  name?: Prisma.StringFilter<"Character"> | string
-  level?: Prisma.IntFilter<"Character"> | number
-  ownerId?: Prisma.StringFilter<"Character"> | string
-  speciesId?: Prisma.IntNullableFilter<"Character"> | number | null
-  classId?: Prisma.IntNullableFilter<"Character"> | number | null
-  backgroundId?: Prisma.IntNullableFilter<"Character"> | number | null
+  id?: Prisma.StringFilter<"Character"> | string
+  name?: Prisma.StringNullableFilter<"Character"> | string | null
+  status?: Prisma.EnumCharacterStatusFilter<"Character"> | $Enums.CharacterStatus
   createdAt?: Prisma.DateTimeFilter<"Character"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Character"> | Date | string
+  userId?: Prisma.StringFilter<"Character"> | string
+  level?: Prisma.IntFilter<"Character"> | number
+  speciesKey?: Prisma.StringNullableFilter<"Character"> | string | null
+  classKey?: Prisma.StringNullableFilter<"Character"> | string | null
+  backgroundKey?: Prisma.StringNullableFilter<"Character"> | string | null
+  abilityScores?: Prisma.JsonNullableFilter<"Character">
+  abilityMethod?: Prisma.StringNullableFilter<"Character"> | string | null
+  equipment?: Prisma.JsonNullableFilter<"Character">
+  spells?: Prisma.JsonNullableFilter<"Character">
+  notes?: Prisma.JsonNullableFilter<"Character">
+  speciesId?: Prisma.IntNullableFilter<"Character"> | number | null
+  backgroundId?: Prisma.IntNullableFilter<"Character"> | number | null
+  classId?: Prisma.IntNullableFilter<"Character"> | number | null
 }
 
 export type CharacterCreateWithoutSpeciesInput = {
-  name: string
-  level?: number
+  id?: string
+  name?: string | null
+  status?: $Enums.CharacterStatus
   createdAt?: Date | string
   updatedAt?: Date | string
-  owner: Prisma.UserCreateNestedOneWithoutCharactersInput
-  class?: Prisma.ClassCreateNestedOneWithoutCharactersInput
+  level?: number
+  speciesKey?: string | null
+  classKey?: string | null
+  backgroundKey?: string | null
+  abilityScores?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  abilityMethod?: string | null
+  equipment?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  spells?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  notes?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  user: Prisma.UserCreateNestedOneWithoutCharactersInput
   background?: Prisma.BackgroundCreateNestedOneWithoutCharactersInput
+  class?: Prisma.ClassCreateNestedOneWithoutCharactersInput
 }
 
 export type CharacterUncheckedCreateWithoutSpeciesInput = {
-  id?: number
-  name: string
-  level?: number
-  ownerId: string
-  classId?: number | null
-  backgroundId?: number | null
+  id?: string
+  name?: string | null
+  status?: $Enums.CharacterStatus
   createdAt?: Date | string
   updatedAt?: Date | string
+  userId: string
+  level?: number
+  speciesKey?: string | null
+  classKey?: string | null
+  backgroundKey?: string | null
+  abilityScores?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  abilityMethod?: string | null
+  equipment?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  spells?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  notes?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  backgroundId?: number | null
+  classId?: number | null
 }
 
 export type CharacterCreateOrConnectWithoutSpeciesInput = {
@@ -768,24 +994,43 @@ export type CharacterUpdateManyWithWhereWithoutSpeciesInput = {
 }
 
 export type CharacterCreateWithoutBackgroundInput = {
-  name: string
-  level?: number
+  id?: string
+  name?: string | null
+  status?: $Enums.CharacterStatus
   createdAt?: Date | string
   updatedAt?: Date | string
-  owner: Prisma.UserCreateNestedOneWithoutCharactersInput
+  level?: number
+  speciesKey?: string | null
+  classKey?: string | null
+  backgroundKey?: string | null
+  abilityScores?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  abilityMethod?: string | null
+  equipment?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  spells?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  notes?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  user: Prisma.UserCreateNestedOneWithoutCharactersInput
   species?: Prisma.SpeciesCreateNestedOneWithoutCharactersInput
   class?: Prisma.ClassCreateNestedOneWithoutCharactersInput
 }
 
 export type CharacterUncheckedCreateWithoutBackgroundInput = {
-  id?: number
-  name: string
-  level?: number
-  ownerId: string
-  speciesId?: number | null
-  classId?: number | null
+  id?: string
+  name?: string | null
+  status?: $Enums.CharacterStatus
   createdAt?: Date | string
   updatedAt?: Date | string
+  userId: string
+  level?: number
+  speciesKey?: string | null
+  classKey?: string | null
+  backgroundKey?: string | null
+  abilityScores?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  abilityMethod?: string | null
+  equipment?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  spells?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  notes?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  speciesId?: number | null
+  classId?: number | null
 }
 
 export type CharacterCreateOrConnectWithoutBackgroundInput = {
@@ -814,24 +1059,43 @@ export type CharacterUpdateManyWithWhereWithoutBackgroundInput = {
 }
 
 export type CharacterCreateWithoutClassInput = {
-  name: string
-  level?: number
+  id?: string
+  name?: string | null
+  status?: $Enums.CharacterStatus
   createdAt?: Date | string
   updatedAt?: Date | string
-  owner: Prisma.UserCreateNestedOneWithoutCharactersInput
+  level?: number
+  speciesKey?: string | null
+  classKey?: string | null
+  backgroundKey?: string | null
+  abilityScores?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  abilityMethod?: string | null
+  equipment?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  spells?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  notes?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  user: Prisma.UserCreateNestedOneWithoutCharactersInput
   species?: Prisma.SpeciesCreateNestedOneWithoutCharactersInput
   background?: Prisma.BackgroundCreateNestedOneWithoutCharactersInput
 }
 
 export type CharacterUncheckedCreateWithoutClassInput = {
-  id?: number
-  name: string
-  level?: number
-  ownerId: string
-  speciesId?: number | null
-  backgroundId?: number | null
+  id?: string
+  name?: string | null
+  status?: $Enums.CharacterStatus
   createdAt?: Date | string
   updatedAt?: Date | string
+  userId: string
+  level?: number
+  speciesKey?: string | null
+  classKey?: string | null
+  backgroundKey?: string | null
+  abilityScores?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  abilityMethod?: string | null
+  equipment?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  spells?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  notes?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  speciesId?: number | null
+  backgroundId?: number | null
 }
 
 export type CharacterCreateOrConnectWithoutClassInput = {
@@ -859,176 +1123,324 @@ export type CharacterUpdateManyWithWhereWithoutClassInput = {
   data: Prisma.XOR<Prisma.CharacterUpdateManyMutationInput, Prisma.CharacterUncheckedUpdateManyWithoutClassInput>
 }
 
-export type CharacterCreateManyOwnerInput = {
-  id?: number
-  name: string
-  level?: number
-  speciesId?: number | null
-  classId?: number | null
-  backgroundId?: number | null
+export type CharacterCreateManyUserInput = {
+  id?: string
+  name?: string | null
+  status?: $Enums.CharacterStatus
   createdAt?: Date | string
   updatedAt?: Date | string
+  level?: number
+  speciesKey?: string | null
+  classKey?: string | null
+  backgroundKey?: string | null
+  abilityScores?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  abilityMethod?: string | null
+  equipment?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  spells?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  notes?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  speciesId?: number | null
+  backgroundId?: number | null
+  classId?: number | null
 }
 
-export type CharacterUpdateWithoutOwnerInput = {
-  name?: Prisma.StringFieldUpdateOperationsInput | string
-  level?: Prisma.IntFieldUpdateOperationsInput | number
+export type CharacterUpdateWithoutUserInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  status?: Prisma.EnumCharacterStatusFieldUpdateOperationsInput | $Enums.CharacterStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  level?: Prisma.IntFieldUpdateOperationsInput | number
+  speciesKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  classKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  backgroundKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  abilityScores?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  abilityMethod?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  equipment?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  spells?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  notes?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   species?: Prisma.SpeciesUpdateOneWithoutCharactersNestedInput
-  class?: Prisma.ClassUpdateOneWithoutCharactersNestedInput
   background?: Prisma.BackgroundUpdateOneWithoutCharactersNestedInput
+  class?: Prisma.ClassUpdateOneWithoutCharactersNestedInput
 }
 
-export type CharacterUncheckedUpdateWithoutOwnerInput = {
-  id?: Prisma.IntFieldUpdateOperationsInput | number
-  name?: Prisma.StringFieldUpdateOperationsInput | string
-  level?: Prisma.IntFieldUpdateOperationsInput | number
-  speciesId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  classId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  backgroundId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+export type CharacterUncheckedUpdateWithoutUserInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  status?: Prisma.EnumCharacterStatusFieldUpdateOperationsInput | $Enums.CharacterStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  level?: Prisma.IntFieldUpdateOperationsInput | number
+  speciesKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  classKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  backgroundKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  abilityScores?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  abilityMethod?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  equipment?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  spells?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  notes?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  speciesId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  backgroundId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  classId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
 }
 
-export type CharacterUncheckedUpdateManyWithoutOwnerInput = {
-  id?: Prisma.IntFieldUpdateOperationsInput | number
-  name?: Prisma.StringFieldUpdateOperationsInput | string
-  level?: Prisma.IntFieldUpdateOperationsInput | number
-  speciesId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  classId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  backgroundId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+export type CharacterUncheckedUpdateManyWithoutUserInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  status?: Prisma.EnumCharacterStatusFieldUpdateOperationsInput | $Enums.CharacterStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  level?: Prisma.IntFieldUpdateOperationsInput | number
+  speciesKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  classKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  backgroundKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  abilityScores?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  abilityMethod?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  equipment?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  spells?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  notes?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  speciesId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  backgroundId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  classId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
 }
 
 export type CharacterCreateManySpeciesInput = {
-  id?: number
-  name: string
-  level?: number
-  ownerId: string
-  classId?: number | null
-  backgroundId?: number | null
+  id?: string
+  name?: string | null
+  status?: $Enums.CharacterStatus
   createdAt?: Date | string
   updatedAt?: Date | string
+  userId: string
+  level?: number
+  speciesKey?: string | null
+  classKey?: string | null
+  backgroundKey?: string | null
+  abilityScores?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  abilityMethod?: string | null
+  equipment?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  spells?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  notes?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  backgroundId?: number | null
+  classId?: number | null
 }
 
 export type CharacterUpdateWithoutSpeciesInput = {
-  name?: Prisma.StringFieldUpdateOperationsInput | string
-  level?: Prisma.IntFieldUpdateOperationsInput | number
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  status?: Prisma.EnumCharacterStatusFieldUpdateOperationsInput | $Enums.CharacterStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  owner?: Prisma.UserUpdateOneRequiredWithoutCharactersNestedInput
-  class?: Prisma.ClassUpdateOneWithoutCharactersNestedInput
+  level?: Prisma.IntFieldUpdateOperationsInput | number
+  speciesKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  classKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  backgroundKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  abilityScores?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  abilityMethod?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  equipment?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  spells?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  notes?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  user?: Prisma.UserUpdateOneRequiredWithoutCharactersNestedInput
   background?: Prisma.BackgroundUpdateOneWithoutCharactersNestedInput
+  class?: Prisma.ClassUpdateOneWithoutCharactersNestedInput
 }
 
 export type CharacterUncheckedUpdateWithoutSpeciesInput = {
-  id?: Prisma.IntFieldUpdateOperationsInput | number
-  name?: Prisma.StringFieldUpdateOperationsInput | string
-  level?: Prisma.IntFieldUpdateOperationsInput | number
-  ownerId?: Prisma.StringFieldUpdateOperationsInput | string
-  classId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  backgroundId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  status?: Prisma.EnumCharacterStatusFieldUpdateOperationsInput | $Enums.CharacterStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  userId?: Prisma.StringFieldUpdateOperationsInput | string
+  level?: Prisma.IntFieldUpdateOperationsInput | number
+  speciesKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  classKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  backgroundKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  abilityScores?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  abilityMethod?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  equipment?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  spells?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  notes?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  backgroundId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  classId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
 }
 
 export type CharacterUncheckedUpdateManyWithoutSpeciesInput = {
-  id?: Prisma.IntFieldUpdateOperationsInput | number
-  name?: Prisma.StringFieldUpdateOperationsInput | string
-  level?: Prisma.IntFieldUpdateOperationsInput | number
-  ownerId?: Prisma.StringFieldUpdateOperationsInput | string
-  classId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  backgroundId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  status?: Prisma.EnumCharacterStatusFieldUpdateOperationsInput | $Enums.CharacterStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  userId?: Prisma.StringFieldUpdateOperationsInput | string
+  level?: Prisma.IntFieldUpdateOperationsInput | number
+  speciesKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  classKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  backgroundKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  abilityScores?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  abilityMethod?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  equipment?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  spells?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  notes?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  backgroundId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  classId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
 }
 
 export type CharacterCreateManyBackgroundInput = {
-  id?: number
-  name: string
-  level?: number
-  ownerId: string
-  speciesId?: number | null
-  classId?: number | null
+  id?: string
+  name?: string | null
+  status?: $Enums.CharacterStatus
   createdAt?: Date | string
   updatedAt?: Date | string
+  userId: string
+  level?: number
+  speciesKey?: string | null
+  classKey?: string | null
+  backgroundKey?: string | null
+  abilityScores?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  abilityMethod?: string | null
+  equipment?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  spells?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  notes?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  speciesId?: number | null
+  classId?: number | null
 }
 
 export type CharacterUpdateWithoutBackgroundInput = {
-  name?: Prisma.StringFieldUpdateOperationsInput | string
-  level?: Prisma.IntFieldUpdateOperationsInput | number
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  status?: Prisma.EnumCharacterStatusFieldUpdateOperationsInput | $Enums.CharacterStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  owner?: Prisma.UserUpdateOneRequiredWithoutCharactersNestedInput
+  level?: Prisma.IntFieldUpdateOperationsInput | number
+  speciesKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  classKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  backgroundKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  abilityScores?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  abilityMethod?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  equipment?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  spells?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  notes?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  user?: Prisma.UserUpdateOneRequiredWithoutCharactersNestedInput
   species?: Prisma.SpeciesUpdateOneWithoutCharactersNestedInput
   class?: Prisma.ClassUpdateOneWithoutCharactersNestedInput
 }
 
 export type CharacterUncheckedUpdateWithoutBackgroundInput = {
-  id?: Prisma.IntFieldUpdateOperationsInput | number
-  name?: Prisma.StringFieldUpdateOperationsInput | string
-  level?: Prisma.IntFieldUpdateOperationsInput | number
-  ownerId?: Prisma.StringFieldUpdateOperationsInput | string
-  speciesId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  classId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  status?: Prisma.EnumCharacterStatusFieldUpdateOperationsInput | $Enums.CharacterStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  userId?: Prisma.StringFieldUpdateOperationsInput | string
+  level?: Prisma.IntFieldUpdateOperationsInput | number
+  speciesKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  classKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  backgroundKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  abilityScores?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  abilityMethod?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  equipment?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  spells?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  notes?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  speciesId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  classId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
 }
 
 export type CharacterUncheckedUpdateManyWithoutBackgroundInput = {
-  id?: Prisma.IntFieldUpdateOperationsInput | number
-  name?: Prisma.StringFieldUpdateOperationsInput | string
-  level?: Prisma.IntFieldUpdateOperationsInput | number
-  ownerId?: Prisma.StringFieldUpdateOperationsInput | string
-  speciesId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  classId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  status?: Prisma.EnumCharacterStatusFieldUpdateOperationsInput | $Enums.CharacterStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  userId?: Prisma.StringFieldUpdateOperationsInput | string
+  level?: Prisma.IntFieldUpdateOperationsInput | number
+  speciesKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  classKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  backgroundKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  abilityScores?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  abilityMethod?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  equipment?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  spells?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  notes?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  speciesId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  classId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
 }
 
 export type CharacterCreateManyClassInput = {
-  id?: number
-  name: string
-  level?: number
-  ownerId: string
-  speciesId?: number | null
-  backgroundId?: number | null
+  id?: string
+  name?: string | null
+  status?: $Enums.CharacterStatus
   createdAt?: Date | string
   updatedAt?: Date | string
+  userId: string
+  level?: number
+  speciesKey?: string | null
+  classKey?: string | null
+  backgroundKey?: string | null
+  abilityScores?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  abilityMethod?: string | null
+  equipment?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  spells?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  notes?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  speciesId?: number | null
+  backgroundId?: number | null
 }
 
 export type CharacterUpdateWithoutClassInput = {
-  name?: Prisma.StringFieldUpdateOperationsInput | string
-  level?: Prisma.IntFieldUpdateOperationsInput | number
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  status?: Prisma.EnumCharacterStatusFieldUpdateOperationsInput | $Enums.CharacterStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  owner?: Prisma.UserUpdateOneRequiredWithoutCharactersNestedInput
+  level?: Prisma.IntFieldUpdateOperationsInput | number
+  speciesKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  classKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  backgroundKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  abilityScores?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  abilityMethod?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  equipment?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  spells?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  notes?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  user?: Prisma.UserUpdateOneRequiredWithoutCharactersNestedInput
   species?: Prisma.SpeciesUpdateOneWithoutCharactersNestedInput
   background?: Prisma.BackgroundUpdateOneWithoutCharactersNestedInput
 }
 
 export type CharacterUncheckedUpdateWithoutClassInput = {
-  id?: Prisma.IntFieldUpdateOperationsInput | number
-  name?: Prisma.StringFieldUpdateOperationsInput | string
-  level?: Prisma.IntFieldUpdateOperationsInput | number
-  ownerId?: Prisma.StringFieldUpdateOperationsInput | string
-  speciesId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  backgroundId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  status?: Prisma.EnumCharacterStatusFieldUpdateOperationsInput | $Enums.CharacterStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  userId?: Prisma.StringFieldUpdateOperationsInput | string
+  level?: Prisma.IntFieldUpdateOperationsInput | number
+  speciesKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  classKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  backgroundKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  abilityScores?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  abilityMethod?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  equipment?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  spells?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  notes?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  speciesId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  backgroundId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
 }
 
 export type CharacterUncheckedUpdateManyWithoutClassInput = {
-  id?: Prisma.IntFieldUpdateOperationsInput | number
-  name?: Prisma.StringFieldUpdateOperationsInput | string
-  level?: Prisma.IntFieldUpdateOperationsInput | number
-  ownerId?: Prisma.StringFieldUpdateOperationsInput | string
-  speciesId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  backgroundId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  status?: Prisma.EnumCharacterStatusFieldUpdateOperationsInput | $Enums.CharacterStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  userId?: Prisma.StringFieldUpdateOperationsInput | string
+  level?: Prisma.IntFieldUpdateOperationsInput | number
+  speciesKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  classKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  backgroundKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  abilityScores?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  abilityMethod?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  equipment?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  spells?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  notes?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  speciesId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  backgroundId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
 }
 
 
@@ -1036,101 +1448,146 @@ export type CharacterUncheckedUpdateManyWithoutClassInput = {
 export type CharacterSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   name?: boolean
-  level?: boolean
-  ownerId?: boolean
-  speciesId?: boolean
-  classId?: boolean
-  backgroundId?: boolean
+  status?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  owner?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  userId?: boolean
+  level?: boolean
+  speciesKey?: boolean
+  classKey?: boolean
+  backgroundKey?: boolean
+  abilityScores?: boolean
+  abilityMethod?: boolean
+  equipment?: boolean
+  spells?: boolean
+  notes?: boolean
+  speciesId?: boolean
+  backgroundId?: boolean
+  classId?: boolean
+  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   species?: boolean | Prisma.Character$speciesArgs<ExtArgs>
-  class?: boolean | Prisma.Character$classArgs<ExtArgs>
   background?: boolean | Prisma.Character$backgroundArgs<ExtArgs>
+  class?: boolean | Prisma.Character$classArgs<ExtArgs>
 }, ExtArgs["result"]["character"]>
 
 export type CharacterSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   name?: boolean
-  level?: boolean
-  ownerId?: boolean
-  speciesId?: boolean
-  classId?: boolean
-  backgroundId?: boolean
+  status?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  owner?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  userId?: boolean
+  level?: boolean
+  speciesKey?: boolean
+  classKey?: boolean
+  backgroundKey?: boolean
+  abilityScores?: boolean
+  abilityMethod?: boolean
+  equipment?: boolean
+  spells?: boolean
+  notes?: boolean
+  speciesId?: boolean
+  backgroundId?: boolean
+  classId?: boolean
+  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   species?: boolean | Prisma.Character$speciesArgs<ExtArgs>
-  class?: boolean | Prisma.Character$classArgs<ExtArgs>
   background?: boolean | Prisma.Character$backgroundArgs<ExtArgs>
+  class?: boolean | Prisma.Character$classArgs<ExtArgs>
 }, ExtArgs["result"]["character"]>
 
 export type CharacterSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   name?: boolean
-  level?: boolean
-  ownerId?: boolean
-  speciesId?: boolean
-  classId?: boolean
-  backgroundId?: boolean
+  status?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  owner?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  userId?: boolean
+  level?: boolean
+  speciesKey?: boolean
+  classKey?: boolean
+  backgroundKey?: boolean
+  abilityScores?: boolean
+  abilityMethod?: boolean
+  equipment?: boolean
+  spells?: boolean
+  notes?: boolean
+  speciesId?: boolean
+  backgroundId?: boolean
+  classId?: boolean
+  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   species?: boolean | Prisma.Character$speciesArgs<ExtArgs>
-  class?: boolean | Prisma.Character$classArgs<ExtArgs>
   background?: boolean | Prisma.Character$backgroundArgs<ExtArgs>
+  class?: boolean | Prisma.Character$classArgs<ExtArgs>
 }, ExtArgs["result"]["character"]>
 
 export type CharacterSelectScalar = {
   id?: boolean
   name?: boolean
-  level?: boolean
-  ownerId?: boolean
-  speciesId?: boolean
-  classId?: boolean
-  backgroundId?: boolean
+  status?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  userId?: boolean
+  level?: boolean
+  speciesKey?: boolean
+  classKey?: boolean
+  backgroundKey?: boolean
+  abilityScores?: boolean
+  abilityMethod?: boolean
+  equipment?: boolean
+  spells?: boolean
+  notes?: boolean
+  speciesId?: boolean
+  backgroundId?: boolean
+  classId?: boolean
 }
 
-export type CharacterOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "level" | "ownerId" | "speciesId" | "classId" | "backgroundId" | "createdAt" | "updatedAt", ExtArgs["result"]["character"]>
+export type CharacterOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "status" | "createdAt" | "updatedAt" | "userId" | "level" | "speciesKey" | "classKey" | "backgroundKey" | "abilityScores" | "abilityMethod" | "equipment" | "spells" | "notes" | "speciesId" | "backgroundId" | "classId", ExtArgs["result"]["character"]>
 export type CharacterInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  owner?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   species?: boolean | Prisma.Character$speciesArgs<ExtArgs>
-  class?: boolean | Prisma.Character$classArgs<ExtArgs>
   background?: boolean | Prisma.Character$backgroundArgs<ExtArgs>
+  class?: boolean | Prisma.Character$classArgs<ExtArgs>
 }
 export type CharacterIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  owner?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   species?: boolean | Prisma.Character$speciesArgs<ExtArgs>
-  class?: boolean | Prisma.Character$classArgs<ExtArgs>
   background?: boolean | Prisma.Character$backgroundArgs<ExtArgs>
+  class?: boolean | Prisma.Character$classArgs<ExtArgs>
 }
 export type CharacterIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  owner?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   species?: boolean | Prisma.Character$speciesArgs<ExtArgs>
-  class?: boolean | Prisma.Character$classArgs<ExtArgs>
   background?: boolean | Prisma.Character$backgroundArgs<ExtArgs>
+  class?: boolean | Prisma.Character$classArgs<ExtArgs>
 }
 
 export type $CharacterPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Character"
   objects: {
-    owner: Prisma.$UserPayload<ExtArgs>
+    user: Prisma.$UserPayload<ExtArgs>
     species: Prisma.$SpeciesPayload<ExtArgs> | null
-    class: Prisma.$ClassPayload<ExtArgs> | null
     background: Prisma.$BackgroundPayload<ExtArgs> | null
+    class: Prisma.$ClassPayload<ExtArgs> | null
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
-    id: number
-    name: string
-    level: number
-    ownerId: string
-    speciesId: number | null
-    classId: number | null
-    backgroundId: number | null
+    id: string
+    name: string | null
+    status: $Enums.CharacterStatus
     createdAt: Date
     updatedAt: Date
+    userId: string
+    level: number
+    speciesKey: string | null
+    classKey: string | null
+    backgroundKey: string | null
+    abilityScores: runtime.JsonValue | null
+    abilityMethod: string | null
+    equipment: runtime.JsonValue | null
+    spells: runtime.JsonValue | null
+    notes: runtime.JsonValue | null
+    speciesId: number | null
+    backgroundId: number | null
+    classId: number | null
   }, ExtArgs["result"]["character"]>
   composites: {}
 }
@@ -1525,10 +1982,10 @@ readonly fields: CharacterFieldRefs;
  */
 export interface Prisma__CharacterClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  owner<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  user<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   species<T extends Prisma.Character$speciesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Character$speciesArgs<ExtArgs>>): Prisma.Prisma__SpeciesClient<runtime.Types.Result.GetResult<Prisma.$SpeciesPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-  class<T extends Prisma.Character$classArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Character$classArgs<ExtArgs>>): Prisma.Prisma__ClassClient<runtime.Types.Result.GetResult<Prisma.$ClassPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   background<T extends Prisma.Character$backgroundArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Character$backgroundArgs<ExtArgs>>): Prisma.Prisma__BackgroundClient<runtime.Types.Result.GetResult<Prisma.$BackgroundPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  class<T extends Prisma.Character$classArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Character$classArgs<ExtArgs>>): Prisma.Prisma__ClassClient<runtime.Types.Result.GetResult<Prisma.$ClassPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1558,15 +2015,24 @@ export interface Prisma__CharacterClient<T, Null = never, ExtArgs extends runtim
  * Fields of the Character model
  */
 export interface CharacterFieldRefs {
-  readonly id: Prisma.FieldRef<"Character", 'Int'>
+  readonly id: Prisma.FieldRef<"Character", 'String'>
   readonly name: Prisma.FieldRef<"Character", 'String'>
-  readonly level: Prisma.FieldRef<"Character", 'Int'>
-  readonly ownerId: Prisma.FieldRef<"Character", 'String'>
-  readonly speciesId: Prisma.FieldRef<"Character", 'Int'>
-  readonly classId: Prisma.FieldRef<"Character", 'Int'>
-  readonly backgroundId: Prisma.FieldRef<"Character", 'Int'>
+  readonly status: Prisma.FieldRef<"Character", 'CharacterStatus'>
   readonly createdAt: Prisma.FieldRef<"Character", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"Character", 'DateTime'>
+  readonly userId: Prisma.FieldRef<"Character", 'String'>
+  readonly level: Prisma.FieldRef<"Character", 'Int'>
+  readonly speciesKey: Prisma.FieldRef<"Character", 'String'>
+  readonly classKey: Prisma.FieldRef<"Character", 'String'>
+  readonly backgroundKey: Prisma.FieldRef<"Character", 'String'>
+  readonly abilityScores: Prisma.FieldRef<"Character", 'Json'>
+  readonly abilityMethod: Prisma.FieldRef<"Character", 'String'>
+  readonly equipment: Prisma.FieldRef<"Character", 'Json'>
+  readonly spells: Prisma.FieldRef<"Character", 'Json'>
+  readonly notes: Prisma.FieldRef<"Character", 'Json'>
+  readonly speciesId: Prisma.FieldRef<"Character", 'Int'>
+  readonly backgroundId: Prisma.FieldRef<"Character", 'Int'>
+  readonly classId: Prisma.FieldRef<"Character", 'Int'>
 }
     
 
@@ -1980,25 +2446,6 @@ export type Character$speciesArgs<ExtArgs extends runtime.Types.Extensions.Inter
 }
 
 /**
- * Character.class
- */
-export type Character$classArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the Class
-   */
-  select?: Prisma.ClassSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the Class
-   */
-  omit?: Prisma.ClassOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.ClassInclude<ExtArgs> | null
-  where?: Prisma.ClassWhereInput
-}
-
-/**
  * Character.background
  */
 export type Character$backgroundArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -2015,6 +2462,25 @@ export type Character$backgroundArgs<ExtArgs extends runtime.Types.Extensions.In
    */
   include?: Prisma.BackgroundInclude<ExtArgs> | null
   where?: Prisma.BackgroundWhereInput
+}
+
+/**
+ * Character.class
+ */
+export type Character$classArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Class
+   */
+  select?: Prisma.ClassSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Class
+   */
+  omit?: Prisma.ClassOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ClassInclude<ExtArgs> | null
+  where?: Prisma.ClassWhereInput
 }
 
 /**
