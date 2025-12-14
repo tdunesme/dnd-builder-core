@@ -31,6 +31,7 @@ export class BackgroundsService {
       id: entity.id,
       key: entity.key,
       name: entity.name,
+      description: entity.description,
       abilityScores: entity.abilityScores,
       originFeatKey: entity.originFeatKey,
       skillProficiencies: entity.skillProficiencies,
