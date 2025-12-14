@@ -1,4 +1,4 @@
-import { Controller, Get, Param, ParseIntPipe } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
 import { SpeciesService } from './species.service';
 
 @Controller('species')
@@ -10,8 +10,8 @@ export class SpeciesController {
     return this.speciesService.findAll();
   }
 
-  @Get(':id')
-  async findOne(@Param('id', ParseIntPipe) id: number) {
-    return this.speciesService.findOne(id);
+  @Get(':key')
+  async findOneByKey(@Param('key') key: string) {
+    return this.speciesService.findOneByKey(key);
   }
 }

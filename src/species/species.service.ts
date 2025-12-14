@@ -14,9 +14,9 @@ export class SpeciesService {
     return species.map((s) => this.toDto(s));
   }
 
-  async findOne(id: number): Promise<SpeciesDto> {
+  async findOneByKey(key: string): Promise<SpeciesDto> {
     const species = await this.prisma.species.findUnique({
-      where: { id },
+      where: { key },
     });
 
     if (!species) {

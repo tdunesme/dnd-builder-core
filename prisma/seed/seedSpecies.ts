@@ -546,6 +546,7 @@ export async function seedSpecies(prisma: PrismaClient) {
       where: { key: data.key },
       update: {
         name: data.name,
+        description: data.description,
         creatureType: data.creatureType,
         size: data.size,
         speed: data.speed,
@@ -555,6 +556,7 @@ export async function seedSpecies(prisma: PrismaClient) {
       create: {
         key: data.key,
         name: data.name,
+        description: data.description,
         creatureType: data.creatureType,
         size: data.size,
         speed: data.speed,
