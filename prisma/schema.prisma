@@ -70,9 +70,10 @@ model Species {
 }
 
 model Background {
-  id   Int    @id @default(autoincrement())
-  key  String @unique
-  name String
+  id          Int     @id @default(autoincrement())
+  key         String  @unique
+  name        String
+  description String?
 
   abilityScores Json
 

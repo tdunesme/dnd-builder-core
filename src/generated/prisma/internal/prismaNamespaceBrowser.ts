@@ -122,6 +122,7 @@ export const BackgroundScalarFieldEnum = {
   id: 'id',
   key: 'key',
   name: 'name',
+  description: 'description',
   abilityScores: 'abilityScores',
   originFeatKey: 'originFeatKey',
   skillProficiencies: 'skillProficiencies',

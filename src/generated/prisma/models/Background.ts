@@ -38,6 +38,7 @@ export type BackgroundMinAggregateOutputType = {
   id: number | null
   key: string | null
   name: string | null
+  description: string | null
   originFeatKey: string | null
   createdAt: Date | null
   updatedAt: Date | null
@@ -47,6 +48,7 @@ export type BackgroundMaxAggregateOutputType = {
   id: number | null
   key: string | null
   name: string | null
+  description: string | null
   originFeatKey: string | null
   createdAt: Date | null
   updatedAt: Date | null
@@ -56,6 +58,7 @@ export type BackgroundCountAggregateOutputType = {
   id: number
   key: number
   name: number
+  description: number
   abilityScores: number
   originFeatKey: number
   skillProficiencies: number
@@ -79,6 +82,7 @@ export type BackgroundMinAggregateInputType = {
   id?: true
   key?: true
   name?: true
+  description?: true
   originFeatKey?: true
   createdAt?: true
   updatedAt?: true
@@ -88,6 +92,7 @@ export type BackgroundMaxAggregateInputType = {
   id?: true
   key?: true
   name?: true
+  description?: true
   originFeatKey?: true
   createdAt?: true
   updatedAt?: true
@@ -97,6 +102,7 @@ export type BackgroundCountAggregateInputType = {
   id?: true
   key?: true
   name?: true
+  description?: true
   abilityScores?: true
   originFeatKey?: true
   skillProficiencies?: true
@@ -197,6 +203,7 @@ export type BackgroundGroupByOutputType = {
   id: number
   key: string
   name: string
+  description: string | null
   abilityScores: runtime.JsonValue
   originFeatKey: string
   skillProficiencies: runtime.JsonValue
@@ -233,6 +240,7 @@ export type BackgroundWhereInput = {
   id?: Prisma.IntFilter<"Background"> | number
   key?: Prisma.StringFilter<"Background"> | string
   name?: Prisma.StringFilter<"Background"> | string
+  description?: Prisma.StringNullableFilter<"Background"> | string | null
   abilityScores?: Prisma.JsonFilter<"Background">
   originFeatKey?: Prisma.StringFilter<"Background"> | string
   skillProficiencies?: Prisma.JsonFilter<"Background">
@@ -247,6 +255,7 @@ export type BackgroundOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   key?: Prisma.SortOrder
   name?: Prisma.SortOrder
+  description?: Prisma.SortOrderInput | Prisma.SortOrder
   abilityScores?: Prisma.SortOrder
   originFeatKey?: Prisma.SortOrder
   skillProficiencies?: Prisma.SortOrder
@@ -264,6 +273,7 @@ export type BackgroundWhereUniqueInput = Prisma.AtLeast<{
   OR?: Prisma.BackgroundWhereInput[]
   NOT?: Prisma.BackgroundWhereInput | Prisma.BackgroundWhereInput[]
   name?: Prisma.StringFilter<"Background"> | string
+  description?: Prisma.StringNullableFilter<"Background"> | string | null
   abilityScores?: Prisma.JsonFilter<"Background">
   originFeatKey?: Prisma.StringFilter<"Background"> | string
   skillProficiencies?: Prisma.JsonFilter<"Background">
@@ -278,6 +288,7 @@ export type BackgroundOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   key?: Prisma.SortOrder
   name?: Prisma.SortOrder
+  description?: Prisma.SortOrderInput | Prisma.SortOrder
   abilityScores?: Prisma.SortOrder
   originFeatKey?: Prisma.SortOrder
   skillProficiencies?: Prisma.SortOrder
@@ -299,6 +310,7 @@ export type BackgroundScalarWhereWithAggregatesInput = {
   id?: Prisma.IntWithAggregatesFilter<"Background"> | number
   key?: Prisma.StringWithAggregatesFilter<"Background"> | string
   name?: Prisma.StringWithAggregatesFilter<"Background"> | string
+  description?: Prisma.StringNullableWithAggregatesFilter<"Background"> | string | null
   abilityScores?: Prisma.JsonWithAggregatesFilter<"Background">
   originFeatKey?: Prisma.StringWithAggregatesFilter<"Background"> | string
   skillProficiencies?: Prisma.JsonWithAggregatesFilter<"Background">
@@ -311,6 +323,7 @@ export type BackgroundScalarWhereWithAggregatesInput = {
 export type BackgroundCreateInput = {
   key: string
   name: string
+  description?: string | null
   abilityScores: Prisma.JsonNullValueInput | runtime.InputJsonValue
   originFeatKey: string
   skillProficiencies: Prisma.JsonNullValueInput | runtime.InputJsonValue
@@ -325,6 +338,7 @@ export type BackgroundUncheckedCreateInput = {
   id?: number
   key: string
   name: string
+  description?: string | null
   abilityScores: Prisma.JsonNullValueInput | runtime.InputJsonValue
   originFeatKey: string
   skillProficiencies: Prisma.JsonNullValueInput | runtime.InputJsonValue
@@ -338,6 +352,7 @@ export type BackgroundUncheckedCreateInput = {
 export type BackgroundUpdateInput = {
   key?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   abilityScores?: Prisma.JsonNullValueInput | runtime.InputJsonValue
   originFeatKey?: Prisma.StringFieldUpdateOperationsInput | string
   skillProficiencies?: Prisma.JsonNullValueInput | runtime.InputJsonValue
@@ -352,6 +367,7 @@ export type BackgroundUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   key?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   abilityScores?: Prisma.JsonNullValueInput | runtime.InputJsonValue
   originFeatKey?: Prisma.StringFieldUpdateOperationsInput | string
   skillProficiencies?: Prisma.JsonNullValueInput | runtime.InputJsonValue
@@ -366,6 +382,7 @@ export type BackgroundCreateManyInput = {
   id?: number
   key: string
   name: string
+  description?: string | null
   abilityScores: Prisma.JsonNullValueInput | runtime.InputJsonValue
   originFeatKey: string
   skillProficiencies: Prisma.JsonNullValueInput | runtime.InputJsonValue
@@ -378,6 +395,7 @@ export type BackgroundCreateManyInput = {
 export type BackgroundUpdateManyMutationInput = {
   key?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   abilityScores?: Prisma.JsonNullValueInput | runtime.InputJsonValue
   originFeatKey?: Prisma.StringFieldUpdateOperationsInput | string
   skillProficiencies?: Prisma.JsonNullValueInput | runtime.InputJsonValue
@@ -391,6 +409,7 @@ export type BackgroundUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   key?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   abilityScores?: Prisma.JsonNullValueInput | runtime.InputJsonValue
   originFeatKey?: Prisma.StringFieldUpdateOperationsInput | string
   skillProficiencies?: Prisma.JsonNullValueInput | runtime.InputJsonValue
@@ -409,6 +428,7 @@ export type BackgroundCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   key?: Prisma.SortOrder
   name?: Prisma.SortOrder
+  description?: Prisma.SortOrder
   abilityScores?: Prisma.SortOrder
   originFeatKey?: Prisma.SortOrder
   skillProficiencies?: Prisma.SortOrder
@@ -426,6 +446,7 @@ export type BackgroundMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   key?: Prisma.SortOrder
   name?: Prisma.SortOrder
+  description?: Prisma.SortOrder
   originFeatKey?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
@@ -435,6 +456,7 @@ export type BackgroundMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   key?: Prisma.SortOrder
   name?: Prisma.SortOrder
+  description?: Prisma.SortOrder
   originFeatKey?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
@@ -463,6 +485,7 @@ export type BackgroundUpdateOneWithoutCharactersNestedInput = {
 export type BackgroundCreateWithoutCharactersInput = {
   key: string
   name: string
+  description?: string | null
   abilityScores: Prisma.JsonNullValueInput | runtime.InputJsonValue
   originFeatKey: string
   skillProficiencies: Prisma.JsonNullValueInput | runtime.InputJsonValue
@@ -476,6 +499,7 @@ export type BackgroundUncheckedCreateWithoutCharactersInput = {
   id?: number
   key: string
   name: string
+  description?: string | null
   abilityScores: Prisma.JsonNullValueInput | runtime.InputJsonValue
   originFeatKey: string
   skillProficiencies: Prisma.JsonNullValueInput | runtime.InputJsonValue
@@ -504,6 +528,7 @@ export type BackgroundUpdateToOneWithWhereWithoutCharactersInput = {
 export type BackgroundUpdateWithoutCharactersInput = {
   key?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   abilityScores?: Prisma.JsonNullValueInput | runtime.InputJsonValue
   originFeatKey?: Prisma.StringFieldUpdateOperationsInput | string
   skillProficiencies?: Prisma.JsonNullValueInput | runtime.InputJsonValue
@@ -517,6 +542,7 @@ export type BackgroundUncheckedUpdateWithoutCharactersInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   key?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   abilityScores?: Prisma.JsonNullValueInput | runtime.InputJsonValue
   originFeatKey?: Prisma.StringFieldUpdateOperationsInput | string
   skillProficiencies?: Prisma.JsonNullValueInput | runtime.InputJsonValue
@@ -561,6 +587,7 @@ export type BackgroundSelect<ExtArgs extends runtime.Types.Extensions.InternalAr
   id?: boolean
   key?: boolean
   name?: boolean
+  description?: boolean
   abilityScores?: boolean
   originFeatKey?: boolean
   skillProficiencies?: boolean
@@ -576,6 +603,7 @@ export type BackgroundSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Ex
   id?: boolean
   key?: boolean
   name?: boolean
+  description?: boolean
   abilityScores?: boolean
   originFeatKey?: boolean
   skillProficiencies?: boolean
@@ -589,6 +617,7 @@ export type BackgroundSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Ex
   id?: boolean
   key?: boolean
   name?: boolean
+  description?: boolean
   abilityScores?: boolean
   originFeatKey?: boolean
   skillProficiencies?: boolean
@@ -602,6 +631,7 @@ export type BackgroundSelectScalar = {
   id?: boolean
   key?: boolean
   name?: boolean
+  description?: boolean
   abilityScores?: boolean
   originFeatKey?: boolean
   skillProficiencies?: boolean
@@ -611,7 +641,7 @@ export type BackgroundSelectScalar = {
   updatedAt?: boolean
 }
 
-export type BackgroundOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "key" | "name" | "abilityScores" | "originFeatKey" | "skillProficiencies" | "toolProficiency" | "equipmentOptions" | "createdAt" | "updatedAt", ExtArgs["result"]["background"]>
+export type BackgroundOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "key" | "name" | "description" | "abilityScores" | "originFeatKey" | "skillProficiencies" | "toolProficiency" | "equipmentOptions" | "createdAt" | "updatedAt", ExtArgs["result"]["background"]>
 export type BackgroundInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   characters?: boolean | Prisma.Background$charactersArgs<ExtArgs>
   _count?: boolean | Prisma.BackgroundCountOutputTypeDefaultArgs<ExtArgs>
@@ -628,6 +658,7 @@ export type $BackgroundPayload<ExtArgs extends runtime.Types.Extensions.Internal
     id: number
     key: string
     name: string
+    description: string | null
     abilityScores: runtime.JsonValue
     originFeatKey: string
     skillProficiencies: runtime.JsonValue
@@ -1062,6 +1093,7 @@ export interface BackgroundFieldRefs {
   readonly id: Prisma.FieldRef<"Background", 'Int'>
   readonly key: Prisma.FieldRef<"Background", 'String'>
   readonly name: Prisma.FieldRef<"Background", 'String'>
+  readonly description: Prisma.FieldRef<"Background", 'String'>
   readonly abilityScores: Prisma.FieldRef<"Background", 'Json'>
   readonly originFeatKey: Prisma.FieldRef<"Background", 'String'>
   readonly skillProficiencies: Prisma.FieldRef<"Background", 'Json'>
