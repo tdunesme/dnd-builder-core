@@ -25,6 +25,8 @@ export class SpellsService {
       name: entity.name,
       level: entity.level,
       school: entity.school,
+      range: entity.range,
+      components: entity.components,
     };
   }
 

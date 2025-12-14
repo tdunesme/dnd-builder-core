@@ -24,4 +24,6 @@ export class SpellLightDto {
   name: string;
   level: number;
   school: string;
+  range: string;
+  components: string;
 }
