@@ -40,6 +40,7 @@ export type ClassMinAggregateOutputType = {
   id: number | null
   key: string | null
   name: string | null
+  description: string | null
   hitDie: number | null
   hasSpellcasting: boolean | null
   spellcastingType: string | null
@@ -51,6 +52,7 @@ export type ClassMaxAggregateOutputType = {
   id: number | null
   key: string | null
   name: string | null
+  description: string | null
   hitDie: number | null
   hasSpellcasting: boolean | null
   spellcastingType: string | null
@@ -62,6 +64,7 @@ export type ClassCountAggregateOutputType = {
   id: number
   key: number
   name: number
+  description: number
   hitDie: number
   primaryAbilities: number
   savingThrows: number
@@ -92,6 +95,7 @@ export type ClassMinAggregateInputType = {
   id?: true
   key?: true
   name?: true
+  description?: true
   hitDie?: true
   hasSpellcasting?: true
   spellcastingType?: true
@@ -103,6 +107,7 @@ export type ClassMaxAggregateInputType = {
   id?: true
   key?: true
   name?: true
+  description?: true
   hitDie?: true
   hasSpellcasting?: true
   spellcastingType?: true
@@ -114,6 +119,7 @@ export type ClassCountAggregateInputType = {
   id?: true
   key?: true
   name?: true
+  description?: true
   hitDie?: true
   primaryAbilities?: true
   savingThrows?: true
@@ -219,6 +225,7 @@ export type ClassGroupByOutputType = {
   id: number
   key: string
   name: string
+  description: string
   hitDie: number
   primaryAbilities: runtime.JsonValue
   savingThrows: runtime.JsonValue
@@ -260,6 +267,7 @@ export type ClassWhereInput = {
   id?: Prisma.IntFilter<"Class"> | number
   key?: Prisma.StringFilter<"Class"> | string
   name?: Prisma.StringFilter<"Class"> | string
+  description?: Prisma.StringFilter<"Class"> | string
   hitDie?: Prisma.IntFilter<"Class"> | number
   primaryAbilities?: Prisma.JsonFilter<"Class">
   savingThrows?: Prisma.JsonFilter<"Class">
@@ -280,6 +288,7 @@ export type ClassOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   key?: Prisma.SortOrder
   name?: Prisma.SortOrder
+  description?: Prisma.SortOrder
   hitDie?: Prisma.SortOrder
   primaryAbilities?: Prisma.SortOrder
   savingThrows?: Prisma.SortOrder
@@ -303,6 +312,7 @@ export type ClassWhereUniqueInput = Prisma.AtLeast<{
   OR?: Prisma.ClassWhereInput[]
   NOT?: Prisma.ClassWhereInput | Prisma.ClassWhereInput[]
   name?: Prisma.StringFilter<"Class"> | string
+  description?: Prisma.StringFilter<"Class"> | string
   hitDie?: Prisma.IntFilter<"Class"> | number
   primaryAbilities?: Prisma.JsonFilter<"Class">
   savingThrows?: Prisma.JsonFilter<"Class">
@@ -323,6 +333,7 @@ export type ClassOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   key?: Prisma.SortOrder
   name?: Prisma.SortOrder
+  description?: Prisma.SortOrder
   hitDie?: Prisma.SortOrder
   primaryAbilities?: Prisma.SortOrder
   savingThrows?: Prisma.SortOrder
@@ -349,6 +360,7 @@ export type ClassScalarWhereWithAggregatesInput = {
   id?: Prisma.IntWithAggregatesFilter<"Class"> | number
   key?: Prisma.StringWithAggregatesFilter<"Class"> | string
   name?: Prisma.StringWithAggregatesFilter<"Class"> | string
+  description?: Prisma.StringWithAggregatesFilter<"Class"> | string
   hitDie?: Prisma.IntWithAggregatesFilter<"Class"> | number
   primaryAbilities?: Prisma.JsonWithAggregatesFilter<"Class">
   savingThrows?: Prisma.JsonWithAggregatesFilter<"Class">
@@ -366,6 +378,7 @@ export type ClassScalarWhereWithAggregatesInput = {
 export type ClassCreateInput = {
   key: string
   name: string
+  description: string
   hitDie: number
   primaryAbilities: Prisma.JsonNullValueInput | runtime.InputJsonValue
   savingThrows: Prisma.JsonNullValueInput | runtime.InputJsonValue
@@ -386,6 +399,7 @@ export type ClassUncheckedCreateInput = {
   id?: number
   key: string
   name: string
+  description: string
   hitDie: number
   primaryAbilities: Prisma.JsonNullValueInput | runtime.InputJsonValue
   savingThrows: Prisma.JsonNullValueInput | runtime.InputJsonValue
@@ -405,6 +419,7 @@ export type ClassUncheckedCreateInput = {
 export type ClassUpdateInput = {
   key?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.StringFieldUpdateOperationsInput | string
   hitDie?: Prisma.IntFieldUpdateOperationsInput | number
   primaryAbilities?: Prisma.JsonNullValueInput | runtime.InputJsonValue
   savingThrows?: Prisma.JsonNullValueInput | runtime.InputJsonValue
@@ -425,6 +440,7 @@ export type ClassUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   key?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.StringFieldUpdateOperationsInput | string
   hitDie?: Prisma.IntFieldUpdateOperationsInput | number
   primaryAbilities?: Prisma.JsonNullValueInput | runtime.InputJsonValue
   savingThrows?: Prisma.JsonNullValueInput | runtime.InputJsonValue
@@ -445,6 +461,7 @@ export type ClassCreateManyInput = {
   id?: number
   key: string
   name: string
+  description: string
   hitDie: number
   primaryAbilities: Prisma.JsonNullValueInput | runtime.InputJsonValue
   savingThrows: Prisma.JsonNullValueInput | runtime.InputJsonValue
@@ -462,6 +479,7 @@ export type ClassCreateManyInput = {
 export type ClassUpdateManyMutationInput = {
   key?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.StringFieldUpdateOperationsInput | string
   hitDie?: Prisma.IntFieldUpdateOperationsInput | number
   primaryAbilities?: Prisma.JsonNullValueInput | runtime.InputJsonValue
   savingThrows?: Prisma.JsonNullValueInput | runtime.InputJsonValue
@@ -480,6 +498,7 @@ export type ClassUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   key?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.StringFieldUpdateOperationsInput | string
   hitDie?: Prisma.IntFieldUpdateOperationsInput | number
   primaryAbilities?: Prisma.JsonNullValueInput | runtime.InputJsonValue
   savingThrows?: Prisma.JsonNullValueInput | runtime.InputJsonValue
@@ -503,6 +522,7 @@ export type ClassCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   key?: Prisma.SortOrder
   name?: Prisma.SortOrder
+  description?: Prisma.SortOrder
   hitDie?: Prisma.SortOrder
   primaryAbilities?: Prisma.SortOrder
   savingThrows?: Prisma.SortOrder
@@ -526,6 +546,7 @@ export type ClassMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   key?: Prisma.SortOrder
   name?: Prisma.SortOrder
+  description?: Prisma.SortOrder
   hitDie?: Prisma.SortOrder
   hasSpellcasting?: Prisma.SortOrder
   spellcastingType?: Prisma.SortOrder
@@ -537,6 +558,7 @@ export type ClassMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   key?: Prisma.SortOrder
   name?: Prisma.SortOrder
+  description?: Prisma.SortOrder
   hitDie?: Prisma.SortOrder
   hasSpellcasting?: Prisma.SortOrder
   spellcastingType?: Prisma.SortOrder
@@ -591,6 +613,7 @@ export type ClassUpdateOneRequiredWithoutLevelsNestedInput = {
 export type ClassCreateWithoutCharactersInput = {
   key: string
   name: string
+  description: string
   hitDie: number
   primaryAbilities: Prisma.JsonNullValueInput | runtime.InputJsonValue
   savingThrows: Prisma.JsonNullValueInput | runtime.InputJsonValue
@@ -610,6 +633,7 @@ export type ClassUncheckedCreateWithoutCharactersInput = {
   id?: number
   key: string
   name: string
+  description: string
   hitDie: number
   primaryAbilities: Prisma.JsonNullValueInput | runtime.InputJsonValue
   savingThrows: Prisma.JsonNullValueInput | runtime.InputJsonValue
@@ -644,6 +668,7 @@ export type ClassUpdateToOneWithWhereWithoutCharactersInput = {
 export type ClassUpdateWithoutCharactersInput = {
   key?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.StringFieldUpdateOperationsInput | string
   hitDie?: Prisma.IntFieldUpdateOperationsInput | number
   primaryAbilities?: Prisma.JsonNullValueInput | runtime.InputJsonValue
   savingThrows?: Prisma.JsonNullValueInput | runtime.InputJsonValue
@@ -663,6 +688,7 @@ export type ClassUncheckedUpdateWithoutCharactersInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   key?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.StringFieldUpdateOperationsInput | string
   hitDie?: Prisma.IntFieldUpdateOperationsInput | number
   primaryAbilities?: Prisma.JsonNullValueInput | runtime.InputJsonValue
   savingThrows?: Prisma.JsonNullValueInput | runtime.InputJsonValue
@@ -681,6 +707,7 @@ export type ClassUncheckedUpdateWithoutCharactersInput = {
 export type ClassCreateWithoutLevelsInput = {
   key: string
   name: string
+  description: string
   hitDie: number
   primaryAbilities: Prisma.JsonNullValueInput | runtime.InputJsonValue
   savingThrows: Prisma.JsonNullValueInput | runtime.InputJsonValue
@@ -700,6 +727,7 @@ export type ClassUncheckedCreateWithoutLevelsInput = {
   id?: number
   key: string
   name: string
+  description: string
   hitDie: number
   primaryAbilities: Prisma.JsonNullValueInput | runtime.InputJsonValue
   savingThrows: Prisma.JsonNullValueInput | runtime.InputJsonValue
@@ -734,6 +762,7 @@ export type ClassUpdateToOneWithWhereWithoutLevelsInput = {
 export type ClassUpdateWithoutLevelsInput = {
   key?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.StringFieldUpdateOperationsInput | string
   hitDie?: Prisma.IntFieldUpdateOperationsInput | number
   primaryAbilities?: Prisma.JsonNullValueInput | runtime.InputJsonValue
   savingThrows?: Prisma.JsonNullValueInput | runtime.InputJsonValue
@@ -753,6 +782,7 @@ export type ClassUncheckedUpdateWithoutLevelsInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   key?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.StringFieldUpdateOperationsInput | string
   hitDie?: Prisma.IntFieldUpdateOperationsInput | number
   primaryAbilities?: Prisma.JsonNullValueInput | runtime.InputJsonValue
   savingThrows?: Prisma.JsonNullValueInput | runtime.InputJsonValue
@@ -812,6 +842,7 @@ export type ClassSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   id?: boolean
   key?: boolean
   name?: boolean
+  description?: boolean
   hitDie?: boolean
   primaryAbilities?: boolean
   savingThrows?: boolean
@@ -833,6 +864,7 @@ export type ClassSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensi
   id?: boolean
   key?: boolean
   name?: boolean
+  description?: boolean
   hitDie?: boolean
   primaryAbilities?: boolean
   savingThrows?: boolean
@@ -851,6 +883,7 @@ export type ClassSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensi
   id?: boolean
   key?: boolean
   name?: boolean
+  description?: boolean
   hitDie?: boolean
   primaryAbilities?: boolean
   savingThrows?: boolean
@@ -869,6 +902,7 @@ export type ClassSelectScalar = {
   id?: boolean
   key?: boolean
   name?: boolean
+  description?: boolean
   hitDie?: boolean
   primaryAbilities?: boolean
   savingThrows?: boolean
@@ -883,7 +917,7 @@ export type ClassSelectScalar = {
   updatedAt?: boolean
 }
 
-export type ClassOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "key" | "name" | "hitDie" | "primaryAbilities" | "savingThrows" | "armorProficiencies" | "weaponProficiencies" | "toolProficiencies" | "skillChoices" | "equipmentOptions" | "hasSpellcasting" | "spellcastingType" | "createdAt" | "updatedAt", ExtArgs["result"]["class"]>
+export type ClassOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "key" | "name" | "description" | "hitDie" | "primaryAbilities" | "savingThrows" | "armorProficiencies" | "weaponProficiencies" | "toolProficiencies" | "skillChoices" | "equipmentOptions" | "hasSpellcasting" | "spellcastingType" | "createdAt" | "updatedAt", ExtArgs["result"]["class"]>
 export type ClassInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   characters?: boolean | Prisma.Class$charactersArgs<ExtArgs>
   levels?: boolean | Prisma.Class$levelsArgs<ExtArgs>
@@ -902,6 +936,7 @@ export type $ClassPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs 
     id: number
     key: string
     name: string
+    description: string
     hitDie: number
     primaryAbilities: runtime.JsonValue
     savingThrows: runtime.JsonValue
@@ -1342,6 +1377,7 @@ export interface ClassFieldRefs {
   readonly id: Prisma.FieldRef<"Class", 'Int'>
   readonly key: Prisma.FieldRef<"Class", 'String'>
   readonly name: Prisma.FieldRef<"Class", 'String'>
+  readonly description: Prisma.FieldRef<"Class", 'String'>
   readonly hitDie: Prisma.FieldRef<"Class", 'Int'>
   readonly primaryAbilities: Prisma.FieldRef<"Class", 'Json'>
   readonly savingThrows: Prisma.FieldRef<"Class", 'Json'>

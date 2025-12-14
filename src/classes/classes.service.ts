@@ -14,9 +14,9 @@ export class ClassesService {
     return classes.map((c) => this.toDto(c));
   }
 
-  async findOne(id: number): Promise<ClassDto> {
+  async findOne(key: string): Promise<ClassDto> {
     const classEntity = await this.prisma.class.findUnique({
-      where: { id },
+      where: { key },
       include: {
         levels: {
           orderBy: { level: 'asc' },
@@ -36,6 +36,7 @@ export class ClassesService {
       id: entity.id,
       key: entity.key,
       name: entity.name,
+      description: entity.description,
       hitDie: entity.hitDie,
       primaryAbilities: entity.primaryAbilities ?? [],
       savingThrows: entity.savingThrows ?? [],

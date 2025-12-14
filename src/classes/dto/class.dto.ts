@@ -2,7 +2,7 @@ export class ClassDto {
   id: number;
   key: string;
   name: string;
-
+  description: string;
   hitDie: number;
 
   primaryAbilities: string[];

@@ -1,35 +1,37 @@
 import { PrismaClient } from '../../src/generated/prisma/client';
 
 const srdClasses = [
-  // BARBARIAN
+  // BARBARE
   {
     key: 'barbarian',
-    name: 'Barbarian',
+    name: 'Barbare',
+    description:
+      'Combattant féroce porté par la rage, le barbare encaisse les coups et déchaîne une force brute au corps à corps.',
     hitDie: 12,
-    primaryAbilities: ['Strength'],
-    savingThrows: ['Strength', 'Constitution'],
-    armorProficiencies: ['Light armor', 'Medium armor', 'Shields'],
-    weaponProficiencies: ['Simple weapons', 'Martial weapons'],
+    primaryAbilities: ['Force'],
+    savingThrows: ['Force', 'Constitution'],
+    armorProficiencies: ['Armure légère', 'Armure intermédiaire', 'Boucliers'],
+    weaponProficiencies: ['Armes simples', 'Armes de guerre'],
     toolProficiencies: [],
     skillChoices: {
       choose: 2,
       from: [
-        'Animal Handling',
-        'Athletics',
+        'Soins aux animaux',
+        'Athlétisme',
         'Intimidation',
         'Nature',
         'Perception',
-        'Survival',
+        'Survie',
       ],
     },
     equipmentOptions: {
       optionA: {
         type: 'package',
         items: [
-          'Greataxe (or any martial melee weapon)',
-          'Two handaxes (or any simple weapon)',
-          'Explorer’s Pack',
-          'Javelins (4)',
+          'Hache à deux mains (ou n’importe quelle arme de guerre de mêlée)',
+          'Deux hachettes (ou n’importe quelle arme simple)',
+          'Paquetage d’explorateur',
+          'Javelots (4)',
         ],
       },
       optionB: {
@@ -41,54 +43,56 @@ const srdClasses = [
     spellcastingType: null,
   },
 
-  // BARD
+  // BARDE
   {
     key: 'bard',
-    name: 'Bard',
+    name: 'Barde',
+    description:
+      'Artiste et aventurier polyvalent, le barde inspire ses alliés, excelle en interactions sociales et manie la magie par la performance.',
     hitDie: 8,
-    primaryAbilities: ['Charisma'],
-    savingThrows: ['Dexterity', 'Charisma'],
-    armorProficiencies: ['Light armor'],
+    primaryAbilities: ['Charisme'],
+    savingThrows: ['Dextérité', 'Charisme'],
+    armorProficiencies: ['Armure légère'],
     weaponProficiencies: [
-      'Simple weapons',
-      'Hand crossbows',
-      'Longswords',
-      'Rapiers',
-      'Shortswords',
+      'Armes simples',
+      'Arbalètes de poing',
+      'Épées longues',
+      'Rapières',
+      'Épées courtes',
     ],
-    toolProficiencies: ['Musical instruments (choose 3)'],
+    toolProficiencies: ['Instruments de musique (choisissez-en 3)'],
     skillChoices: {
       choose: 3,
       from: [
-        'Acrobatics',
-        'Animal Handling',
-        'Arcana',
-        'Athletics',
-        'Deception',
-        'History',
-        'Insight',
+        'Acrobaties',
+        'Soins aux animaux',
+        'Arcanes',
+        'Athlétisme',
+        'Tromperie',
+        'Histoire',
+        'Perspicacité',
         'Intimidation',
         'Investigation',
-        'Medicine',
+        'Médecine',
         'Nature',
         'Perception',
-        'Performance',
+        'Représentation',
         'Persuasion',
         'Religion',
-        'Sleight of Hand',
-        'Stealth',
-        'Survival',
+        'Escamotage',
+        'Discrétion',
+        'Survie',
       ],
     },
     equipmentOptions: {
       optionA: {
         type: 'package',
         items: [
-          'Rapier (or longsword or any simple weapon)',
-          'Diplomat’s Pack (or Entertainer’s Pack)',
-          'Lute (or any musical instrument)',
-          'Leather armor',
-          'Dagger',
+          'Rapière (ou épée longue, ou n’importe quelle arme simple)',
+          'Paquetage de diplomate (ou paquetage d’artiste)',
+          'Luth (ou n’importe quel instrument de musique)',
+          'Armure de cuir',
+          'Dague',
         ],
       },
       optionB: {
@@ -100,30 +104,32 @@ const srdClasses = [
     spellcastingType: 'full',
   },
 
-  // CLERIC
+  // CLERC
   {
     key: 'cleric',
-    name: 'Cleric',
+    name: 'Clerc',
+    description:
+      'Champion d’une puissance divine, le clerc soigne, protège et soutient le groupe tout en appelant des miracles contre les ennemis.',
     hitDie: 8,
-    primaryAbilities: ['Wisdom'],
-    savingThrows: ['Wisdom', 'Charisma'],
-    armorProficiencies: ['Light armor', 'Medium armor', 'Shields'],
-    weaponProficiencies: ['Simple weapons'],
+    primaryAbilities: ['Sagesse'],
+    savingThrows: ['Sagesse', 'Charisme'],
+    armorProficiencies: ['Armure légère', 'Armure intermédiaire', 'Boucliers'],
+    weaponProficiencies: ['Armes simples'],
     toolProficiencies: [],
     skillChoices: {
       choose: 2,
-      from: ['History', 'Insight', 'Medicine', 'Persuasion', 'Religion'],
+      from: ['Histoire', 'Perspicacité', 'Médecine', 'Persuasion', 'Religion'],
     },
     equipmentOptions: {
       optionA: {
         type: 'package',
         items: [
-          'Mace (or warhammer)',
-          'Scale mail (or leather armor or chain mail)',
-          'Light crossbow and 20 bolts (or any simple weapon)',
-          'Priest’s Pack (or Explorer’s Pack)',
-          'Shield',
-          'Holy symbol',
+          'Masse (ou marteau de guerre)',
+          'Chemise d’écailles (ou armure de cuir, ou cotte de mailles)',
+          'Arbalète légère et 20 carreaux (ou n’importe quelle arme simple)',
+          'Paquetage de prêtre (ou paquetage d’explorateur)',
+          'Bouclier',
+          'Symbole sacré',
         ],
       },
       optionB: {
@@ -135,52 +141,54 @@ const srdClasses = [
     spellcastingType: 'full',
   },
 
-  // DRUID
+  // DRUIDE
   {
     key: 'druid',
-    name: 'Druid',
+    name: 'Druide',
+    description:
+      'Gardien de la nature, le druide manie une magie primordiale et s’adapte à la situation grâce à ses pouvoirs et sa communion avec le vivant.',
     hitDie: 8,
-    primaryAbilities: ['Wisdom'],
-    savingThrows: ['Intelligence', 'Wisdom'],
+    primaryAbilities: ['Sagesse'],
+    savingThrows: ['Intelligence', 'Sagesse'],
     armorProficiencies: [
-      'Light armor (non-metal)',
-      'Medium armor (non-metal)',
-      'Shields (non-metal)',
+      'Armure légère (non métallique)',
+      'Armure intermédiaire (non métallique)',
+      'Boucliers (non métalliques)',
     ],
     weaponProficiencies: [
-      'Clubs',
-      'Daggers',
-      'Darts',
-      'Javelins',
-      'Maces',
-      'Quarterstaffs',
-      'Scimitars',
-      'Sickles',
-      'Slings',
-      'Spears',
+      'Gourdins',
+      'Dagues',
+      'Fléchettes',
+      'Javelots',
+      'Masses',
+      'Bâtons',
+      'Cimeterres',
+      'Faucilles',
+      'Frondes',
+      'Lances',
     ],
-    toolProficiencies: ['Herbalism Kit'],
+    toolProficiencies: ['Kit d’herboriste'],
     skillChoices: {
       choose: 2,
       from: [
-        'Arcana',
-        'Animal Handling',
-        'Insight',
-        'Medicine',
+        'Arcanes',
+        'Soins aux animaux',
+        'Perspicacité',
+        'Médecine',
         'Nature',
         'Perception',
         'Religion',
-        'Survival',
+        'Survie',
       ],
     },
     equipmentOptions: {
       optionA: {
         type: 'package',
         items: [
-          'Wooden shield (or any simple weapon)',
-          'Scimitar (or any simple melee weapon)',
-          'Explorer’s Pack',
-          'Druidic focus',
+          'Bouclier en bois (ou n’importe quelle arme simple)',
+          'Cimeterre (ou n’importe quelle arme simple de mêlée)',
+          'Paquetage d’explorateur',
+          'Focaliseur druidique',
         ],
       },
       optionB: {
@@ -192,37 +200,39 @@ const srdClasses = [
     spellcastingType: 'full',
   },
 
-  // FIGHTER
+  // GUERRIER
   {
     key: 'fighter',
-    name: 'Fighter',
+    name: 'Guerrier',
+    description:
+      'Maître des armes et des techniques martiales, le guerrier est fiable dans tous les combats et brille par sa polyvalence tactique.',
     hitDie: 10,
-    primaryAbilities: ['Strength', 'Dexterity'],
-    savingThrows: ['Strength', 'Constitution'],
-    armorProficiencies: ['All armor', 'Shields'],
-    weaponProficiencies: ['Simple weapons', 'Martial weapons'],
+    primaryAbilities: ['Force', 'Dextérité'],
+    savingThrows: ['Force', 'Constitution'],
+    armorProficiencies: ['Toutes les armures', 'Boucliers'],
+    weaponProficiencies: ['Armes simples', 'Armes de guerre'],
     toolProficiencies: [],
     skillChoices: {
       choose: 2,
       from: [
-        'Acrobatics',
-        'Animal Handling',
-        'Athletics',
-        'History',
-        'Insight',
+        'Acrobaties',
+        'Soins aux animaux',
+        'Athlétisme',
+        'Histoire',
+        'Perspicacité',
         'Intimidation',
         'Perception',
-        'Survival',
+        'Survie',
       ],
     },
     equipmentOptions: {
       optionA: {
         type: 'package',
         items: [
-          'Chain mail (or leather armor, longbow, 20 arrows)',
-          'Martial weapon and shield (or two martial weapons)',
-          'Light crossbow and 20 bolts (or two handaxes)',
-          'Dungeoneer’s Pack (or Explorer’s Pack)',
+          'Cotte de mailles (ou armure de cuir, arc long, 20 flèches)',
+          'Arme de guerre et bouclier (ou deux armes de guerre)',
+          'Arbalète légère et 20 carreaux (ou deux hachettes)',
+          'Paquetage d’explorateur de donjons (ou paquetage d’explorateur)',
         ],
       },
       optionB: {
@@ -234,37 +244,39 @@ const srdClasses = [
     spellcastingType: null,
   },
 
-  // MONK
+  // MOINE
   {
     key: 'monk',
-    name: 'Monk',
+    name: 'Moine',
+    description:
+      'Combattant discipliné, le moine canalise son énergie intérieure pour frapper vite, se déplacer avec agilité et dépasser les limites du corps.',
     hitDie: 8,
-    primaryAbilities: ['Dexterity', 'Wisdom'],
-    savingThrows: ['Strength', 'Dexterity'],
+    primaryAbilities: ['Dextérité', 'Sagesse'],
+    savingThrows: ['Force', 'Dextérité'],
     armorProficiencies: [],
-    weaponProficiencies: ['Simple weapons', 'Shortswords'],
+    weaponProficiencies: ['Armes simples', 'Épées courtes'],
     toolProficiencies: [
-      'Artisan’s tools (one type)',
-      'Musical instrument (one)',
+      'Outils d’artisan (un type)',
+      'Instrument de musique (un)',
     ],
     skillChoices: {
       choose: 2,
       from: [
-        'Acrobatics',
-        'Athletics',
-        'History',
-        'Insight',
+        'Acrobaties',
+        'Athlétisme',
+        'Histoire',
+        'Perspicacité',
         'Religion',
-        'Stealth',
+        'Discrétion',
       ],
     },
     equipmentOptions: {
       optionA: {
         type: 'package',
         items: [
-          'Shortsword (or any simple weapon)',
-          'Dungeoneer’s Pack (or Explorer’s Pack)',
-          '10 darts',
+          'Épée courte (ou n’importe quelle arme simple)',
+          'Paquetage d’explorateur de donjons (ou paquetage d’explorateur)',
+          'Fléchettes (10)',
         ],
       },
       optionB: {
@@ -280,19 +292,21 @@ const srdClasses = [
   {
     key: 'paladin',
     name: 'Paladin',
+    description:
+      'Défenseur sacré lié à un serment, le paladin protège ses alliés, tient la ligne et frappe avec une puissance consacrée.',
     hitDie: 10,
-    primaryAbilities: ['Strength', 'Charisma'],
-    savingThrows: ['Wisdom', 'Charisma'],
-    armorProficiencies: ['All armor', 'Shields'],
-    weaponProficiencies: ['Simple weapons', 'Martial weapons'],
+    primaryAbilities: ['Force', 'Charisme'],
+    savingThrows: ['Sagesse', 'Charisme'],
+    armorProficiencies: ['Toutes les armures', 'Boucliers'],
+    weaponProficiencies: ['Armes simples', 'Armes de guerre'],
     toolProficiencies: [],
     skillChoices: {
       choose: 2,
       from: [
-        'Athletics',
-        'Insight',
+        'Athlétisme',
+        'Perspicacité',
         'Intimidation',
-        'Medicine',
+        'Médecine',
         'Persuasion',
         'Religion',
       ],
@@ -301,11 +315,11 @@ const srdClasses = [
       optionA: {
         type: 'package',
         items: [
-          'Martial weapon and shield (or two martial weapons)',
-          'Five javelins (or any simple melee weapon)',
-          'Priest’s Pack (or Explorer’s Pack)',
-          'Chain mail',
-          'Holy symbol',
+          'Arme de guerre et bouclier (ou deux armes de guerre)',
+          'Javelots (5) (ou n’importe quelle arme simple de mêlée)',
+          'Paquetage de prêtre (ou paquetage d’explorateur)',
+          'Cotte de mailles',
+          'Symbole sacré',
         ],
       },
       optionB: {
@@ -317,38 +331,40 @@ const srdClasses = [
     spellcastingType: 'half',
   },
 
-  // RANGER
+  // RÔDEUR
   {
     key: 'ranger',
-    name: 'Ranger',
+    name: 'Rôdeur',
+    description:
+      'Éclaireur et chasseur, le rôdeur excelle en exploration, combat à distance ou en mêlée et soutient le groupe par sa survie et sa traque.',
     hitDie: 10,
-    primaryAbilities: ['Dexterity', 'Wisdom'],
-    savingThrows: ['Strength', 'Dexterity'],
-    armorProficiencies: ['Light armor', 'Medium armor', 'Shields'],
-    weaponProficiencies: ['Simple weapons', 'Martial weapons'],
+    primaryAbilities: ['Dextérité', 'Sagesse'],
+    savingThrows: ['Force', 'Dextérité'],
+    armorProficiencies: ['Armure légère', 'Armure intermédiaire', 'Boucliers'],
+    weaponProficiencies: ['Armes simples', 'Armes de guerre'],
     toolProficiencies: [],
     skillChoices: {
       choose: 3,
       from: [
-        'Animal Handling',
-        'Athletics',
-        'Insight',
+        'Soins aux animaux',
+        'Athlétisme',
+        'Perspicacité',
         'Investigation',
         'Nature',
         'Perception',
-        'Stealth',
-        'Survival',
+        'Discrétion',
+        'Survie',
       ],
     },
     equipmentOptions: {
       optionA: {
         type: 'package',
         items: [
-          'Scale mail (or leather armor)',
-          'Two shortswords (or two simple melee weapons)',
-          'Dungeoneer’s Pack (or Explorer’s Pack)',
-          'Longbow',
-          'Arrows (20)',
+          'Chemise d’écailles (ou armure de cuir)',
+          'Deux épées courtes (ou deux armes simples de mêlée)',
+          'Paquetage d’explorateur de donjons (ou paquetage d’explorateur)',
+          'Arc long',
+          'Flèches (20)',
         ],
       },
       optionB: {
@@ -360,49 +376,51 @@ const srdClasses = [
     spellcastingType: 'half',
   },
 
-  // ROGUE
+  // ROUBLARD
   {
     key: 'rogue',
-    name: 'Rogue',
+    name: 'Roublard',
+    description:
+      'Spécialiste de la discrétion et de la précision, le roublard frappe au bon moment, contourne les obstacles et maîtrise l’infiltration.',
     hitDie: 8,
-    primaryAbilities: ['Dexterity'],
-    savingThrows: ['Dexterity', 'Intelligence'],
-    armorProficiencies: ['Light armor'],
+    primaryAbilities: ['Dextérité'],
+    savingThrows: ['Dextérité', 'Intelligence'],
+    armorProficiencies: ['Armure légère'],
     weaponProficiencies: [
-      'Simple weapons',
-      'Hand crossbows',
-      'Longswords',
-      'Rapiers',
-      'Shortswords',
+      'Armes simples',
+      'Arbalètes de poing',
+      'Épées longues',
+      'Rapières',
+      'Épées courtes',
     ],
-    toolProficiencies: ["Thieves' Tools"],
+    toolProficiencies: ['Outils de voleur'],
     skillChoices: {
       choose: 4,
       from: [
-        'Acrobatics',
-        'Athletics',
-        'Deception',
-        'Insight',
+        'Acrobaties',
+        'Athlétisme',
+        'Tromperie',
+        'Perspicacité',
         'Intimidation',
         'Investigation',
         'Perception',
-        'Performance',
+        'Représentation',
         'Persuasion',
-        'Sleight of Hand',
-        'Stealth',
+        'Escamotage',
+        'Discrétion',
       ],
     },
     equipmentOptions: {
       optionA: {
         type: 'package',
         items: [
-          'Rapier (or shortsword)',
-          'Shortbow and 20 arrows (or shortsword)',
-          'Burglar’s Pack (or Dungeoneer’s Pack or Explorer’s Pack)',
-          'Leather armor',
-          'Dagger',
-          'Dagger',
-          "Thieves' Tools",
+          'Rapière (ou épée courte)',
+          'Arc court et 20 flèches (ou épée courte)',
+          'Paquetage de cambrioleur (ou paquetage d’explorateur de donjons, ou paquetage d’explorateur)',
+          'Armure de cuir',
+          'Dague',
+          'Dague',
+          'Outils de voleur',
         ],
       },
       optionB: {
@@ -414,28 +432,30 @@ const srdClasses = [
     spellcastingType: null,
   },
 
-  // SORCERER
+  // ENSORCELEUR
   {
     key: 'sorcerer',
-    name: 'Sorcerer',
+    name: 'Ensorceleur',
+    description:
+      'Magicien inné, l’ensorceleur puise sa puissance dans une lignée ou un don naturel et façonne ses sorts avec une magie brute.',
     hitDie: 6,
-    primaryAbilities: ['Charisma'],
-    savingThrows: ['Constitution', 'Charisma'],
+    primaryAbilities: ['Charisme'],
+    savingThrows: ['Constitution', 'Charisme'],
     armorProficiencies: [],
     weaponProficiencies: [
-      'Daggers',
-      'Darts',
-      'Slings',
-      'Quarterstaffs',
-      'Light crossbows',
+      'Dagues',
+      'Fléchettes',
+      'Frondes',
+      'Bâtons',
+      'Arbalètes légères',
     ],
     toolProficiencies: [],
     skillChoices: {
       choose: 2,
       from: [
-        'Arcana',
-        'Deception',
-        'Insight',
+        'Arcanes',
+        'Tromperie',
+        'Perspicacité',
         'Intimidation',
         'Persuasion',
         'Religion',
@@ -445,11 +465,11 @@ const srdClasses = [
       optionA: {
         type: 'package',
         items: [
-          'Light crossbow and 20 bolts (or any simple weapon)',
-          'Component pouch (or arcane focus)',
-          'Dungeoneer’s Pack (or Explorer’s Pack)',
-          'Dagger',
-          'Dagger',
+          'Arbalète légère et 20 carreaux (ou n’importe quelle arme simple)',
+          'Bourse à composantes (ou focaliseur arcanique)',
+          'Paquetage d’explorateur de donjons (ou paquetage d’explorateur)',
+          'Dague',
+          'Dague',
         ],
       },
       optionB: {
@@ -461,22 +481,24 @@ const srdClasses = [
     spellcastingType: 'full',
   },
 
-  // WARLOCK
+  // OCCULTISTE
   {
     key: 'warlock',
-    name: 'Warlock',
+    name: 'Occultiste',
+    description:
+      'Occultiste lié par un pacte, le sorcier (warlock) obtient des pouvoirs surnaturels en échange d’un lien avec une entité mystérieuse.',
     hitDie: 8,
-    primaryAbilities: ['Charisma'],
-    savingThrows: ['Wisdom', 'Charisma'],
-    armorProficiencies: ['Light armor'],
-    weaponProficiencies: ['Simple weapons'],
+    primaryAbilities: ['Charisme'],
+    savingThrows: ['Sagesse', 'Charisme'],
+    armorProficiencies: ['Armure légère'],
+    weaponProficiencies: ['Armes simples'],
     toolProficiencies: [],
     skillChoices: {
       choose: 2,
       from: [
-        'Arcana',
-        'Deception',
-        'History',
+        'Arcanes',
+        'Tromperie',
+        'Histoire',
         'Intimidation',
         'Investigation',
         'Nature',
@@ -487,13 +509,13 @@ const srdClasses = [
       optionA: {
         type: 'package',
         items: [
-          'Light crossbow and 20 bolts (or any simple weapon)',
-          'Component pouch (or arcane focus)',
-          'Scholar’s Pack (or Dungeoneer’s Pack)',
-          'Leather armor',
-          'Simple weapon',
-          'Dagger',
-          'Dagger',
+          'Arbalète légère et 20 carreaux (ou n’importe quelle arme simple)',
+          'Bourse à composantes (ou focaliseur arcanique)',
+          'Paquetage d’érudit (ou paquetage d’explorateur de donjons)',
+          'Armure de cuir',
+          'Arme simple',
+          'Dague',
+          'Dague',
         ],
       },
       optionB: {
@@ -505,30 +527,32 @@ const srdClasses = [
     spellcastingType: 'pact',
   },
 
-  // WIZARD
+  // MAGICIEN
   {
     key: 'wizard',
-    name: 'Wizard',
+    name: 'Magicien',
+    description:
+      'Érudit de l’arcane, le magicien apprend ses sorts par l’étude et adapte sa magie grâce à sa préparation et à son grimoire.',
     hitDie: 6,
     primaryAbilities: ['Intelligence'],
-    savingThrows: ['Intelligence', 'Wisdom'],
+    savingThrows: ['Intelligence', 'Sagesse'],
     armorProficiencies: [],
     weaponProficiencies: [
-      'Daggers',
-      'Darts',
-      'Slings',
-      'Quarterstaffs',
-      'Light crossbows',
+      'Dagues',
+      'Fléchettes',
+      'Frondes',
+      'Bâtons',
+      'Arbalètes légères',
     ],
     toolProficiencies: [],
     skillChoices: {
       choose: 2,
       from: [
-        'Arcana',
-        'History',
-        'Insight',
+        'Arcanes',
+        'Histoire',
+        'Perspicacité',
         'Investigation',
-        'Medicine',
+        'Médecine',
         'Religion',
       ],
     },
@@ -536,10 +560,10 @@ const srdClasses = [
       optionA: {
         type: 'package',
         items: [
-          'Quarterstaff (or dagger)',
-          'Component pouch (or arcane focus)',
-          'Scholar’s Pack (or Explorer’s Pack)',
-          'Spellbook',
+          'Bâton (ou dague)',
+          'Bourse à composantes (ou focaliseur arcanique)',
+          'Paquetage d’érudit (ou paquetage d’explorateur)',
+          'Grimoire',
         ],
       },
       optionB: {
@@ -560,6 +584,7 @@ export async function seedClasses(prisma: PrismaClient) {
       where: { key: data.key },
       update: {
         name: data.name,
+        description: data.description,
         hitDie: data.hitDie,
         primaryAbilities: data.primaryAbilities,
         savingThrows: data.savingThrows,
@@ -574,6 +599,7 @@ export async function seedClasses(prisma: PrismaClient) {
       create: {
         key: data.key,
         name: data.name,
+        description: data.description,
         hitDie: data.hitDie,
         primaryAbilities: data.primaryAbilities,
         savingThrows: data.savingThrows,

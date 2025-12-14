@@ -137,6 +137,7 @@ export const ClassScalarFieldEnum = {
   id: 'id',
   key: 'key',
   name: 'name',
+  description: 'description',
   hitDie: 'hitDie',
   primaryAbilities: 'primaryAbilities',
   savingThrows: 'savingThrows',
