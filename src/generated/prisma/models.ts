@@ -9,10 +9,4 @@
  * 🟢 You can import this file directly.
  */
 export type * from './models/User.js'
-export type * from './models/Character.js'
-export type * from './models/Species.js'
-export type * from './models/Background.js'
-export type * from './models/Class.js'
-export type * from './models/ClassLevel.js'
-export type * from './models/Spell.js'
 export type * from './commonInputTypes.js'

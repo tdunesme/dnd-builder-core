@@ -51,13 +51,7 @@ export const AnyNull = runtime.AnyNull
 
 
 export const ModelName = {
-  User: 'User',
-  Character: 'Character',
-  Species: 'Species',
-  Background: 'Background',
-  Class: 'Class',
-  ClassLevel: 'ClassLevel',
-  Spell: 'Spell'
+  User: 'User'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -86,154 +80,10 @@ export const UserScalarFieldEnum = {
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
 
 
-export const CharacterScalarFieldEnum = {
-  id: 'id',
-  name: 'name',
-  level: 'level',
-  ownerId: 'ownerId',
-  speciesId: 'speciesId',
-  classId: 'classId',
-  backgroundId: 'backgroundId',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-} as const
-
-export type CharacterScalarFieldEnum = (typeof CharacterScalarFieldEnum)[keyof typeof CharacterScalarFieldEnum]
-
-
-export const SpeciesScalarFieldEnum = {
-  id: 'id',
-  key: 'key',
-  name: 'name',
-  description: 'description',
-  creatureType: 'creatureType',
-  size: 'size',
-  speed: 'speed',
-  sizeOptions: 'sizeOptions',
-  traits: 'traits',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-} as const
-
-export type SpeciesScalarFieldEnum = (typeof SpeciesScalarFieldEnum)[keyof typeof SpeciesScalarFieldEnum]
-
-
-export const BackgroundScalarFieldEnum = {
-  id: 'id',
-  key: 'key',
-  name: 'name',
-  description: 'description',
-  abilityScores: 'abilityScores',
-  originFeatKey: 'originFeatKey',
-  skillProficiencies: 'skillProficiencies',
-  toolProficiency: 'toolProficiency',
-  equipmentOptions: 'equipmentOptions',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-} as const
-
-export type BackgroundScalarFieldEnum = (typeof BackgroundScalarFieldEnum)[keyof typeof BackgroundScalarFieldEnum]
-
-
-export const ClassScalarFieldEnum = {
-  id: 'id',
-  key: 'key',
-  name: 'name',
-  description: 'description',
-  hitDie: 'hitDie',
-  primaryAbilities: 'primaryAbilities',
-  savingThrows: 'savingThrows',
-  armorProficiencies: 'armorProficiencies',
-  weaponProficiencies: 'weaponProficiencies',
-  toolProficiencies: 'toolProficiencies',
-  skillChoices: 'skillChoices',
-  equipmentOptions: 'equipmentOptions',
-  hasSpellcasting: 'hasSpellcasting',
-  spellcastingType: 'spellcastingType',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-} as const
-
-export type ClassScalarFieldEnum = (typeof ClassScalarFieldEnum)[keyof typeof ClassScalarFieldEnum]
-
-
-export const ClassLevelScalarFieldEnum = {
-  id: 'id',
-  classId: 'classId',
-  level: 'level',
-  proficiencyBonus: 'proficiencyBonus',
-  features: 'features',
-  progression: 'progression'
-} as const
-
-export type ClassLevelScalarFieldEnum = (typeof ClassLevelScalarFieldEnum)[keyof typeof ClassLevelScalarFieldEnum]
-
-
-export const SpellScalarFieldEnum = {
-  id: 'id',
-  key: 'key',
-  name: 'name',
-  level: 'level',
-  school: 'school',
-  source: 'source',
-  castingTime: 'castingTime',
-  range: 'range',
-  components: 'components',
-  duration: 'duration',
-  classes: 'classes',
-  description: 'description',
-  atHigherLevels: 'atHigherLevels',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-} as const
-
-export type SpellScalarFieldEnum = (typeof SpellScalarFieldEnum)[keyof typeof SpellScalarFieldEnum]
-
-
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
 } as const
 
 export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
-
-
-export const NullableJsonNullValueInput = {
-  DbNull: 'DbNull',
-  JsonNull: 'JsonNull'
-} as const
-
-export type NullableJsonNullValueInput = (typeof NullableJsonNullValueInput)[keyof typeof NullableJsonNullValueInput]
-
-
-export const JsonNullValueInput = {
-  JsonNull: 'JsonNull'
-} as const
-
-export type JsonNullValueInput = (typeof JsonNullValueInput)[keyof typeof JsonNullValueInput]
-
-
-export const NullsOrder = {
-  first: 'first',
-  last: 'last'
-} as const
-
-export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
-
-
-export const JsonNullValueFilter = {
-  DbNull: 'DbNull',
-  JsonNull: 'JsonNull',
-  AnyNull: 'AnyNull'
-} as const
-
-export type JsonNullValueFilter = (typeof JsonNullValueFilter)[keyof typeof JsonNullValueFilter]
-
-
-export const QueryMode = {
-  default: 'default',
-  insensitive: 'insensitive'
-} as const
-
-export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode]
 

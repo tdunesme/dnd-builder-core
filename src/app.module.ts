@@ -4,23 +4,9 @@ import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { PrismaModule } from './prisma/prisma.module';
 import { AuthModule } from './auth/auth.module';
-import { CharactersModule } from './characters/characters.module';
-import { SpeciesModule } from './species/species.module';
-import { BackgroundsModule } from './backgrounds/backgrounds.module';
-import { ClassesModule } from './classes/classes.module';
-import { SpellsModule } from './spells/spells.module';
 
 @Module({
-  imports: [
-    UsersModule,
-    PrismaModule,
-    AuthModule,
-    CharactersModule,
-    SpeciesModule,
-    BackgroundsModule,
-    ClassesModule,
-    SpellsModule,
-  ],
+  imports: [UsersModule, PrismaModule, AuthModule],
   controllers: [AppController],
   providers: [AppService],
 })

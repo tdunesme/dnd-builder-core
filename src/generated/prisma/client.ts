@@ -42,33 +42,3 @@ export { Prisma }
  * 
  */
 export type User = Prisma.UserModel
-/**
- * Model Character
- * 
- */
-export type Character = Prisma.CharacterModel
-/**
- * Model Species
- * 
- */
-export type Species = Prisma.SpeciesModel
-/**
- * Model Background
- * 
- */
-export type Background = Prisma.BackgroundModel
-/**
- * Model Class
- * 
- */
-export type Class = Prisma.ClassModel
-/**
- * Model ClassLevel
- * 
- */
-export type ClassLevel = Prisma.ClassLevelModel
-/**
- * Model Spell
- * 
- */
-export type Spell = Prisma.SpellModel

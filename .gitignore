@@ -2,6 +2,15 @@
 /dist
 /node_modules
 /build
+.pnpm-store/
+
+# pnpm
+.pnpm-debug.log*
+.pnpmfile.cjs
+
+# Build
+dist/
+build/
 
 # Logs
 logs
