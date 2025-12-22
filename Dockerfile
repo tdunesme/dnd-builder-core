@@ -1,35 +1,24 @@
-# Image de base Node.js légère
-FROM node:20-alpine
-
-# Dossier de travail dans le conteneur
+FROM --platform=linux/amd64 node:20-slim
 WORKDIR /usr/src/app
 
-# 1. Copier les fichiers de dépendances
-COPY package*.json ./
+RUN apt-get update && apt-get install -y \
+  python3 make g++ libsqlite3-dev \
+  && rm -rf /var/lib/apt/lists/*
 
-# 2. Installer les dépendances
-RUN npm install
+RUN corepack enable && corepack prepare pnpm@10 --activate
 
-# 3. Copier le schéma Prisma avant le reste (cache plus efficace)
+# IMPORTANT: pnpm-workspace.yaml doit être présent avant l'install
+COPY pnpm-workspace.yaml ./
+
+COPY package.json pnpm-lock.yaml ./
+RUN pnpm install --frozen-lockfile
+
 COPY prisma ./prisma
-
-# 👉 IMPORTANT : définir DATABASE_URL pour PRISMA AU BUILD
-# (juste pour prisma generate; en runtime ce sera surchargé par .env)
 ENV DATABASE_URL="file:./dev.db"
+RUN pnpm prisma generate
 
-# 4. Copier le reste du code
 COPY . .
+RUN pnpm build
 
-# 5. Générer le client Prisma
-RUN npx prisma generate
-
-# 6. Builder l'application Nest
-RUN npm run build
-
-# 7. Exposer le port utilisé par Nest
 EXPOSE 3000
-
-# 8. Commande de démarrage :
-#    - applique les migrations (SQLite) si nécessaires
-#    - lance le serveur
-CMD ["sh", "-c", "npx prisma migrate deploy && npm run start:prod"]
+CMD ["sh", "-c", "pnpm prisma migrate deploy && pnpm start:prod"]
