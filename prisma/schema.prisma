@@ -23,4 +23,103 @@ model User {
   lastName     String
   createdAt    DateTime    @default(now())
   updatedAt    DateTime    @updatedAt
+
+  characters Character[]
 }
+
+model Character {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  userId String
+  user   User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  // Identity
+  name  String
+  level Int @default(1)
+
+  // SRD references (nullable = not chosen yet)
+  raceIndex       String?
+  subraceIndex    String?
+
+  classIndex      String?
+  subclassIndex   String?
+
+  backgroundIndex String?
+  alignmentIndex  String?
+
+  // Ability scores (nullable until step reached)
+  strength     Int?
+  dexterity    Int?
+  constitution Int?
+  intelligence Int?
+  wisdom       Int?
+  charisma     Int?
+
+  // Relations
+  skills        CharacterSkill[]
+  proficiencies CharacterProficiency[]
+  languages     CharacterLanguage[]
+  spells        CharacterSpell[]
+  equipment     CharacterEquipment[]
+
+  @@index([userId])
+}
+
+
+model CharacterSkill {
+  id String @id @default(uuid())
+
+  characterId String
+  character   Character @relation(fields: [characterId], references: [id], onDelete: Cascade)
+
+  skillIndex String
+
+  @@unique([characterId, skillIndex])
+}
+
+model CharacterProficiency {
+  id String @id @default(uuid())
+
+  characterId String
+  character   Character @relation(fields: [characterId], references: [id], onDelete: Cascade)
+
+  proficiencyIndex String
+
+  @@unique([characterId, proficiencyIndex])
+}
+
+model CharacterLanguage {
+  id String @id @default(uuid())
+
+  characterId String
+  character   Character @relation(fields: [characterId], references: [id], onDelete: Cascade)
+
+  languageIndex String
+
+  @@unique([characterId, languageIndex])
+}
+
+model CharacterSpell {
+  id String @id @default(uuid())
+
+  characterId String
+  character   Character @relation(fields: [characterId], references: [id], onDelete: Cascade)
+
+  spellIndex String
+
+  @@unique([characterId, spellIndex])
+}
+
+model CharacterEquipment {
+  id String @id @default(uuid())
+
+  characterId String
+  character   Character @relation(fields: [characterId], references: [id], onDelete: Cascade)
+
+  equipmentIndex String
+
+  @@unique([characterId, equipmentIndex])
+}
+

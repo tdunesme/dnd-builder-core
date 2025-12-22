@@ -22,3 +22,33 @@ export * from './enums.js';
  * 
  */
 export type User = Prisma.UserModel
+/**
+ * Model Character
+ * 
+ */
+export type Character = Prisma.CharacterModel
+/**
+ * Model CharacterSkill
+ * 
+ */
+export type CharacterSkill = Prisma.CharacterSkillModel
+/**
+ * Model CharacterProficiency
+ * 
+ */
+export type CharacterProficiency = Prisma.CharacterProficiencyModel
+/**
+ * Model CharacterLanguage
+ * 
+ */
+export type CharacterLanguage = Prisma.CharacterLanguageModel
+/**
+ * Model CharacterSpell
+ * 
+ */
+export type CharacterSpell = Prisma.CharacterSpellModel
+/**
+ * Model CharacterEquipment
+ * 
+ */
+export type CharacterEquipment = Prisma.CharacterEquipmentModel

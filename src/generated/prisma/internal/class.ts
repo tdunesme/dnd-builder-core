@@ -20,7 +20,7 @@ const config: runtime.GetPrismaClientConfig = {
   "clientVersion": "7.1.0",
   "engineVersion": "ab635e6b9d606fa5c8fb8b1a7f909c3c3c1c98ba",
   "activeProvider": "sqlite",
-  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider     = \"prisma-client\"\n  output       = \"../src/generated/prisma\"\n  moduleFormat = \"cjs\"\n}\n\ndatasource db {\n  provider = \"sqlite\"\n}\n\n// User\nmodel User {\n  id           String   @id @default(cuid())\n  email        String   @unique\n  passwordHash String\n  firstName    String\n  lastName     String\n  createdAt    DateTime @default(now())\n  updatedAt    DateTime @updatedAt\n}\n",
+  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider     = \"prisma-client\"\n  output       = \"../src/generated/prisma\"\n  moduleFormat = \"cjs\"\n}\n\ndatasource db {\n  provider = \"sqlite\"\n}\n\n// User\nmodel User {\n  id           String   @id @default(cuid())\n  email        String   @unique\n  passwordHash String\n  firstName    String\n  lastName     String\n  createdAt    DateTime @default(now())\n  updatedAt    DateTime @updatedAt\n\n  characters Character[]\n}\n\nmodel Character {\n  id        String   @id @default(uuid())\n  createdAt DateTime @default(now())\n  updatedAt DateTime @updatedAt\n\n  userId String\n  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)\n\n  // Identity\n  name  String\n  level Int    @default(1)\n\n  // SRD references (nullable = not chosen yet)\n  raceIndex    String?\n  subraceIndex String?\n\n  classIndex    String?\n  subclassIndex String?\n\n  backgroundIndex String?\n  alignmentIndex  String?\n\n  // Ability scores (nullable until step reached)\n  strength     Int?\n  dexterity    Int?\n  constitution Int?\n  intelligence Int?\n  wisdom       Int?\n  charisma     Int?\n\n  // Relations\n  skills        CharacterSkill[]\n  proficiencies CharacterProficiency[]\n  languages     CharacterLanguage[]\n  spells        CharacterSpell[]\n  equipment     CharacterEquipment[]\n\n  @@index([userId])\n}\n\nmodel CharacterSkill {\n  id String @id @default(uuid())\n\n  characterId String\n  character   Character @relation(fields: [characterId], references: [id], onDelete: Cascade)\n\n  skillIndex String\n\n  @@unique([characterId, skillIndex])\n}\n\nmodel CharacterProficiency {\n  id String @id @default(uuid())\n\n  characterId String\n  character   Character @relation(fields: [characterId], references: [id], onDelete: Cascade)\n\n  proficiencyIndex String\n\n  @@unique([characterId, proficiencyIndex])\n}\n\nmodel CharacterLanguage {\n  id String @id @default(uuid())\n\n  characterId String\n  character   Character @relation(fields: [characterId], references: [id], onDelete: Cascade)\n\n  languageIndex String\n\n  @@unique([characterId, languageIndex])\n}\n\nmodel CharacterSpell {\n  id String @id @default(uuid())\n\n  characterId String\n  character   Character @relation(fields: [characterId], references: [id], onDelete: Cascade)\n\n  spellIndex String\n\n  @@unique([characterId, spellIndex])\n}\n\nmodel CharacterEquipment {\n  id String @id @default(uuid())\n\n  characterId String\n  character   Character @relation(fields: [characterId], references: [id], onDelete: Cascade)\n\n  equipmentIndex String\n\n  @@unique([characterId, equipmentIndex])\n}\n",
   "runtimeDataModel": {
     "models": {},
     "enums": {},
@@ -28,7 +28,7 @@ const config: runtime.GetPrismaClientConfig = {
   }
 }
 
-config.runtimeDataModel = JSON.parse("{\"models\":{\"User\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"email\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"passwordHash\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"firstName\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"lastName\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"createdAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"updatedAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"}],\"dbName\":null}},\"enums\":{},\"types\":{}}")
+config.runtimeDataModel = JSON.parse("{\"models\":{\"User\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"email\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"passwordHash\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"firstName\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"lastName\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"createdAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"updatedAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"characters\",\"kind\":\"object\",\"type\":\"Character\",\"relationName\":\"CharacterToUser\"}],\"dbName\":null},\"Character\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"createdAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"updatedAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"userId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"user\",\"kind\":\"object\",\"type\":\"User\",\"relationName\":\"CharacterToUser\"},{\"name\":\"name\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"level\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"raceIndex\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"subraceIndex\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"classIndex\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"subclassIndex\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"backgroundIndex\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"alignmentIndex\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"strength\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"dexterity\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"constitution\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"intelligence\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"wisdom\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"charisma\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"skills\",\"kind\":\"object\",\"type\":\"CharacterSkill\",\"relationName\":\"CharacterToCharacterSkill\"},{\"name\":\"proficiencies\",\"kind\":\"object\",\"type\":\"CharacterProficiency\",\"relationName\":\"CharacterToCharacterProficiency\"},{\"name\":\"languages\",\"kind\":\"object\",\"type\":\"CharacterLanguage\",\"relationName\":\"CharacterToCharacterLanguage\"},{\"name\":\"spells\",\"kind\":\"object\",\"type\":\"CharacterSpell\",\"relationName\":\"CharacterToCharacterSpell\"},{\"name\":\"equipment\",\"kind\":\"object\",\"type\":\"CharacterEquipment\",\"relationName\":\"CharacterToCharacterEquipment\"}],\"dbName\":null},\"CharacterSkill\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"characterId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"character\",\"kind\":\"object\",\"type\":\"Character\",\"relationName\":\"CharacterToCharacterSkill\"},{\"name\":\"skillIndex\",\"kind\":\"scalar\",\"type\":\"String\"}],\"dbName\":null},\"CharacterProficiency\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"characterId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"character\",\"kind\":\"object\",\"type\":\"Character\",\"relationName\":\"CharacterToCharacterProficiency\"},{\"name\":\"proficiencyIndex\",\"kind\":\"scalar\",\"type\":\"String\"}],\"dbName\":null},\"CharacterLanguage\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"characterId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"character\",\"kind\":\"object\",\"type\":\"Character\",\"relationName\":\"CharacterToCharacterLanguage\"},{\"name\":\"languageIndex\",\"kind\":\"scalar\",\"type\":\"String\"}],\"dbName\":null},\"CharacterSpell\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"characterId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"character\",\"kind\":\"object\",\"type\":\"Character\",\"relationName\":\"CharacterToCharacterSpell\"},{\"name\":\"spellIndex\",\"kind\":\"scalar\",\"type\":\"String\"}],\"dbName\":null},\"CharacterEquipment\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"characterId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"character\",\"kind\":\"object\",\"type\":\"Character\",\"relationName\":\"CharacterToCharacterEquipment\"},{\"name\":\"equipmentIndex\",\"kind\":\"scalar\",\"type\":\"String\"}],\"dbName\":null}},\"enums\":{},\"types\":{}}")
 
 async function decodeBase64AsWasm(wasmBase64: string): Promise<WebAssembly.Module> {
   const { Buffer } = await import('node:buffer')
@@ -183,6 +183,66 @@ export interface PrismaClient<
     * ```
     */
   get user(): Prisma.UserDelegate<ExtArgs, { omit: OmitOpts }>;
+
+  /**
+   * `prisma.character`: Exposes CRUD operations for the **Character** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Characters
+    * const characters = await prisma.character.findMany()
+    * ```
+    */
+  get character(): Prisma.CharacterDelegate<ExtArgs, { omit: OmitOpts }>;
+
+  /**
+   * `prisma.characterSkill`: Exposes CRUD operations for the **CharacterSkill** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more CharacterSkills
+    * const characterSkills = await prisma.characterSkill.findMany()
+    * ```
+    */
+  get characterSkill(): Prisma.CharacterSkillDelegate<ExtArgs, { omit: OmitOpts }>;
+
+  /**
+   * `prisma.characterProficiency`: Exposes CRUD operations for the **CharacterProficiency** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more CharacterProficiencies
+    * const characterProficiencies = await prisma.characterProficiency.findMany()
+    * ```
+    */
+  get characterProficiency(): Prisma.CharacterProficiencyDelegate<ExtArgs, { omit: OmitOpts }>;
+
+  /**
+   * `prisma.characterLanguage`: Exposes CRUD operations for the **CharacterLanguage** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more CharacterLanguages
+    * const characterLanguages = await prisma.characterLanguage.findMany()
+    * ```
+    */
+  get characterLanguage(): Prisma.CharacterLanguageDelegate<ExtArgs, { omit: OmitOpts }>;
+
+  /**
+   * `prisma.characterSpell`: Exposes CRUD operations for the **CharacterSpell** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more CharacterSpells
+    * const characterSpells = await prisma.characterSpell.findMany()
+    * ```
+    */
+  get characterSpell(): Prisma.CharacterSpellDelegate<ExtArgs, { omit: OmitOpts }>;
+
+  /**
+   * `prisma.characterEquipment`: Exposes CRUD operations for the **CharacterEquipment** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more CharacterEquipments
+    * const characterEquipments = await prisma.characterEquipment.findMany()
+    * ```
+    */
+  get characterEquipment(): Prisma.CharacterEquipmentDelegate<ExtArgs, { omit: OmitOpts }>;
 }
 
 export function getPrismaClientClass(): PrismaClientConstructor {

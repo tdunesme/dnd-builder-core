@@ -70,6 +70,8 @@ describe('AuthService', () => {
         id: '1',
         email: 'valid@example.com',
         passwordHash: 'hashed-password',
+        firstName: 'John',
+        lastName: 'Doe',
         createdAt: new Date(),
         updatedAt: new Date(),
       };
@@ -95,8 +97,12 @@ describe('AuthService', () => {
         email: user.email,
       });
       expect(result).toEqual({
-        id: user.id,
-        email: user.email,
+        user: {
+          id: user.id,
+          email: user.email,
+          firstName: user.firstName,
+          lastName: user.lastName,
+        },
         accessToken: 'mock-token',
       });
     });

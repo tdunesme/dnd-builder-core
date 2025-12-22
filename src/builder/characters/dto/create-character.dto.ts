@@ -1,0 +1,7 @@
+import { IsString, MinLength } from 'class-validator';
+
+export class CreateCharacterDto {
+  @IsString()
+  @MinLength(1)
+  name: string;
+}

@@ -9,4 +9,10 @@
  * 🟢 You can import this file directly.
  */
 export type * from './models/User.js'
+export type * from './models/Character.js'
+export type * from './models/CharacterSkill.js'
+export type * from './models/CharacterProficiency.js'
+export type * from './models/CharacterLanguage.js'
+export type * from './models/CharacterSpell.js'
+export type * from './models/CharacterEquipment.js'
 export type * from './commonInputTypes.js'

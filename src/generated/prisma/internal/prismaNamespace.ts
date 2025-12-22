@@ -384,7 +384,13 @@ type FieldRefInputType<Model, FieldType> = Model extends never ? never : FieldRe
 
 
 export const ModelName = {
-  User: 'User'
+  User: 'User',
+  Character: 'Character',
+  CharacterSkill: 'CharacterSkill',
+  CharacterProficiency: 'CharacterProficiency',
+  CharacterLanguage: 'CharacterLanguage',
+  CharacterSpell: 'CharacterSpell',
+  CharacterEquipment: 'CharacterEquipment'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -400,7 +406,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user"
+    modelProps: "user" | "character" | "characterSkill" | "characterProficiency" | "characterLanguage" | "characterSpell" | "characterEquipment"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -478,6 +484,450 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    Character: {
+      payload: Prisma.$CharacterPayload<ExtArgs>
+      fields: Prisma.CharacterFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.CharacterFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.CharacterFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterPayload>
+        }
+        findFirst: {
+          args: Prisma.CharacterFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.CharacterFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterPayload>
+        }
+        findMany: {
+          args: Prisma.CharacterFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterPayload>[]
+        }
+        create: {
+          args: Prisma.CharacterCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterPayload>
+        }
+        createMany: {
+          args: Prisma.CharacterCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.CharacterCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterPayload>[]
+        }
+        delete: {
+          args: Prisma.CharacterDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterPayload>
+        }
+        update: {
+          args: Prisma.CharacterUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterPayload>
+        }
+        deleteMany: {
+          args: Prisma.CharacterDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.CharacterUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.CharacterUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterPayload>[]
+        }
+        upsert: {
+          args: Prisma.CharacterUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterPayload>
+        }
+        aggregate: {
+          args: Prisma.CharacterAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateCharacter>
+        }
+        groupBy: {
+          args: Prisma.CharacterGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.CharacterGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.CharacterCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.CharacterCountAggregateOutputType> | number
+        }
+      }
+    }
+    CharacterSkill: {
+      payload: Prisma.$CharacterSkillPayload<ExtArgs>
+      fields: Prisma.CharacterSkillFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.CharacterSkillFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterSkillPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.CharacterSkillFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterSkillPayload>
+        }
+        findFirst: {
+          args: Prisma.CharacterSkillFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterSkillPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.CharacterSkillFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterSkillPayload>
+        }
+        findMany: {
+          args: Prisma.CharacterSkillFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterSkillPayload>[]
+        }
+        create: {
+          args: Prisma.CharacterSkillCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterSkillPayload>
+        }
+        createMany: {
+          args: Prisma.CharacterSkillCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.CharacterSkillCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterSkillPayload>[]
+        }
+        delete: {
+          args: Prisma.CharacterSkillDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterSkillPayload>
+        }
+        update: {
+          args: Prisma.CharacterSkillUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterSkillPayload>
+        }
+        deleteMany: {
+          args: Prisma.CharacterSkillDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.CharacterSkillUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.CharacterSkillUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterSkillPayload>[]
+        }
+        upsert: {
+          args: Prisma.CharacterSkillUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterSkillPayload>
+        }
+        aggregate: {
+          args: Prisma.CharacterSkillAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateCharacterSkill>
+        }
+        groupBy: {
+          args: Prisma.CharacterSkillGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.CharacterSkillGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.CharacterSkillCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.CharacterSkillCountAggregateOutputType> | number
+        }
+      }
+    }
+    CharacterProficiency: {
+      payload: Prisma.$CharacterProficiencyPayload<ExtArgs>
+      fields: Prisma.CharacterProficiencyFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.CharacterProficiencyFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterProficiencyPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.CharacterProficiencyFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterProficiencyPayload>
+        }
+        findFirst: {
+          args: Prisma.CharacterProficiencyFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterProficiencyPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.CharacterProficiencyFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterProficiencyPayload>
+        }
+        findMany: {
+          args: Prisma.CharacterProficiencyFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterProficiencyPayload>[]
+        }
+        create: {
+          args: Prisma.CharacterProficiencyCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterProficiencyPayload>
+        }
+        createMany: {
+          args: Prisma.CharacterProficiencyCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.CharacterProficiencyCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterProficiencyPayload>[]
+        }
+        delete: {
+          args: Prisma.CharacterProficiencyDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterProficiencyPayload>
+        }
+        update: {
+          args: Prisma.CharacterProficiencyUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterProficiencyPayload>
+        }
+        deleteMany: {
+          args: Prisma.CharacterProficiencyDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.CharacterProficiencyUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.CharacterProficiencyUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterProficiencyPayload>[]
+        }
+        upsert: {
+          args: Prisma.CharacterProficiencyUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterProficiencyPayload>
+        }
+        aggregate: {
+          args: Prisma.CharacterProficiencyAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateCharacterProficiency>
+        }
+        groupBy: {
+          args: Prisma.CharacterProficiencyGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.CharacterProficiencyGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.CharacterProficiencyCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.CharacterProficiencyCountAggregateOutputType> | number
+        }
+      }
+    }
+    CharacterLanguage: {
+      payload: Prisma.$CharacterLanguagePayload<ExtArgs>
+      fields: Prisma.CharacterLanguageFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.CharacterLanguageFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterLanguagePayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.CharacterLanguageFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterLanguagePayload>
+        }
+        findFirst: {
+          args: Prisma.CharacterLanguageFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterLanguagePayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.CharacterLanguageFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterLanguagePayload>
+        }
+        findMany: {
+          args: Prisma.CharacterLanguageFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterLanguagePayload>[]
+        }
+        create: {
+          args: Prisma.CharacterLanguageCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterLanguagePayload>
+        }
+        createMany: {
+          args: Prisma.CharacterLanguageCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.CharacterLanguageCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterLanguagePayload>[]
+        }
+        delete: {
+          args: Prisma.CharacterLanguageDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterLanguagePayload>
+        }
+        update: {
+          args: Prisma.CharacterLanguageUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterLanguagePayload>
+        }
+        deleteMany: {
+          args: Prisma.CharacterLanguageDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.CharacterLanguageUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.CharacterLanguageUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterLanguagePayload>[]
+        }
+        upsert: {
+          args: Prisma.CharacterLanguageUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterLanguagePayload>
+        }
+        aggregate: {
+          args: Prisma.CharacterLanguageAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateCharacterLanguage>
+        }
+        groupBy: {
+          args: Prisma.CharacterLanguageGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.CharacterLanguageGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.CharacterLanguageCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.CharacterLanguageCountAggregateOutputType> | number
+        }
+      }
+    }
+    CharacterSpell: {
+      payload: Prisma.$CharacterSpellPayload<ExtArgs>
+      fields: Prisma.CharacterSpellFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.CharacterSpellFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterSpellPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.CharacterSpellFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterSpellPayload>
+        }
+        findFirst: {
+          args: Prisma.CharacterSpellFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterSpellPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.CharacterSpellFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterSpellPayload>
+        }
+        findMany: {
+          args: Prisma.CharacterSpellFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterSpellPayload>[]
+        }
+        create: {
+          args: Prisma.CharacterSpellCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterSpellPayload>
+        }
+        createMany: {
+          args: Prisma.CharacterSpellCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.CharacterSpellCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterSpellPayload>[]
+        }
+        delete: {
+          args: Prisma.CharacterSpellDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterSpellPayload>
+        }
+        update: {
+          args: Prisma.CharacterSpellUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterSpellPayload>
+        }
+        deleteMany: {
+          args: Prisma.CharacterSpellDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.CharacterSpellUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.CharacterSpellUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterSpellPayload>[]
+        }
+        upsert: {
+          args: Prisma.CharacterSpellUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterSpellPayload>
+        }
+        aggregate: {
+          args: Prisma.CharacterSpellAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateCharacterSpell>
+        }
+        groupBy: {
+          args: Prisma.CharacterSpellGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.CharacterSpellGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.CharacterSpellCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.CharacterSpellCountAggregateOutputType> | number
+        }
+      }
+    }
+    CharacterEquipment: {
+      payload: Prisma.$CharacterEquipmentPayload<ExtArgs>
+      fields: Prisma.CharacterEquipmentFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.CharacterEquipmentFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterEquipmentPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.CharacterEquipmentFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterEquipmentPayload>
+        }
+        findFirst: {
+          args: Prisma.CharacterEquipmentFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterEquipmentPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.CharacterEquipmentFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterEquipmentPayload>
+        }
+        findMany: {
+          args: Prisma.CharacterEquipmentFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterEquipmentPayload>[]
+        }
+        create: {
+          args: Prisma.CharacterEquipmentCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterEquipmentPayload>
+        }
+        createMany: {
+          args: Prisma.CharacterEquipmentCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.CharacterEquipmentCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterEquipmentPayload>[]
+        }
+        delete: {
+          args: Prisma.CharacterEquipmentDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterEquipmentPayload>
+        }
+        update: {
+          args: Prisma.CharacterEquipmentUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterEquipmentPayload>
+        }
+        deleteMany: {
+          args: Prisma.CharacterEquipmentDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.CharacterEquipmentUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.CharacterEquipmentUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterEquipmentPayload>[]
+        }
+        upsert: {
+          args: Prisma.CharacterEquipmentUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CharacterEquipmentPayload>
+        }
+        aggregate: {
+          args: Prisma.CharacterEquipmentAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateCharacterEquipment>
+        }
+        groupBy: {
+          args: Prisma.CharacterEquipmentGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.CharacterEquipmentGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.CharacterEquipmentCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.CharacterEquipmentCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -527,12 +977,89 @@ export const UserScalarFieldEnum = {
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
 
 
+export const CharacterScalarFieldEnum = {
+  id: 'id',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  userId: 'userId',
+  name: 'name',
+  level: 'level',
+  raceIndex: 'raceIndex',
+  subraceIndex: 'subraceIndex',
+  classIndex: 'classIndex',
+  subclassIndex: 'subclassIndex',
+  backgroundIndex: 'backgroundIndex',
+  alignmentIndex: 'alignmentIndex',
+  strength: 'strength',
+  dexterity: 'dexterity',
+  constitution: 'constitution',
+  intelligence: 'intelligence',
+  wisdom: 'wisdom',
+  charisma: 'charisma'
+} as const
+
+export type CharacterScalarFieldEnum = (typeof CharacterScalarFieldEnum)[keyof typeof CharacterScalarFieldEnum]
+
+
+export const CharacterSkillScalarFieldEnum = {
+  id: 'id',
+  characterId: 'characterId',
+  skillIndex: 'skillIndex'
+} as const
+
+export type CharacterSkillScalarFieldEnum = (typeof CharacterSkillScalarFieldEnum)[keyof typeof CharacterSkillScalarFieldEnum]
+
+
+export const CharacterProficiencyScalarFieldEnum = {
+  id: 'id',
+  characterId: 'characterId',
+  proficiencyIndex: 'proficiencyIndex'
+} as const
+
+export type CharacterProficiencyScalarFieldEnum = (typeof CharacterProficiencyScalarFieldEnum)[keyof typeof CharacterProficiencyScalarFieldEnum]
+
+
+export const CharacterLanguageScalarFieldEnum = {
+  id: 'id',
+  characterId: 'characterId',
+  languageIndex: 'languageIndex'
+} as const
+
+export type CharacterLanguageScalarFieldEnum = (typeof CharacterLanguageScalarFieldEnum)[keyof typeof CharacterLanguageScalarFieldEnum]
+
+
+export const CharacterSpellScalarFieldEnum = {
+  id: 'id',
+  characterId: 'characterId',
+  spellIndex: 'spellIndex'
+} as const
+
+export type CharacterSpellScalarFieldEnum = (typeof CharacterSpellScalarFieldEnum)[keyof typeof CharacterSpellScalarFieldEnum]
+
+
+export const CharacterEquipmentScalarFieldEnum = {
+  id: 'id',
+  characterId: 'characterId',
+  equipmentIndex: 'equipmentIndex'
+} as const
+
+export type CharacterEquipmentScalarFieldEnum = (typeof CharacterEquipmentScalarFieldEnum)[keyof typeof CharacterEquipmentScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
 } as const
 
 export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
+
+
+export const NullsOrder = {
+  first: 'first',
+  last: 'last'
+} as const
+
+export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
 
 
 
@@ -559,6 +1086,13 @@ export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel
  * Reference to a field of type 'Int'
  */
 export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
+    
+
+
+/**
+ * Reference to a field of type 'Float'
+ */
+export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
     
 
 /**
@@ -657,6 +1191,12 @@ export type PrismaClientOptions = ({
 }
 export type GlobalOmitConfig = {
   user?: Prisma.UserOmit
+  character?: Prisma.CharacterOmit
+  characterSkill?: Prisma.CharacterSkillOmit
+  characterProficiency?: Prisma.CharacterProficiencyOmit
+  characterLanguage?: Prisma.CharacterLanguageOmit
+  characterSpell?: Prisma.CharacterSpellOmit
+  characterEquipment?: Prisma.CharacterEquipmentOmit
 }
 
 /* Types for Logging */

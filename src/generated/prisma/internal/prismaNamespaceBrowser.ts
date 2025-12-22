@@ -51,7 +51,13 @@ export const AnyNull = runtime.AnyNull
 
 
 export const ModelName = {
-  User: 'User'
+  User: 'User',
+  Character: 'Character',
+  CharacterSkill: 'CharacterSkill',
+  CharacterProficiency: 'CharacterProficiency',
+  CharacterLanguage: 'CharacterLanguage',
+  CharacterSpell: 'CharacterSpell',
+  CharacterEquipment: 'CharacterEquipment'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -80,10 +86,87 @@ export const UserScalarFieldEnum = {
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
 
 
+export const CharacterScalarFieldEnum = {
+  id: 'id',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  userId: 'userId',
+  name: 'name',
+  level: 'level',
+  raceIndex: 'raceIndex',
+  subraceIndex: 'subraceIndex',
+  classIndex: 'classIndex',
+  subclassIndex: 'subclassIndex',
+  backgroundIndex: 'backgroundIndex',
+  alignmentIndex: 'alignmentIndex',
+  strength: 'strength',
+  dexterity: 'dexterity',
+  constitution: 'constitution',
+  intelligence: 'intelligence',
+  wisdom: 'wisdom',
+  charisma: 'charisma'
+} as const
+
+export type CharacterScalarFieldEnum = (typeof CharacterScalarFieldEnum)[keyof typeof CharacterScalarFieldEnum]
+
+
+export const CharacterSkillScalarFieldEnum = {
+  id: 'id',
+  characterId: 'characterId',
+  skillIndex: 'skillIndex'
+} as const
+
+export type CharacterSkillScalarFieldEnum = (typeof CharacterSkillScalarFieldEnum)[keyof typeof CharacterSkillScalarFieldEnum]
+
+
+export const CharacterProficiencyScalarFieldEnum = {
+  id: 'id',
+  characterId: 'characterId',
+  proficiencyIndex: 'proficiencyIndex'
+} as const
+
+export type CharacterProficiencyScalarFieldEnum = (typeof CharacterProficiencyScalarFieldEnum)[keyof typeof CharacterProficiencyScalarFieldEnum]
+
+
+export const CharacterLanguageScalarFieldEnum = {
+  id: 'id',
+  characterId: 'characterId',
+  languageIndex: 'languageIndex'
+} as const
+
+export type CharacterLanguageScalarFieldEnum = (typeof CharacterLanguageScalarFieldEnum)[keyof typeof CharacterLanguageScalarFieldEnum]
+
+
+export const CharacterSpellScalarFieldEnum = {
+  id: 'id',
+  characterId: 'characterId',
+  spellIndex: 'spellIndex'
+} as const
+
+export type CharacterSpellScalarFieldEnum = (typeof CharacterSpellScalarFieldEnum)[keyof typeof CharacterSpellScalarFieldEnum]
+
+
+export const CharacterEquipmentScalarFieldEnum = {
+  id: 'id',
+  characterId: 'characterId',
+  equipmentIndex: 'equipmentIndex'
+} as const
+
+export type CharacterEquipmentScalarFieldEnum = (typeof CharacterEquipmentScalarFieldEnum)[keyof typeof CharacterEquipmentScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
 } as const
 
 export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
+
+
+export const NullsOrder = {
+  first: 'first',
+  last: 'last'
+} as const
+
+export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
 
