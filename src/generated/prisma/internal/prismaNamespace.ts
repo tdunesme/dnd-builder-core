@@ -80,12 +80,12 @@ export type PrismaVersion = {
 }
 
 /**
- * Prisma Client JS version: 7.1.0
- * Query Engine version: ab635e6b9d606fa5c8fb8b1a7f909c3c3c1c98ba
+ * Prisma Client JS version: 7.2.0
+ * Query Engine version: 0c8ef2ce45c83248ab3df073180d5eda9e8be7a3
  */
 export const prismaVersion: PrismaVersion = {
-  client: "7.1.0",
-  engine: "ab635e6b9d606fa5c8fb8b1a7f909c3c3c1c98ba"
+  client: "7.2.0",
+  engine: "0c8ef2ce45c83248ab3df073180d5eda9e8be7a3"
 }
 
 /**
@@ -1031,7 +1031,8 @@ export type CharacterLanguageScalarFieldEnum = (typeof CharacterLanguageScalarFi
 export const CharacterSpellScalarFieldEnum = {
   id: 'id',
   characterId: 'characterId',
-  spellIndex: 'spellIndex'
+  spellIndex: 'spellIndex',
+  source: 'source'
 } as const
 
 export type CharacterSpellScalarFieldEnum = (typeof CharacterSpellScalarFieldEnum)[keyof typeof CharacterSpellScalarFieldEnum]
@@ -1040,7 +1041,8 @@ export type CharacterSpellScalarFieldEnum = (typeof CharacterSpellScalarFieldEnu
 export const CharacterEquipmentScalarFieldEnum = {
   id: 'id',
   characterId: 'characterId',
-  equipmentIndex: 'equipmentIndex'
+  equipmentIndex: 'equipmentIndex',
+  quantity: 'quantity'
 } as const
 
 export type CharacterEquipmentScalarFieldEnum = (typeof CharacterEquipmentScalarFieldEnum)[keyof typeof CharacterEquipmentScalarFieldEnum]

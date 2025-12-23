@@ -1,18 +1,85 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
+import { Prisma, Character } from 'src/generated/prisma/client';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { CreateCharacterDto } from './dto/create-character.dto';
 import { UpdateCharacterDto } from './dto/update-character.dto';
-import { Character } from 'src/generated/prisma/client';
+
+export type CharacterWithRelations = Prisma.CharacterGetPayload<{
+  include: {
+    skills: true;
+    proficiencies: true;
+    languages: true;
+    spells: true;
+    equipment: true;
+  };
+}>;
 
 @Injectable()
 export class CharactersService {
   constructor(private readonly prisma: PrismaService) {}
 
-  async create(userId: string, dto: CreateCharacterDto): Promise<Character> {
-    return await this.prisma.character.create({
+  async create(
+    userId: string,
+    dto: CreateCharacterDto,
+  ): Promise<CharacterWithRelations> {
+    return this.prisma.character.create({
       data: {
-        name: dto.name,
         userId,
+        name: dto.name,
+        level: dto.level ?? 1,
+
+        raceIndex: dto.raceIndex,
+        subraceIndex: dto.subraceIndex,
+        classIndex: dto.classIndex,
+        subclassIndex: dto.subclassIndex,
+        backgroundIndex: dto.backgroundIndex,
+        alignmentIndex: dto.alignmentIndex,
+
+        strength: dto.strength,
+        dexterity: dto.dexterity,
+        constitution: dto.constitution,
+        intelligence: dto.intelligence,
+        wisdom: dto.wisdom,
+        charisma: dto.charisma,
+
+        skills: dto.skillIndexes
+          ? { create: dto.skillIndexes.map((skillIndex) => ({ skillIndex })) }
+          : { create: [] },
+
+        proficiencies: dto.proficiencyIndexes
+          ? {
+              create: dto.proficiencyIndexes.map((proficiencyIndex) => ({
+                proficiencyIndex,
+              })),
+            }
+          : { create: [] },
+
+        languages: dto.languageIndexes
+          ? {
+              create: dto.languageIndexes.map((languageIndex) => ({
+                languageIndex,
+              })),
+            }
+          : { create: [] },
+
+        spells: dto.spellIndexes
+          ? { create: dto.spellIndexes.map((spellIndex) => ({ spellIndex })) }
+          : { create: [] },
+
+        equipment: dto.equipmentIndexes
+          ? {
+              create: dto.equipmentIndexes.map((equipmentIndex) => ({
+                equipmentIndex,
+              })),
+            }
+          : { create: [] },
+      },
+      include: {
+        skills: true,
+        proficiencies: true,
+        languages: true,
+        spells: true,
+        equipment: true,
       },
     });
   }
@@ -22,38 +89,96 @@ export class CharactersService {
     characterId: string,
     dto: UpdateCharacterDto,
   ): Promise<Character> {
-    const character = await this.prisma.character.findFirst({
-      where: { id: characterId, userId },
-    });
+    const data: Prisma.CharacterUpdateInput = {
+      name: dto.name,
+      level: dto.level,
 
-    if (!character) {
-      throw new NotFoundException('Character not found');
+      raceIndex: dto.raceIndex,
+      subraceIndex: dto.subraceIndex,
+      classIndex: dto.classIndex,
+      subclassIndex: dto.subclassIndex,
+      backgroundIndex: dto.backgroundIndex,
+      alignmentIndex: dto.alignmentIndex,
+
+      strength: dto.strength,
+      dexterity: dto.dexterity,
+      constitution: dto.constitution,
+      intelligence: dto.intelligence,
+      wisdom: dto.wisdom,
+      charisma: dto.charisma,
+    };
+
+    if (dto.skillIndexes !== undefined) {
+      data.skills = {
+        deleteMany: {},
+        create: dto.skillIndexes.map((skillIndex) => ({ skillIndex })),
+      };
+    }
+
+    if (dto.proficiencyIndexes !== undefined) {
+      data.proficiencies = {
+        deleteMany: {},
+        create: dto.proficiencyIndexes.map((proficiencyIndex) => ({
+          proficiencyIndex,
+        })),
+      };
+    }
+
+    if (dto.languageIndexes !== undefined) {
+      data.languages = {
+        deleteMany: {},
+        create: dto.languageIndexes.map((languageIndex) => ({ languageIndex })),
+      };
+    }
+
+    if (dto.spellIndexes !== undefined) {
+      data.spells = {
+        deleteMany: {},
+        create: dto.spellIndexes.map((spellIndex) => ({ spellIndex })),
+      };
+    }
+
+    if (dto.equipmentIndexes !== undefined) {
+      data.equipment = {
+        deleteMany: {},
+        create: dto.equipmentIndexes.map((equipmentIndex) => ({
+          equipmentIndex,
+        })),
+      };
     }
 
     return this.prisma.character.update({
-      where: { id: characterId },
-      data: {
-        name: dto.name,
-        raceIndex: dto.raceIndex,
-        subraceIndex: dto.subraceIndex,
-        classIndex: dto.classIndex,
-        subclassIndex: dto.subclassIndex,
-        backgroundIndex: dto.backgroundIndex,
-        alignmentIndex: dto.alignmentIndex,
-        strength: dto.strength,
-        dexterity: dto.dexterity,
-        constitution: dto.constitution,
-        intelligence: dto.intelligence,
-        wisdom: dto.wisdom,
-        charisma: dto.charisma,
-      },
+      where: { id: characterId, userId },
+      data,
     });
   }
 
   async findAllForUser(userId: string): Promise<Character[]> {
-    return await this.prisma.character.findMany({
+    return this.prisma.character.findMany({
       where: { userId },
-      orderBy: { updatedAt: 'desc' },
+      orderBy: { createdAt: 'desc' },
+    });
+  }
+
+  async findById(
+    userId: string,
+    characterId: string,
+  ): Promise<CharacterWithRelations> {
+    return this.prisma.character.findFirstOrThrow({
+      where: { id: characterId, userId },
+      include: {
+        skills: true,
+        proficiencies: true,
+        languages: true,
+        spells: true,
+        equipment: true,
+      },
+    });
+  }
+
+  async delete(userId: string, characterId: string): Promise<void> {
+    await this.prisma.character.delete({
+      where: { id: characterId, userId },
     });
   }
 }

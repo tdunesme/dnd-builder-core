@@ -20,46 +20,70 @@ export type CharacterEquipmentModel = runtime.Types.Result.DefaultSelection<Pris
 
 export type AggregateCharacterEquipment = {
   _count: CharacterEquipmentCountAggregateOutputType | null
+  _avg: CharacterEquipmentAvgAggregateOutputType | null
+  _sum: CharacterEquipmentSumAggregateOutputType | null
   _min: CharacterEquipmentMinAggregateOutputType | null
   _max: CharacterEquipmentMaxAggregateOutputType | null
+}
+
+export type CharacterEquipmentAvgAggregateOutputType = {
+  quantity: number | null
+}
+
+export type CharacterEquipmentSumAggregateOutputType = {
+  quantity: number | null
 }
 
 export type CharacterEquipmentMinAggregateOutputType = {
   id: string | null
   characterId: string | null
   equipmentIndex: string | null
+  quantity: number | null
 }
 
 export type CharacterEquipmentMaxAggregateOutputType = {
   id: string | null
   characterId: string | null
   equipmentIndex: string | null
+  quantity: number | null
 }
 
 export type CharacterEquipmentCountAggregateOutputType = {
   id: number
   characterId: number
   equipmentIndex: number
+  quantity: number
   _all: number
 }
 
+
+export type CharacterEquipmentAvgAggregateInputType = {
+  quantity?: true
+}
+
+export type CharacterEquipmentSumAggregateInputType = {
+  quantity?: true
+}
 
 export type CharacterEquipmentMinAggregateInputType = {
   id?: true
   characterId?: true
   equipmentIndex?: true
+  quantity?: true
 }
 
 export type CharacterEquipmentMaxAggregateInputType = {
   id?: true
   characterId?: true
   equipmentIndex?: true
+  quantity?: true
 }
 
 export type CharacterEquipmentCountAggregateInputType = {
   id?: true
   characterId?: true
   equipmentIndex?: true
+  quantity?: true
   _all?: true
 }
 
@@ -101,6 +125,18 @@ export type CharacterEquipmentAggregateArgs<ExtArgs extends runtime.Types.Extens
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
+   * Select which fields to average
+  **/
+  _avg?: CharacterEquipmentAvgAggregateInputType
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+   * 
+   * Select which fields to sum
+  **/
+  _sum?: CharacterEquipmentSumAggregateInputType
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+   * 
    * Select which fields to find the minimum value
   **/
   _min?: CharacterEquipmentMinAggregateInputType
@@ -131,6 +167,8 @@ export type CharacterEquipmentGroupByArgs<ExtArgs extends runtime.Types.Extensio
   take?: number
   skip?: number
   _count?: CharacterEquipmentCountAggregateInputType | true
+  _avg?: CharacterEquipmentAvgAggregateInputType
+  _sum?: CharacterEquipmentSumAggregateInputType
   _min?: CharacterEquipmentMinAggregateInputType
   _max?: CharacterEquipmentMaxAggregateInputType
 }
@@ -139,7 +177,10 @@ export type CharacterEquipmentGroupByOutputType = {
   id: string
   characterId: string
   equipmentIndex: string
+  quantity: number
   _count: CharacterEquipmentCountAggregateOutputType | null
+  _avg: CharacterEquipmentAvgAggregateOutputType | null
+  _sum: CharacterEquipmentSumAggregateOutputType | null
   _min: CharacterEquipmentMinAggregateOutputType | null
   _max: CharacterEquipmentMaxAggregateOutputType | null
 }
@@ -166,6 +207,7 @@ export type CharacterEquipmentWhereInput = {
   id?: Prisma.StringFilter<"CharacterEquipment"> | string
   characterId?: Prisma.StringFilter<"CharacterEquipment"> | string
   equipmentIndex?: Prisma.StringFilter<"CharacterEquipment"> | string
+  quantity?: Prisma.IntFilter<"CharacterEquipment"> | number
   character?: Prisma.XOR<Prisma.CharacterScalarRelationFilter, Prisma.CharacterWhereInput>
 }
 
@@ -173,6 +215,7 @@ export type CharacterEquipmentOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   characterId?: Prisma.SortOrder
   equipmentIndex?: Prisma.SortOrder
+  quantity?: Prisma.SortOrder
   character?: Prisma.CharacterOrderByWithRelationInput
 }
 
@@ -184,6 +227,7 @@ export type CharacterEquipmentWhereUniqueInput = Prisma.AtLeast<{
   NOT?: Prisma.CharacterEquipmentWhereInput | Prisma.CharacterEquipmentWhereInput[]
   characterId?: Prisma.StringFilter<"CharacterEquipment"> | string
   equipmentIndex?: Prisma.StringFilter<"CharacterEquipment"> | string
+  quantity?: Prisma.IntFilter<"CharacterEquipment"> | number
   character?: Prisma.XOR<Prisma.CharacterScalarRelationFilter, Prisma.CharacterWhereInput>
 }, "id" | "characterId_equipmentIndex">
 
@@ -191,9 +235,12 @@ export type CharacterEquipmentOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   characterId?: Prisma.SortOrder
   equipmentIndex?: Prisma.SortOrder
+  quantity?: Prisma.SortOrder
   _count?: Prisma.CharacterEquipmentCountOrderByAggregateInput
+  _avg?: Prisma.CharacterEquipmentAvgOrderByAggregateInput
   _max?: Prisma.CharacterEquipmentMaxOrderByAggregateInput
   _min?: Prisma.CharacterEquipmentMinOrderByAggregateInput
+  _sum?: Prisma.CharacterEquipmentSumOrderByAggregateInput
 }
 
 export type CharacterEquipmentScalarWhereWithAggregatesInput = {
@@ -203,11 +250,13 @@ export type CharacterEquipmentScalarWhereWithAggregatesInput = {
   id?: Prisma.StringWithAggregatesFilter<"CharacterEquipment"> | string
   characterId?: Prisma.StringWithAggregatesFilter<"CharacterEquipment"> | string
   equipmentIndex?: Prisma.StringWithAggregatesFilter<"CharacterEquipment"> | string
+  quantity?: Prisma.IntWithAggregatesFilter<"CharacterEquipment"> | number
 }
 
 export type CharacterEquipmentCreateInput = {
   id?: string
   equipmentIndex: string
+  quantity?: number
   character: Prisma.CharacterCreateNestedOneWithoutEquipmentInput
 }
 
@@ -215,11 +264,13 @@ export type CharacterEquipmentUncheckedCreateInput = {
   id?: string
   characterId: string
   equipmentIndex: string
+  quantity?: number
 }
 
 export type CharacterEquipmentUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   equipmentIndex?: Prisma.StringFieldUpdateOperationsInput | string
+  quantity?: Prisma.IntFieldUpdateOperationsInput | number
   character?: Prisma.CharacterUpdateOneRequiredWithoutEquipmentNestedInput
 }
 
@@ -227,23 +278,27 @@ export type CharacterEquipmentUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   characterId?: Prisma.StringFieldUpdateOperationsInput | string
   equipmentIndex?: Prisma.StringFieldUpdateOperationsInput | string
+  quantity?: Prisma.IntFieldUpdateOperationsInput | number
 }
 
 export type CharacterEquipmentCreateManyInput = {
   id?: string
   characterId: string
   equipmentIndex: string
+  quantity?: number
 }
 
 export type CharacterEquipmentUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   equipmentIndex?: Prisma.StringFieldUpdateOperationsInput | string
+  quantity?: Prisma.IntFieldUpdateOperationsInput | number
 }
 
 export type CharacterEquipmentUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   characterId?: Prisma.StringFieldUpdateOperationsInput | string
   equipmentIndex?: Prisma.StringFieldUpdateOperationsInput | string
+  quantity?: Prisma.IntFieldUpdateOperationsInput | number
 }
 
 export type CharacterEquipmentListRelationFilter = {
@@ -265,18 +320,29 @@ export type CharacterEquipmentCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   characterId?: Prisma.SortOrder
   equipmentIndex?: Prisma.SortOrder
+  quantity?: Prisma.SortOrder
+}
+
+export type CharacterEquipmentAvgOrderByAggregateInput = {
+  quantity?: Prisma.SortOrder
 }
 
 export type CharacterEquipmentMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   characterId?: Prisma.SortOrder
   equipmentIndex?: Prisma.SortOrder
+  quantity?: Prisma.SortOrder
 }
 
 export type CharacterEquipmentMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   characterId?: Prisma.SortOrder
   equipmentIndex?: Prisma.SortOrder
+  quantity?: Prisma.SortOrder
+}
+
+export type CharacterEquipmentSumOrderByAggregateInput = {
+  quantity?: Prisma.SortOrder
 }
 
 export type CharacterEquipmentCreateNestedManyWithoutCharacterInput = {
@@ -324,11 +390,13 @@ export type CharacterEquipmentUncheckedUpdateManyWithoutCharacterNestedInput = {
 export type CharacterEquipmentCreateWithoutCharacterInput = {
   id?: string
   equipmentIndex: string
+  quantity?: number
 }
 
 export type CharacterEquipmentUncheckedCreateWithoutCharacterInput = {
   id?: string
   equipmentIndex: string
+  quantity?: number
 }
 
 export type CharacterEquipmentCreateOrConnectWithoutCharacterInput = {
@@ -363,26 +431,31 @@ export type CharacterEquipmentScalarWhereInput = {
   id?: Prisma.StringFilter<"CharacterEquipment"> | string
   characterId?: Prisma.StringFilter<"CharacterEquipment"> | string
   equipmentIndex?: Prisma.StringFilter<"CharacterEquipment"> | string
+  quantity?: Prisma.IntFilter<"CharacterEquipment"> | number
 }
 
 export type CharacterEquipmentCreateManyCharacterInput = {
   id?: string
   equipmentIndex: string
+  quantity?: number
 }
 
 export type CharacterEquipmentUpdateWithoutCharacterInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   equipmentIndex?: Prisma.StringFieldUpdateOperationsInput | string
+  quantity?: Prisma.IntFieldUpdateOperationsInput | number
 }
 
 export type CharacterEquipmentUncheckedUpdateWithoutCharacterInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   equipmentIndex?: Prisma.StringFieldUpdateOperationsInput | string
+  quantity?: Prisma.IntFieldUpdateOperationsInput | number
 }
 
 export type CharacterEquipmentUncheckedUpdateManyWithoutCharacterInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   equipmentIndex?: Prisma.StringFieldUpdateOperationsInput | string
+  quantity?: Prisma.IntFieldUpdateOperationsInput | number
 }
 
 
@@ -391,6 +464,7 @@ export type CharacterEquipmentSelect<ExtArgs extends runtime.Types.Extensions.In
   id?: boolean
   characterId?: boolean
   equipmentIndex?: boolean
+  quantity?: boolean
   character?: boolean | Prisma.CharacterDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["characterEquipment"]>
 
@@ -398,6 +472,7 @@ export type CharacterEquipmentSelectCreateManyAndReturn<ExtArgs extends runtime.
   id?: boolean
   characterId?: boolean
   equipmentIndex?: boolean
+  quantity?: boolean
   character?: boolean | Prisma.CharacterDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["characterEquipment"]>
 
@@ -405,6 +480,7 @@ export type CharacterEquipmentSelectUpdateManyAndReturn<ExtArgs extends runtime.
   id?: boolean
   characterId?: boolean
   equipmentIndex?: boolean
+  quantity?: boolean
   character?: boolean | Prisma.CharacterDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["characterEquipment"]>
 
@@ -412,9 +488,10 @@ export type CharacterEquipmentSelectScalar = {
   id?: boolean
   characterId?: boolean
   equipmentIndex?: boolean
+  quantity?: boolean
 }
 
-export type CharacterEquipmentOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "characterId" | "equipmentIndex", ExtArgs["result"]["characterEquipment"]>
+export type CharacterEquipmentOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "characterId" | "equipmentIndex" | "quantity", ExtArgs["result"]["characterEquipment"]>
 export type CharacterEquipmentInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   character?: boolean | Prisma.CharacterDefaultArgs<ExtArgs>
 }
@@ -434,6 +511,7 @@ export type $CharacterEquipmentPayload<ExtArgs extends runtime.Types.Extensions.
     id: string
     characterId: string
     equipmentIndex: string
+    quantity: number
   }, ExtArgs["result"]["characterEquipment"]>
   composites: {}
 }
@@ -861,6 +939,7 @@ export interface CharacterEquipmentFieldRefs {
   readonly id: Prisma.FieldRef<"CharacterEquipment", 'String'>
   readonly characterId: Prisma.FieldRef<"CharacterEquipment", 'String'>
   readonly equipmentIndex: Prisma.FieldRef<"CharacterEquipment", 'String'>
+  readonly quantity: Prisma.FieldRef<"CharacterEquipment", 'Int'>
 }
     
 

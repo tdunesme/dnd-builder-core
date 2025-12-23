@@ -140,7 +140,8 @@ export type CharacterLanguageScalarFieldEnum = (typeof CharacterLanguageScalarFi
 export const CharacterSpellScalarFieldEnum = {
   id: 'id',
   characterId: 'characterId',
-  spellIndex: 'spellIndex'
+  spellIndex: 'spellIndex',
+  source: 'source'
 } as const
 
 export type CharacterSpellScalarFieldEnum = (typeof CharacterSpellScalarFieldEnum)[keyof typeof CharacterSpellScalarFieldEnum]
@@ -149,7 +150,8 @@ export type CharacterSpellScalarFieldEnum = (typeof CharacterSpellScalarFieldEnu
 export const CharacterEquipmentScalarFieldEnum = {
   id: 'id',
   characterId: 'characterId',
-  equipmentIndex: 'equipmentIndex'
+  equipmentIndex: 'equipmentIndex',
+  quantity: 'quantity'
 } as const
 
 export type CharacterEquipmentScalarFieldEnum = (typeof CharacterEquipmentScalarFieldEnum)[keyof typeof CharacterEquipmentScalarFieldEnum]

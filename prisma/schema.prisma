@@ -16,40 +16,42 @@ datasource db {
 
 // User
 model User {
-  id           String      @id @default(cuid())
-  email        String      @unique
+  id           String   @id @default(cuid())
+  email        String   @unique
   passwordHash String
   firstName    String
   lastName     String
-  createdAt    DateTime    @default(now())
-  updatedAt    DateTime    @updatedAt
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
 
   characters Character[]
 }
 
 model Character {
-  id        String   @id @default(uuid())
+  id String @id @default(cuid())
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
+  // Ownership
   userId String
-  user   User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   // Identity
   name  String
-  level Int @default(1)
+  level Int    @default(1)
 
-  // SRD references (nullable = not chosen yet)
-  raceIndex       String?
-  subraceIndex    String?
+  // SRD references (indexes only)
+  raceIndex    String?
+  subraceIndex String?
 
-  classIndex      String?
-  subclassIndex   String?
+  classIndex    String?
+  subclassIndex String?
 
   backgroundIndex String?
   alignmentIndex  String?
 
-  // Ability scores (nullable until step reached)
+  // Ability Scores (raw values only)
   strength     Int?
   dexterity    Int?
   constitution Int?
@@ -57,7 +59,7 @@ model Character {
   wisdom       Int?
   charisma     Int?
 
-  // Relations
+  // Relations (pure choices)
   skills        CharacterSkill[]
   proficiencies CharacterProficiency[]
   languages     CharacterLanguage[]
@@ -67,9 +69,8 @@ model Character {
   @@index([userId])
 }
 
-
 model CharacterSkill {
-  id String @id @default(uuid())
+  id String @id @default(cuid())
 
   characterId String
   character   Character @relation(fields: [characterId], references: [id], onDelete: Cascade)
@@ -80,7 +81,7 @@ model CharacterSkill {
 }
 
 model CharacterProficiency {
-  id String @id @default(uuid())
+  id String @id @default(cuid())
 
   characterId String
   character   Character @relation(fields: [characterId], references: [id], onDelete: Cascade)
@@ -91,7 +92,7 @@ model CharacterProficiency {
 }
 
 model CharacterLanguage {
-  id String @id @default(uuid())
+  id String @id @default(cuid())
 
   characterId String
   character   Character @relation(fields: [characterId], references: [id], onDelete: Cascade)
@@ -102,24 +103,27 @@ model CharacterLanguage {
 }
 
 model CharacterSpell {
-  id String @id @default(uuid())
+  id String @id @default(cuid())
 
   characterId String
   character   Character @relation(fields: [characterId], references: [id], onDelete: Cascade)
 
   spellIndex String
 
+  // Optionnel – utile plus tard
+  source String? // class | race | feat | item
+
   @@unique([characterId, spellIndex])
 }
 
 model CharacterEquipment {
-  id String @id @default(uuid())
+  id String @id @default(cuid())
 
   characterId String
   character   Character @relation(fields: [characterId], references: [id], onDelete: Cascade)
 
   equipmentIndex String
+  quantity       Int    @default(1)
 
   @@unique([characterId, equipmentIndex])
 }
-

@@ -1,20 +1,21 @@
 import {
+  IsArray,
+  IsInt,
   IsOptional,
   IsString,
-  IsInt,
-  Min,
   Max,
-  IsArray,
+  Min,
 } from 'class-validator';
 
 export class UpdateCharacterDto {
-  /* ---------- Identity ---------- */
-
-  @IsOptional()
   @IsString()
+  @IsOptional()
   name?: string;
 
-  /* ---------- SRD references (single) ---------- */
+  @IsOptional()
+  @IsInt()
+  @Min(1)
+  level?: number;
 
   @IsOptional()
   @IsString()
@@ -39,8 +40,6 @@ export class UpdateCharacterDto {
   @IsOptional()
   @IsString()
   alignmentIndex?: string;
-
-  /* ---------- Ability Scores ---------- */
 
   @IsOptional()
   @IsInt()
@@ -77,8 +76,6 @@ export class UpdateCharacterDto {
   @Min(1)
   @Max(30)
   charisma?: number;
-
-  /* ---------- Multiple choices (replace strategy) ---------- */
 
   @IsOptional()
   @IsArray()

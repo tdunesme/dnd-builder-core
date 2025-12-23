@@ -28,18 +28,21 @@ export type CharacterSpellMinAggregateOutputType = {
   id: string | null
   characterId: string | null
   spellIndex: string | null
+  source: string | null
 }
 
 export type CharacterSpellMaxAggregateOutputType = {
   id: string | null
   characterId: string | null
   spellIndex: string | null
+  source: string | null
 }
 
 export type CharacterSpellCountAggregateOutputType = {
   id: number
   characterId: number
   spellIndex: number
+  source: number
   _all: number
 }
 
@@ -48,18 +51,21 @@ export type CharacterSpellMinAggregateInputType = {
   id?: true
   characterId?: true
   spellIndex?: true
+  source?: true
 }
 
 export type CharacterSpellMaxAggregateInputType = {
   id?: true
   characterId?: true
   spellIndex?: true
+  source?: true
 }
 
 export type CharacterSpellCountAggregateInputType = {
   id?: true
   characterId?: true
   spellIndex?: true
+  source?: true
   _all?: true
 }
 
@@ -139,6 +145,7 @@ export type CharacterSpellGroupByOutputType = {
   id: string
   characterId: string
   spellIndex: string
+  source: string | null
   _count: CharacterSpellCountAggregateOutputType | null
   _min: CharacterSpellMinAggregateOutputType | null
   _max: CharacterSpellMaxAggregateOutputType | null
@@ -166,6 +173,7 @@ export type CharacterSpellWhereInput = {
   id?: Prisma.StringFilter<"CharacterSpell"> | string
   characterId?: Prisma.StringFilter<"CharacterSpell"> | string
   spellIndex?: Prisma.StringFilter<"CharacterSpell"> | string
+  source?: Prisma.StringNullableFilter<"CharacterSpell"> | string | null
   character?: Prisma.XOR<Prisma.CharacterScalarRelationFilter, Prisma.CharacterWhereInput>
 }
 
@@ -173,6 +181,7 @@ export type CharacterSpellOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   characterId?: Prisma.SortOrder
   spellIndex?: Prisma.SortOrder
+  source?: Prisma.SortOrderInput | Prisma.SortOrder
   character?: Prisma.CharacterOrderByWithRelationInput
 }
 
@@ -184,6 +193,7 @@ export type CharacterSpellWhereUniqueInput = Prisma.AtLeast<{
   NOT?: Prisma.CharacterSpellWhereInput | Prisma.CharacterSpellWhereInput[]
   characterId?: Prisma.StringFilter<"CharacterSpell"> | string
   spellIndex?: Prisma.StringFilter<"CharacterSpell"> | string
+  source?: Prisma.StringNullableFilter<"CharacterSpell"> | string | null
   character?: Prisma.XOR<Prisma.CharacterScalarRelationFilter, Prisma.CharacterWhereInput>
 }, "id" | "characterId_spellIndex">
 
@@ -191,6 +201,7 @@ export type CharacterSpellOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   characterId?: Prisma.SortOrder
   spellIndex?: Prisma.SortOrder
+  source?: Prisma.SortOrderInput | Prisma.SortOrder
   _count?: Prisma.CharacterSpellCountOrderByAggregateInput
   _max?: Prisma.CharacterSpellMaxOrderByAggregateInput
   _min?: Prisma.CharacterSpellMinOrderByAggregateInput
@@ -203,11 +214,13 @@ export type CharacterSpellScalarWhereWithAggregatesInput = {
   id?: Prisma.StringWithAggregatesFilter<"CharacterSpell"> | string
   characterId?: Prisma.StringWithAggregatesFilter<"CharacterSpell"> | string
   spellIndex?: Prisma.StringWithAggregatesFilter<"CharacterSpell"> | string
+  source?: Prisma.StringNullableWithAggregatesFilter<"CharacterSpell"> | string | null
 }
 
 export type CharacterSpellCreateInput = {
   id?: string
   spellIndex: string
+  source?: string | null
   character: Prisma.CharacterCreateNestedOneWithoutSpellsInput
 }
 
@@ -215,11 +228,13 @@ export type CharacterSpellUncheckedCreateInput = {
   id?: string
   characterId: string
   spellIndex: string
+  source?: string | null
 }
 
 export type CharacterSpellUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   spellIndex?: Prisma.StringFieldUpdateOperationsInput | string
+  source?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   character?: Prisma.CharacterUpdateOneRequiredWithoutSpellsNestedInput
 }
 
@@ -227,23 +242,27 @@ export type CharacterSpellUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   characterId?: Prisma.StringFieldUpdateOperationsInput | string
   spellIndex?: Prisma.StringFieldUpdateOperationsInput | string
+  source?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type CharacterSpellCreateManyInput = {
   id?: string
   characterId: string
   spellIndex: string
+  source?: string | null
 }
 
 export type CharacterSpellUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   spellIndex?: Prisma.StringFieldUpdateOperationsInput | string
+  source?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type CharacterSpellUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   characterId?: Prisma.StringFieldUpdateOperationsInput | string
   spellIndex?: Prisma.StringFieldUpdateOperationsInput | string
+  source?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type CharacterSpellListRelationFilter = {
@@ -265,18 +284,21 @@ export type CharacterSpellCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   characterId?: Prisma.SortOrder
   spellIndex?: Prisma.SortOrder
+  source?: Prisma.SortOrder
 }
 
 export type CharacterSpellMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   characterId?: Prisma.SortOrder
   spellIndex?: Prisma.SortOrder
+  source?: Prisma.SortOrder
 }
 
 export type CharacterSpellMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   characterId?: Prisma.SortOrder
   spellIndex?: Prisma.SortOrder
+  source?: Prisma.SortOrder
 }
 
 export type CharacterSpellCreateNestedManyWithoutCharacterInput = {
@@ -324,11 +346,13 @@ export type CharacterSpellUncheckedUpdateManyWithoutCharacterNestedInput = {
 export type CharacterSpellCreateWithoutCharacterInput = {
   id?: string
   spellIndex: string
+  source?: string | null
 }
 
 export type CharacterSpellUncheckedCreateWithoutCharacterInput = {
   id?: string
   spellIndex: string
+  source?: string | null
 }
 
 export type CharacterSpellCreateOrConnectWithoutCharacterInput = {
@@ -363,26 +387,31 @@ export type CharacterSpellScalarWhereInput = {
   id?: Prisma.StringFilter<"CharacterSpell"> | string
   characterId?: Prisma.StringFilter<"CharacterSpell"> | string
   spellIndex?: Prisma.StringFilter<"CharacterSpell"> | string
+  source?: Prisma.StringNullableFilter<"CharacterSpell"> | string | null
 }
 
 export type CharacterSpellCreateManyCharacterInput = {
   id?: string
   spellIndex: string
+  source?: string | null
 }
 
 export type CharacterSpellUpdateWithoutCharacterInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   spellIndex?: Prisma.StringFieldUpdateOperationsInput | string
+  source?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type CharacterSpellUncheckedUpdateWithoutCharacterInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   spellIndex?: Prisma.StringFieldUpdateOperationsInput | string
+  source?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type CharacterSpellUncheckedUpdateManyWithoutCharacterInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   spellIndex?: Prisma.StringFieldUpdateOperationsInput | string
+  source?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 
@@ -391,6 +420,7 @@ export type CharacterSpellSelect<ExtArgs extends runtime.Types.Extensions.Intern
   id?: boolean
   characterId?: boolean
   spellIndex?: boolean
+  source?: boolean
   character?: boolean | Prisma.CharacterDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["characterSpell"]>
 
@@ -398,6 +428,7 @@ export type CharacterSpellSelectCreateManyAndReturn<ExtArgs extends runtime.Type
   id?: boolean
   characterId?: boolean
   spellIndex?: boolean
+  source?: boolean
   character?: boolean | Prisma.CharacterDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["characterSpell"]>
 
@@ -405,6 +436,7 @@ export type CharacterSpellSelectUpdateManyAndReturn<ExtArgs extends runtime.Type
   id?: boolean
   characterId?: boolean
   spellIndex?: boolean
+  source?: boolean
   character?: boolean | Prisma.CharacterDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["characterSpell"]>
 
@@ -412,9 +444,10 @@ export type CharacterSpellSelectScalar = {
   id?: boolean
   characterId?: boolean
   spellIndex?: boolean
+  source?: boolean
 }
 
-export type CharacterSpellOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "characterId" | "spellIndex", ExtArgs["result"]["characterSpell"]>
+export type CharacterSpellOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "characterId" | "spellIndex" | "source", ExtArgs["result"]["characterSpell"]>
 export type CharacterSpellInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   character?: boolean | Prisma.CharacterDefaultArgs<ExtArgs>
 }
@@ -434,6 +467,7 @@ export type $CharacterSpellPayload<ExtArgs extends runtime.Types.Extensions.Inte
     id: string
     characterId: string
     spellIndex: string
+    source: string | null
   }, ExtArgs["result"]["characterSpell"]>
   composites: {}
 }
@@ -861,6 +895,7 @@ export interface CharacterSpellFieldRefs {
   readonly id: Prisma.FieldRef<"CharacterSpell", 'String'>
   readonly characterId: Prisma.FieldRef<"CharacterSpell", 'String'>
   readonly spellIndex: Prisma.FieldRef<"CharacterSpell", 'String'>
+  readonly source: Prisma.FieldRef<"CharacterSpell", 'String'>
 }
     
 
