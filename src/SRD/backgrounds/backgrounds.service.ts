@@ -3,11 +3,11 @@ import { SrdClientService } from '../srd-client/srd-client.service';
 import { SrdRessourcesDto } from '../dto/srd-ressources.dto';
 
 @Injectable()
-export class RacesService {
+export class BackgroundsService {
   constructor(private readonly srdClient: SrdClientService) {}
 
   async getAll(): Promise<SrdRessourcesDto[]> {
-    const response = await this.srdClient.get('/races');
+    const response = await this.srdClient.get('/backgrounds');
 
     return response.results.map((item) => ({
       index: item.index,
@@ -17,6 +17,6 @@ export class RacesService {
   }
 
   async getById(index: string): Promise<any> {
-    return await this.srdClient.get(`/races/${index}`);
+    return await this.srdClient.get(`/backgrounds/${index}`);
   }
 }

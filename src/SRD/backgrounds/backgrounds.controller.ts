@@ -1,20 +1,20 @@
 import { Controller, Get, Param, UseGuards } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { SrdRessourcesDto } from '../dto/srd-ressources.dto';
-import { RacesService } from './races.service';
+import { BackgroundsService } from './backgrounds.service';
 
-@Controller('races')
+@Controller('backgrounds')
 @UseGuards(AuthGuard('jwt'))
-export class RacesController {
-  constructor(private readonly racesService: RacesService) {}
+export class BackgroundsController {
+  constructor(private readonly backgroundsService: BackgroundsService) {}
 
   @Get()
   async findAll(): Promise<SrdRessourcesDto[]> {
-    return this.racesService.getAll();
+    return this.backgroundsService.getAll();
   }
 
   @Get(':index')
   async findById(@Param('index') index: string): Promise<any> {
-    return this.racesService.getById(index);
+    return this.backgroundsService.getById(index);
   }
 }

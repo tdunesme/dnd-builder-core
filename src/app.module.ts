@@ -8,6 +8,7 @@ import { CharactersModule } from './builder/characters/characters.module';
 import { ClassesModule } from './SRD/classes/classes.module';
 import { RacesModule } from './SRD/races/races.module';
 import { SrdClientModule } from './SRD/srd-client/srd-client.module';
+import { BackgroundsModule } from './srd/backgrounds/backgrounds.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { SrdClientModule } from './SRD/srd-client/srd-client.module';
     ClassesModule,
     RacesModule,
     SrdClientModule,
+    BackgroundsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
