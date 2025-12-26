@@ -8,7 +8,7 @@ import { CharactersModule } from './builder/characters/characters.module';
 import { ClassesModule } from './SRD/classes/classes.module';
 import { RacesModule } from './SRD/races/races.module';
 import { SrdClientModule } from './SRD/srd-client/srd-client.module';
-import { BackgroundsModule } from './srd/backgrounds/backgrounds.module';
+import { BackgroundsModule } from './SRD/backgrounds/backgrounds.module';
 
 @Module({
   imports: [
